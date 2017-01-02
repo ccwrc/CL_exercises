@@ -25,7 +25,7 @@ for ($i = 1; $i <= $varN; $i++) {
     echo "</tr>";
     for ($j = 1; $j <= $varN; $j++) {
         echo "<td>";
-        echo "$i x $j =";
+        echo "$i x $j = ";
         echo $i * $j;
         echo "</td>";
     }
