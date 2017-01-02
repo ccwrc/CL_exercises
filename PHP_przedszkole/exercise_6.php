@@ -11,19 +11,19 @@
     99 - 100 pkt - ocena celująca
  */
 
-$sumOfpoints = 45;
+$sumOfPoints = 45;
 
-if ($sumOfpoints >= 0 && $sumOfpoints <= 39) {
+if ($sumOfPoints >= 0 && $sumOfPoints <= 39) {
     echo "ocena niedostateczna";
-} else if ($sumOfpoints >= 40 && $sumOfpoints <= 54) {
+} else if ($sumOfPoints >= 40 && $sumOfPoints <= 54) {
     echo "ocena dopuszczająca";
-} else if ($sumOfpoints >= 55 && $sumOfpoints <= 69) {
+} else if ($sumOfPoints >= 55 && $sumOfPoints <= 69) {
     echo "ocena dostateczna";
-} else if ($sumOfpoints >= 70 && $sumOfpoints <= 84) {
+} else if ($sumOfPoints >= 70 && $sumOfPoints <= 84) {
     echo "ocena dobra";
-} else if ($sumOfpoints >= 85 && $sumOfpoints <= 98) {
+} else if ($sumOfPoints >= 85 && $sumOfPoints <= 98) {
     echo "ocena bardzo dobra";
-} else if ($sumOfpoints >= 99 && $sumOfpoints <= 100) {
+} else if ($sumOfPoints >= 99 && $sumOfPoints <= 100) {
     echo "ocena celująca";
 } else {
     echo "wprowadziłeś dane spoza zakresu (1-100)";
