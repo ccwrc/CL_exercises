@@ -54,11 +54,15 @@ function exe6($sumOfPoints) {
 function exe7($lastNumber) {
     $total = 1;
 
-    for ($lastNumber; $lastNumber > 1; $lastNumber--) {
-        $total = $total * $lastNumber;
-    }
+    if ($lastNumber == 0) {
+        return 1;
+    } else {
+        for ($lastNumber; $lastNumber > 1; $lastNumber--) {
+            $total = $total * $lastNumber;
+        }
 
-    return $total;
+        return $total;
+    }
 }
 
 // e8

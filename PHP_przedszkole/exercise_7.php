@@ -10,11 +10,15 @@ Silnia jest zdefiniowana jako iloraz wszystkich liczb całkowitych w zakresie od
 8! = 1*2*3*4*5*6*7*8 = 40320
  */
 
-$lastNumber = 8;
+$lastNumber = 0;
 $total = 1;
 
-for ($lastNumber; $lastNumber >1; $lastNumber--) {
-    $total = $total * $lastNumber;
-}
+if ($lastNumber == 0) {
+    echo 1;
+} else {
+    for ($lastNumber; $lastNumber > 1; $lastNumber--) {
+        $total = $total * $lastNumber;
+    }
 
-echo $total;
+    echo $total;
+}
