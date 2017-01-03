@@ -1,3 +1,3 @@
 # CL_exercises
 
-Kilka prostych ćwiczeń z zajęć.
+Kilkanaście prostych ćwiczeń z zajęć.
