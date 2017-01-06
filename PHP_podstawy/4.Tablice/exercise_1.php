@@ -8,7 +8,7 @@ $testArray = ['123w', 'edw11', '1qa11', 'wew22', 'www', 'aa222', 'qq', '909'];
 
 function printTable($testArray) {
     foreach ($testArray as $value) {
-        echo $value . "<br>";
+        echo $value . "<br/>";
     }
 }
 
