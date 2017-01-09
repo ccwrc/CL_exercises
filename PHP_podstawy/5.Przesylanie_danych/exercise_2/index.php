@@ -6,10 +6,11 @@
  * to w superglobalnej zmiennej $_SERVER['REQUEST_METHOD']) to ponad formularzem 
  * ma się wyświetlić napis "Witaj "  */
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' &&
+        isset($_POST['nameSurname']) &&
+        trim($_POST['nameSurname']) != '') {
     echo "Witaj " . $_POST['nameSurname'];
-} 
-
+}
 ?>
 
 <!DOCTYPE html>
