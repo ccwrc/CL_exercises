@@ -14,18 +14,21 @@
         <meta charset="UTF-8">
         <title>Zadanie 1</title>
     </head>
-    <body>
+<body>
 
-        <ul>
-        <?php
-            for ($i = 0; $i < 7; $i++) {
-                $start = mt_rand(1, 5);
-                $end = mt_rand(6, 10);
-                ?>
-                <li><a href="startend.php?start=<?= $start ?>&end=<?= $end ?>" </li>
-                od <?= $start ?>  do <?= $end ?> </a>
+    <?php
+    echo "<ul>";
 
-        <?php } ?> </ul>
+    for ($i = 0; $i <= 5; $i++) {
+        
+        $start = mt_rand(1, 10);
+        $end = mt_rand(11, 20);
+        
+        echo "<li><a href=\"startend.php?start=$start&end=$end\"</li>od $start do $end</a>";
+    }
+
+    echo "</ul>";
+    ?>
 
 </body>
 </html>
