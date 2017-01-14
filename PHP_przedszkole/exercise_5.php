@@ -20,19 +20,3 @@ if ($varC > $helpVar) {
 
 echo "Największa licza to $helpVar";
 
-// ponizej koslawe na pl zmiennych
-/* $liczba1 = 90;
-$liczba2 = -899;
-$liczba3 = 7;
-
-$helpend = $liczba1;
-
-if ($liczba2 > $helpend) {
-	$helpend = $liczba2; 
-	}
-
-if ($liczba3 > $helpend) {
-	$helpend = $liczba3; 
-	}
-	
-echo "Największa liczba to $helpend"; */
