@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} add pupil{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Teacher: add pupil</h1>
+
+<form action="{{ path("app_teacher_relationteacherpupil") }}" method="POST">
+    <select name="teacher_id">
+    {% for teacher in teachers %}
+        
+        <option value="{{ teacher.id }}">
+            {{ teacher.name }}
+         </option>
+         
+    {% endfor %}
+    </select>
+    
+        <select name="pupil_id">
+    {% for pupil in pupils %}
+        
+        <option value="{{ pupil.id }}">
+            {{ pupil.name }}
+         </option>
+         
+    {% endfor %}
+    </select>
+    
+
+       <input type="submit">
+</form>
+
+{% endblock %}

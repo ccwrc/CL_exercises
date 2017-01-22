@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} list pupil {% endblock %}
+
+{% block body %}
+
+{% for pupil in pupils %}
+    {{ pupil.name }} <br/>
+    {% else %}
+    nie ma uczniow bez klasy
+{% endfor %}
+    
+    
+{% endblock %}

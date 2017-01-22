@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Teacher:new{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Teacher:new page</h1>
+
+<form action="{{ path("app_teacher_create") }}" method="POST">
+    <input type="text" name="name">
+     <input type="number" name="experience">
+
+       <input type="submit">
+</form>
+
+{% endblock %}

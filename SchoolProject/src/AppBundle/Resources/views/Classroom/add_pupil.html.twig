@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} dodaj ucznia do klasy {% endblock %}
+
+{% block body %}
+    
+    <h1>dodaj ucznia do klasy {{ class.name }} </h1>
+   
+
+    <form action="{{ path("app_classroom_addpupiltoclass", {"classId" : class.id}) }}" method="POST">
+        
+        {% for pupil in pupils %}
+            <input type="checkbox" name="pupilsId[]" value="{{ pupil.id }}"> {{ pupil.name }}
+            <br/>
+        {% endfor %}
+        
+        <input type="submit">
+        </form>
+    
+{% endblock %}

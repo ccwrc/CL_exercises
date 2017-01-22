@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Teacher:show{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Teacher:show page</h1>
+
+nazwa nauczyciela {{ teacher.name }} <br/>
+doswiadczenie {{ teacher.experience }} <br/>
+
+uczniowie:
+<ul>
+    {% for pupil in teacher.pupils %}
+        <li>{{ pupil.name }}</li>
+        {% else %} brak uczniow
+        {% endfor %}
+</ul>
+
+
+{% endblock %}

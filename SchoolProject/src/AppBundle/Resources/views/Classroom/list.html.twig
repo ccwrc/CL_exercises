@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} pokaz wszystkie klasy {% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for class in allClasses %}
+            <li>{{ class.name }}
+                <a href="{{ path("app_classroom_getoneclass", {"id" : class.id}) }}"> pokaż </a>
+                <a href="{{ path("app_classroom_deleteclassroom", {"id" : class.id}) }}"> skasuj </a>
+                <a href="{{ path("app_classroom_modifyclassroom", {"id" : class.id}) }}"> edycja </a>
+            </li>
+            {% else %} nie ma zadnych klas
+                {% endfor %}
+    </ul>
+    
+{% endblock %}
