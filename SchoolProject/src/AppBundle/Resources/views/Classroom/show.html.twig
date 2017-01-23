@@ -1,21 +1,19 @@
 {% extends '::base.html.twig' %}
 
-{% block title %} pokaz klase {% endblock %}
+{% block title %} pokaż klasę {% endblock %}
 
 {% block body %}
 
     <div>
-       <h1> {{ class.name }} </h1>
+        <h1> {{ class.name }} </h1>
     </div>
-    
+
     <div>
         {% for pupil in class.pupils %}
-            uczen {{ pupil.id }} nazw {{ pupil.name }} <br/>
+            Uczeń ID: {{ pupil.id }} Nazwisko: {{ pupil.name }} <br/>
         {% endfor %}
     </div>
-    
-    
-    
-       {{ dump(class) }}
-    
+    {# nigdy nie uzywac phpowego var dumpa - przez odwolania moze dojsc do zapetlenia #}
+    {{ dump(class) }}
+
 {% endblock %}

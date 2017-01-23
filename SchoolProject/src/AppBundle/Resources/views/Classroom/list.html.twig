@@ -1,18 +1,18 @@
 {% extends '::base.html.twig' %}
 
-{% block title %} pokaz wszystkie klasy {% endblock %}
+{% block title %} pokaż wszystkie klasy {% endblock %}
 
 {% block body %}
 
     <ul>
         {% for class in allClasses %}
             <li>{{ class.name }}
-                <a href="{{ path("app_classroom_getoneclass", {"id" : class.id}) }}"> pokaż </a>
-                <a href="{{ path("app_classroom_deleteclassroom", {"id" : class.id}) }}"> skasuj </a>
-                <a href="{{ path("app_classroom_modifyclassroom", {"id" : class.id}) }}"> edycja </a>
+                <a href="{{ path("app_classroom_getoneclass", {"id" : class.id}) }}"> Pokaż </a>
+                <a href="{{ path("app_classroom_deleteclassroom", {"id" : class.id}) }}"> Skasuj </a>
+                <a href="{{ path("app_classroom_modifyclassroom", {"id" : class.id}) }}"> Edytuj </a>
             </li>
-            {% else %} nie ma zadnych klas
-                {% endfor %}
+        {% else %} Nie ma żadnych klas, reforma edukacji górą
+        {% endfor %}
     </ul>
-    
+
 {% endblock %}

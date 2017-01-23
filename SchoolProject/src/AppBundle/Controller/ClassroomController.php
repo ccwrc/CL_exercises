@@ -12,6 +12,13 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use AppBundle\Entity\Classroom;
 
 class ClassroomController extends Controller {
+    
+    /**
+     * @Route("/")
+     */
+    public function testAction() { // testowe wejscie na glowna
+        return $this->render("::base.html.twig");
+    }
 
     /**
      * @Route("/class/new")
@@ -26,7 +33,7 @@ class ClassroomController extends Controller {
      * @Method("POST")
      */
     public function createNewClassroomAction(Request $req) {
-        // em - menadzer encji
+        // em - menadzer encji pobierany z doktrynki
         $em = $this->getDoctrine()->getManager();
 
         $className = $req->request->get("className");
@@ -34,8 +41,8 @@ class ClassroomController extends Controller {
         $newClassroom = new Classroom();
         $newClassroom->setName($className);
 
-        $em->persist($newClassroom);
-        $em->flush();
+        $em->persist($newClassroom); //powiadomienie, ze juz jest
+        $em->flush(); //MiB2 zatwierdzenie i zapis wszystkich danych
 
         // $postData = $req->request->all();
         // var_dump($postData);
