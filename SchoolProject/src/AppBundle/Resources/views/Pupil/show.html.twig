@@ -1,14 +1,14 @@
 {% extends '::base.html.twig' %}
 
-{% block title %} pokaz ucznia {% endblock %}
+{% block title %} pokaż ucznia, jedną sztukę {% endblock %}
 
 {% block body %}
 
     <div>
-        <h1>uczen o id {{ pupil.id }}</h1>
-        imie {{ pupil.name }} <br/>
-        wiek {{ pupil.age }} <br/>
-        opis {{ pupil.description }} <br/>
+        <h1>Uczeń o id {{ pupil.id }}</h1>
+        Imię i nazwisko: {{ pupil.name }} <br/>
+        Wiek: {{ pupil.age }} <br/>
+        Opis: {{ pupil.description }} <br/>
     </div>
-    
+
 {% endblock %}

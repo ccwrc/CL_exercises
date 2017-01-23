@@ -1,14 +1,14 @@
 {% extends '::base.html.twig' %}
 
-{% block title %} nowy uczen {% endblock %}
+{% block title %} nowy uczeń - formularz {% endblock %}
 
 {% block body %}
 
     <form action="{{ path("app_pupil_createpupil") }}" method="POST">
-        <input type="text" name="name" value="nazwa ucznia"> <br/>
-         <input type="number" name="age" value="wiek"> <br/>
-          <input type="text" name="description" value="opis"> <br/>
+        <input type="text" name="name" value="Imię i nazwisko ucznia"> <br/>
+        <input type="number" name="age" value="Wiek"> <br/>
+        <input type="text" name="description" value="Krótki opis"> <br/>
         <input type="submit">
-        </form>
-    
+    </form>
+
 {% endblock %}
