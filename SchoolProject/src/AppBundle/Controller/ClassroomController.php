@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use AppBundle\Entity\Classroom;
 
-class ClassroomController extends Controller
-{
+class ClassroomController extends Controller {
+
     /**
      * @Route("/class/new")
      * @Method("GET")
@@ -21,34 +21,35 @@ class ClassroomController extends Controller
         return $this->render("AppBundle:Classroom:new.html.twig");
     }
 
-        /**
+    /**
      * @Route("/class/new")
      * @Method("POST")
      */
     public function createNewClassroomAction(Request $req) {
+        // em - menadzer encji
         $em = $this->getDoctrine()->getManager();
-        
+
         $className = $req->request->get("className");
-        
+
         $newClassroom = new Classroom();
         $newClassroom->setName($className);
-        
+
         $em->persist($newClassroom);
         $em->flush();
-        
+
         // $postData = $req->request->all();
         // var_dump($postData);
         // return new Response("nowa klasa o id {$newClassroom->getId()} zostala utworzona");
         // return new JsonResponse($newClassroom);
         //return $this->render("AppBundle:Classroom:show.html.twig", [
-         //   "class" => $newClassroom
+        //   "class" => $newClassroom
         // ]);
-        
+
         return $this->redirectToRoute("app_classroom_getoneclass", [
-            "id" => $newClassroom->getId()
+                    "id" => $newClassroom->getId()
         ]);
     }
-    
+
     /**
      * @Route("/class")
      * @Method("GET")
@@ -58,10 +59,10 @@ class ClassroomController extends Controller
         $allClassess = $classroomRepo->findAll();
         // return new JsonResponse($allClassess);
         return $this->render("AppBundle:Classroom:list.html.twig", [
-            "allClasses" => $allClassess
+                    "allClasses" => $allClassess
         ]);
-    } 
-    
+    }
+
     /**
      * @Route("/class/{id}", requirements={"id"="\d+"})
      * @Method("GET")
@@ -72,24 +73,24 @@ class ClassroomController extends Controller
         //return new JsonResponse($class);
         return $this->render("AppBundle:Classroom:show.html.twig", ["class" => $class]);
     }
-    
-     /**
+
+    /**
      * @Route("/class/delete/{id}", requirements={"id"="\d+"})
      */
     public function deleteClassroomAction($id) {
         // public function deleteClassroomAction(Classroom $class)
         $classroomRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
         $em = $this->getDoctrine()->getManager();
-        
+
         $classroom = $classroomRepo->find($id);
-        if($classroom != null) {
+        if ($classroom != null) {
             $em->remove($classroom);
             $em->flush();
         }
         // return new JsonResponse(true);
         return $this->redirectToRoute("app_classroom_showallclasses");
     }
-    
+
     /**
      * @Route("/class/modify/{id}", requirements={"id"="\d+"})
      * @Method("GET")
@@ -97,113 +98,107 @@ class ClassroomController extends Controller
     public function modifyClassroomAction(Request $req, $id) {
         $repo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
         $classToModify = $repo->find($id);
-        
+
         return $this->render("AppBundle:Classroom:edit.html.twig", ["classroom" => $classToModify]);
-        
     }
-    
-     /**
+
+    /**
      * @Route("/class/modify/{id}", requirements={"id"="\d+"})
      * @Method("POST")
      */
     public function changeClassroomAction(Request $req, $id) {
         $repo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
         $em = $this->getDoctrine()->getManager();
-        
+
         $newName = $req->request->get("className");
-        
+
         $classToModify = $repo->find($id);
-        if($classToModify != null) {
+        if ($classToModify != null) {
             $classToModify->setName($newName);
             $em->flush();
         }
-        
+
         return $this->redirectToRoute("app_classroom_getoneclass", [
-            "id" => $classToModify->getId()
+                    "id" => $classToModify->getId()
         ]);
     }
-    
+
     /**
      * @Route("/class/{id}/addPupil", requirements={"id"="\d+"})
      * @Method("GET")
      */
-    
     public function prepareAddPupilAction($id) {
         // $em = $this->getDoctrine()->getManager();
-        
+
         $classRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
         $pupilRepo = $this->getDoctrine()->getRepository("AppBundle:Pupil");
-        
+
         $classroom = $classRepo->find($id);
         $allPupils = $pupilRepo->findAll();
-        
+
         return $this->render("AppBundle:Classroom:add_pupil.html.twig", [
-            "class" => $classroom,
-            "pupils" => $allPupils]);
+                    "class" => $classroom,
+                    "pupils" => $allPupils]);
     }
-    
-     /**
+
+    /**
      * @Route("/class/{classId}/addPupil", requirements={"id"="\d+"})
      * @Method("POST")
      */
-    
-     public function addPupilToClassAction(Request $req, $classId) {
-         $em = $this->getDoctrine()->getManager();
-         
+    public function addPupilToClassAction(Request $req, $classId) {
+        $em = $this->getDoctrine()->getManager();
+
         $classRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
         $pupilRepo = $this->getDoctrine()->getRepository("AppBundle:Pupil");
-        
+
         $classroom = $classRepo->find($classId);
-        
+
         $pupilsId = $req->request->get("pupilsId");
-        foreach($pupilsId as $pupilId) {
+        foreach ($pupilsId as $pupilId) {
             $pupil = $pupilRepo->find($pupilId);
             $pupil->setClassroom($classroom);
             $classroom->addPupil($pupil);
         }
         $em->flush();
-        
-        
-        return $this->redirectToRoute("app_classroom_getoneclass", [
-            "id" => $classroom->getId()
-        ]);
-         
-     }
 
+
+        return $this->redirectToRoute("app_classroom_getoneclass", [
+                    "id" => $classroom->getId()
+        ]);
+    }
 
     /**
      * @Route("/class/{id}")
      * @Method("POST")
      *
-    public function modifyClassAction(Request $req, $id) {
-        $classroomRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
-        $em = $this->getDoctrine()->getManager();
-        
-        $class = $classroomRepo->find($id);
-        if($class != null) {
-            $class->setName( $req->request->get("name") );
-            $em->flush();
-        }
-        
-        return new JsonResponse($class);
-    }
-    
-    /**
+      public function modifyClassAction(Request $req, $id) {
+      $classroomRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
+      $em = $this->getDoctrine()->getManager();
+
+      $class = $classroomRepo->find($id);
+      if($class != null) {
+      $class->setName( $req->request->get("name") );
+      $em->flush();
+      }
+
+      return new JsonResponse($class);
+      }
+
+      /**
      * @Route("/class/{id}")
      * @Method("DELETE")
      *
-    public function deleteClassroomAction($id) {
-        // public function deleteClassroomAction(Classroom $class)
-        $classroomRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
-        $em = $this->getDoctrine()->getManager();
-        
-        $classroom = $classroomRepo->find($id);
-        if($classroom != null) {
-            $em->remove($classroom);
-            $em->flush();
-        }
-        return new JsonResponse(true);
-    }
-    */
-    
+      public function deleteClassroomAction($id) {
+      // public function deleteClassroomAction(Classroom $class)
+      $classroomRepo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
+      $em = $this->getDoctrine()->getManager();
+
+      $classroom = $classroomRepo->find($id);
+      if($classroom != null) {
+      $em->remove($classroom);
+      $em->flush();
+      }
+      return new JsonResponse(true);
+      }
+     */
 }
