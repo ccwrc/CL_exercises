@@ -8,11 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use AppBundle\Entity\Classroom;
 
 class ClassroomController extends Controller {
-    
+
     /**
      * @Route("/")
      */
@@ -35,21 +34,21 @@ class ClassroomController extends Controller {
     public function createNewClassroomAction(Request $req) {
         // em - menadzer encji pobierany z doktrynki
         $em = $this->getDoctrine()->getManager();
-
+        // pobranie danych ktore przytuptaly postem ze stronki
         $className = $req->request->get("className");
 
-        $newClassroom = new Classroom();
-        $newClassroom->setName($className);
+        $newClassroom = new Classroom(); // nowy obiekt klasy
+        $newClassroom->setName($className); //idik generowany z automatu
 
-        $em->persist($newClassroom); //powiadomienie, ze juz jest
+        $em->persist($newClassroom); //powiadomienie menadzera encji, ze juz jest
         $em->flush(); //MiB2 zatwierdzenie i zapis wszystkich danych
-
+        
         // $postData = $req->request->all();
         // var_dump($postData);
         // return new Response("nowa klasa o id {$newClassroom->getId()} zostala utworzona");
         // return new JsonResponse($newClassroom);
-        //return $this->render("AppBundle:Classroom:show.html.twig", [
-        //   "class" => $newClassroom
+        // return $this->render("AppBundle:Classroom:show.html.twig", [
+        // "class" => $newClassroom
         // ]);
 
         return $this->redirectToRoute("app_classroom_getoneclass", [
@@ -67,7 +66,7 @@ class ClassroomController extends Controller {
         // return new JsonResponse($allClassess);
         return $this->render("AppBundle:Classroom:list.html.twig", [
                     "allClasses" => $allClassess
-        ]);
+        ]); // app_classroom_showallclasses 
     }
 
     /**
