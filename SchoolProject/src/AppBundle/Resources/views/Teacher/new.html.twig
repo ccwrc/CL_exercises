@@ -1,15 +1,18 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Teacher:new{% endblock %}
+{% block title %}nowy nauczyciel - formularz{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Teacher:new page</h1>
+    <h1>Welcome to the Teacher: stwórz nowego nauczyciela</h1>
 
-<form action="{{ path("app_teacher_create") }}" method="POST">
-    <input type="text" name="name">
-     <input type="number" name="experience">
-
-       <input type="submit">
-</form>
+    <form action="{{ path("app_teacher_create") }}" method="POST">
+        <label> Podaj:
+            <input type="text" name="name" value="Imię i nazwisko"> <br/>
+        </label>
+        <label> Lata doświadczenia:
+            <input type="number" name="experience" value="0"> <br/>
+        </label>
+        <input type="submit" value="Stwórz">
+    </form>
 
 {% endblock %}

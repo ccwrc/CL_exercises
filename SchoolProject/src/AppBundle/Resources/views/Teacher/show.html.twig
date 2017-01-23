@@ -1,18 +1,18 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Pokaż nauczyciela {% endblock %}
+{% block title %} pokaż nauczyciela {% endblock %}
 
 {% block body %}
     <h1>Welcome to the Teacher: pokaż nauczyciela</h1>
 
     Nauczyciel: {{ teacher.name }} <br/>
-    Doświadczenie: {{ teacher.experience }} <br/>
+    Doświadczenie: {{ teacher.experience }} <br/><br/>
 
     Uczniowie: <br/>
     <ul>
         {% for pupil in teacher.pupils %}
             <li>{{ pupil.name }}</li>
-        {% else %} brak uczniow
+        {% else %} Brak uczniów
         {% endfor %}
     </ul>
 
