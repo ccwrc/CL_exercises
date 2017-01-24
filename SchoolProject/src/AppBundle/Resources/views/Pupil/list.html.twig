@@ -1,13 +1,14 @@
 {% extends '::base.html.twig' %}
 
-{% block title %} wyświetlanie ucznia bez klasy {% endblock %}
+{% block title %} wyświetlanie uczniów {% endblock %}
 
 {% block body %}
 
+    <h1>Lista uczniów</h1>    
     {% for pupil in pupils %}
-        {{ pupil.name }} <br/>
+        Imię i nazwisko ucznia: {{ pupil.name }}, ID: {{ pupil.id }}, wiek: {{ pupil.age }} <br/>
     {% else %}
-        Nie ma uczniów bez klasy
+        Nie ma uczniów z wymaganymi parametrami
     {% endfor %}
 
 {% endblock %}

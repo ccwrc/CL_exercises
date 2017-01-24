@@ -25,7 +25,7 @@ class PupilController extends Controller {
      */
     public function createPupilAction(Request $req) {
         $em = $this->getDoctrine()->getManager();
-
+          // var_dump($req);
         $name = $req->request->get("name");
         $age = $req->request->get("age");
         $description = $req->request->get("description");
@@ -52,29 +52,32 @@ class PupilController extends Controller {
         $pupil = $repo->find($id);
 
         return $this->render("AppBundle:Pupil:show.html.twig", [
-                    "pupil" => $pupil]);
+                    "pupil" => $pupil
+        ]);
     }
 
     /**
      * @Route("/getpupilswithoutclass")
      */
-    public function getpupilswithoutclass() {
+    public function getPupilsWithoutclass() {
         $repo = $this->getDoctrine()->getRepository('AppBundle:Pupil');
-        $pwc = $repo->getAllPupilsWithoutClass();
+        $pupilsWithoutClass = $repo->getAllPupilsWithoutClass();
 
         return $this->render("AppBundle:Pupil:list.html.twig", [
-                    "pupils" => $pwc]);
+                    "pupils" => $pupilsWithoutClass
+        ]);
     }
 
     /**
-     * @Route("/getpupilswithBetween/{max}/{min}")
+     * @Route("/getpupilswithbetween/{minAge}/{maxAge}")
      */
-    public function getpupilswithBetween($max, $min) {
+    public function getPupilsWithBetween($minAge, $maxAge) {
         $repo = $this->getDoctrine()->getRepository('AppBundle:Pupil');
-        $pwc = $repo->getAllPupilsWithAgeBetween($min, $max);
+        $allPupilsWithAgeBetween = $repo->getAllPupilsWithAgeBetween($minAge, $maxAge);
 
         return $this->render("AppBundle:Pupil:list.html.twig", [
-                    "pupils" => $pwc]);
+                    "pupils" => $allPupilsWithAgeBetween
+        ]);
     }
 
 }
