@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+
 use AppBundle\Entity\Classroom;
 
 class ClassroomController extends Controller {
@@ -78,7 +79,7 @@ class ClassroomController extends Controller {
         $class = $classroomRepo->find($id);
         //return new JsonResponse($class);
         return $this->render("AppBundle:Classroom:show.html.twig", ["class" => $class]);
-    }
+    } // w widoku dump rekordu: {{ dump(class) }}
 
     /**
      * @Route("/class/delete/{id}", requirements={"id"="\d+"})
@@ -105,7 +106,9 @@ class ClassroomController extends Controller {
         $repo = $this->getDoctrine()->getRepository("AppBundle:Classroom");
         $classToModify = $repo->find($id);
 
-        return $this->render("AppBundle:Classroom:edit.html.twig", ["classroom" => $classToModify]);
+        return $this->render("AppBundle:Classroom:edit.html.twig", [
+                    "classroom" => $classToModify
+        ]);
     }
 
     /**
@@ -173,7 +176,7 @@ class ClassroomController extends Controller {
         ]);
     }
 
-    /**
+    /*
      * @Route("/class/{id}")
      * @Method("POST")
      *
@@ -190,7 +193,7 @@ class ClassroomController extends Controller {
       return new JsonResponse($class);
       }
 
-      /**
+      /*
      * @Route("/class/{id}")
      * @Method("DELETE")
      *
@@ -205,6 +208,5 @@ class ClassroomController extends Controller {
       $em->flush();
       }
       return new JsonResponse(true);
-      }
-     */
+      }  */
 }
