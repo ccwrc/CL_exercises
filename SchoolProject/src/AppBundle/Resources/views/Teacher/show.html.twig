@@ -3,12 +3,12 @@
 {% block title %} pokaż nauczyciela {% endblock %}
 
 {% block body %}
-    <h1>Welcome to the Teacher: pokaż nauczyciela</h1>
+    <h1>Dane nauczyciela</h1>
 
     Nauczyciel: {{ teacher.name }} <br/>
     Doświadczenie: {{ teacher.experience }} <br/><br/>
 
-    Uczniowie: <br/>
+    Przypisani uczniowie: <br/>
     <ul>
         {% for pupil in teacher.pupils %}
             <li>{{ pupil.name }}</li>

@@ -6,21 +6,22 @@
     <h1>Dodaj ucznia do nauczyciela</h1>
 
     <form action="{{ path("app_teacher_relationteacherpupil") }}" method="POST">
+        Nauczyciel:
         <select name="teacher_id">
             {% for teacher in teachers %}
                 <option value="{{ teacher.id }}">
                     {{ teacher.name }}
                 </option>
             {% endfor %}
-        </select>
-
+        </select> <br/>
+        Uczeń:
         <select name="pupil_id">
             {% for pupil in pupils %}
                 <option value="{{ pupil.id }}">
                     {{ pupil.name }}
                 </option>
             {% endfor %}
-        </select>
+        </select><br/>
 
         <input type="submit" value="Powiąż">
     </form>

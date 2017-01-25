@@ -59,7 +59,7 @@ class PupilController extends Controller {
     /**
      * @Route("/getpupilswithoutclass")
      */
-    public function getPupilsWithoutclass() {
+    public function getPupilsWithoutClass() {
         $repo = $this->getDoctrine()->getRepository('AppBundle:Pupil');
         $pupilsWithoutClass = $repo->getAllPupilsWithoutClass();
 
