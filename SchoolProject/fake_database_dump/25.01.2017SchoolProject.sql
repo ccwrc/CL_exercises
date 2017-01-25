@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 24, 2017 at 05:16 PM
+-- Generation Time: Jan 25, 2017 at 06:20 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -73,7 +73,10 @@ INSERT INTO `pupil` (`id`, `name`, `age`, `description`, `classroom_id`) VALUES
 (6, 'Imię i nazwisko ucznia', 22, 'Krótki opis', NULL),
 (7, 'Imię i nazwisko ucznia', 8, 'Krótki opis', NULL),
 (8, 'Imię i nazwisko ucznia22', 7, 'Krótki opis22', NULL),
-(9, 'Imię i nazwisko ucznia22', 72, 'Krótki opis22', NULL);
+(9, 'Imię i nazwisko ucznia22', 72, 'Krótki opis22', NULL),
+(10, 'jan kovalski', 23, 'opis jana kovalskiego', NULL),
+(11, 'kovalski', 33, 'kovalski poips', NULL),
+(12, 'Imię i nazwisko ucznia', 7, 'Krótki opis', NULL);
 
 -- --------------------------------------------------------
 
@@ -92,8 +95,11 @@ CREATE TABLE `pupil_teacher` (
 
 INSERT INTO `pupil_teacher` (`pupil_id`, `teacher_id`) VALUES
 (1, 1),
+(1, 3),
 (2, 2),
-(3, 2);
+(2, 3),
+(3, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -119,7 +125,8 @@ INSERT INTO `teacher` (`id`, `name`, `experience`) VALUES
 (5, 'jan kovalski', 23),
 (6, 'jan kovalski', 237),
 (7, 'Imię i nazwisko', 99),
-(8, 'nauczyciel zmiana widoku', 4);
+(8, 'nauczyciel zmiana widoku', 4),
+(9, 'ticzer wtorek', 1);
 
 --
 -- Indexes for dumped tables
@@ -160,17 +167,17 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `classroom`
 --
 ALTER TABLE `classroom`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `pupil`
 --
 ALTER TABLE `pupil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Constraints for dumped tables
 --
