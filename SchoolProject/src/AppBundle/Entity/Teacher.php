@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="teacher")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TeacherRepository")
  */
-class Teacher
-{
+class Teacher {
+
     /**
      * @var int
      *
@@ -34,20 +34,18 @@ class Teacher
      * @ORM\Column(name="experience", type="float")
      */
     private $experience;
-    
+
     /**
      * @ORM\ManyToMany(targetEntity="Pupil", mappedBy="teachers")
      */
     private $pupils;
-
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -57,8 +55,7 @@ class Teacher
      * @param string $name
      * @return Teacher
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -69,8 +66,7 @@ class Teacher
      *
      * @return string 
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -80,8 +76,7 @@ class Teacher
      * @param float $experience
      * @return Teacher
      */
-    public function setExperience($experience)
-    {
+    public function setExperience($experience) {
         $this->experience = $experience;
 
         return $this;
@@ -92,15 +87,14 @@ class Teacher
      *
      * @return float 
      */
-    public function getExperience()
-    {
+    public function getExperience() {
         return $this->experience;
     }
+
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->pupils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -110,8 +104,7 @@ class Teacher
      * @param \AppBundle\Entity\Pupil $pupils
      * @return Teacher
      */
-    public function addPupil(\AppBundle\Entity\Pupil $pupils)
-    {
+    public function addPupil(\AppBundle\Entity\Pupil $pupils) {
         $this->pupils[] = $pupils;
 
         return $this;
@@ -122,8 +115,7 @@ class Teacher
      *
      * @param \AppBundle\Entity\Pupil $pupils
      */
-    public function removePupil(\AppBundle\Entity\Pupil $pupils)
-    {
+    public function removePupil(\AppBundle\Entity\Pupil $pupils) {
         $this->pupils->removeElement($pupils);
     }
 
@@ -132,8 +124,8 @@ class Teacher
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getPupils()
-    {
+    public function getPupils() {
         return $this->pupils;
     }
+
 }

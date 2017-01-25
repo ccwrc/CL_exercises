@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="pupil")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PupilRepository")
  */
-class Pupil
-{
+class Pupil {
+
     /**
      * @var int
      *
@@ -41,27 +41,25 @@ class Pupil
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
-    
+
     /**
-     *@ORM\ManyToOne(targetEntity="Classroom", inversedBy="pupils")
+     * @ORM\ManyToOne(targetEntity="Classroom", inversedBy="pupils")
      * @ORM\JoinColumn(name="classroom_id", referencedColumnName="id")
      */
     private $classroom;
-    
+
     /**
-     *@ORM\ManyToMany(targetEntity="Teacher", inversedBy="pupils")
+     * @ORM\ManyToMany(targetEntity="Teacher", inversedBy="pupils")
      * @ORM\JoinTable(name="pupil_teacher")
      */
     private $teachers;
-
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -71,8 +69,7 @@ class Pupil
      * @param string $name
      * @return Pupil
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -83,8 +80,7 @@ class Pupil
      *
      * @return string 
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -94,8 +90,7 @@ class Pupil
      * @param integer $age
      * @return Pupil
      */
-    public function setAge($age)
-    {
+    public function setAge($age) {
         $this->age = $age;
 
         return $this;
@@ -106,8 +101,7 @@ class Pupil
      *
      * @return integer 
      */
-    public function getAge()
-    {
+    public function getAge() {
         return $this->age;
     }
 
@@ -117,8 +111,7 @@ class Pupil
      * @param string $description
      * @return Pupil
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -129,8 +122,7 @@ class Pupil
      *
      * @return string 
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -140,8 +132,7 @@ class Pupil
      * @param \AppBundle\Entity\Classroom $classroom
      * @return Pupil
      */
-    public function setClassroom(\AppBundle\Entity\Classroom $classroom = null)
-    {
+    public function setClassroom(\AppBundle\Entity\Classroom $classroom = null) {
         $this->classroom = $classroom;
 
         return $this;
@@ -152,15 +143,14 @@ class Pupil
      *
      * @return \AppBundle\Entity\Classroom 
      */
-    public function getClassroom()
-    {
+    public function getClassroom() {
         return $this->classroom;
     }
+
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->teachers = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -170,8 +160,7 @@ class Pupil
      * @param \AppBundle\Entity\Teacher $teachers
      * @return Pupil
      */
-    public function addTeacher(\AppBundle\Entity\Teacher $teachers)
-    {
+    public function addTeacher(\AppBundle\Entity\Teacher $teachers) {
         $this->teachers[] = $teachers;
 
         return $this;
@@ -182,8 +171,7 @@ class Pupil
      *
      * @param \AppBundle\Entity\Teacher $teachers
      */
-    public function removeTeacher(\AppBundle\Entity\Teacher $teachers)
-    {
+    public function removeTeacher(\AppBundle\Entity\Teacher $teachers) {
         $this->teachers->removeElement($teachers);
     }
 
@@ -192,8 +180,8 @@ class Pupil
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getTeachers()
-    {
+    public function getTeachers() {
         return $this->teachers;
     }
+
 }
