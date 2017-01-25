@@ -59,7 +59,7 @@ class PupilController extends Controller {
     /**
      * @Route("/getpupilswithoutclass")
      */
-    public function getPupilsWithoutClass() {
+    public function getPupilsWithoutClassAction() {
         $repo = $this->getDoctrine()->getRepository('AppBundle:Pupil');
         $pupilsWithoutClass = $repo->getAllPupilsWithoutClass();
 
@@ -71,7 +71,7 @@ class PupilController extends Controller {
     /**
      * @Route("/getpupilswithbetween/{minAge}/{maxAge}")
      */
-    public function getPupilsWithBetween($minAge, $maxAge) {
+    public function getPupilsWithBetweenAction($minAge, $maxAge) {
         $repo = $this->getDoctrine()->getRepository('AppBundle:Pupil');
         $allPupilsWithAgeBetween = $repo->getAllPupilsWithAgeBetween($minAge, $maxAge);
 
