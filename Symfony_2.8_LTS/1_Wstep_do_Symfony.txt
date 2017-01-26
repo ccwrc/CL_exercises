@@ -1,0 +1,31 @@
+Zadanie 1 – tworzenie projektu 
+
+Stwórz nowy projekt o nazwie projekt_1. Następnie wykonaj następujące kroki:
+
+    Uruchom serwer deweloperski.
+    Sprawdź czy wyświetli Ci się strona strona startowa Symfony.
+    Jeśli strona startowa się wyświetla, to wejdź do profilera. Zobacz, jakie ma opcje i czego możesz się z niego dowiedzieć.
+    Wejdź na stronę, której jeszcze nie ma np. http://localhost:8080/noSuchPage.
+    Zobacz, w jaki sposób Symfony komunikuje błąd oraz to co go spowodowało
+------------------------------------------------------------------------------------------------
+Zadanie 2 – dodawanie bundla korzystając z komendy konsolowej
+
+W projekcie o nazwie projekt_1 wykonaj następujące kroki:
+
+    Dodaj nowego bundla o nazwie CLBundle. Pamiętaj o wybraniu annotacji, stworzeniu automatyczne całego katalogu i automatycznego dopisania informacji do Kernela i Routingu.
+    Wejdź pod adres http://localhost:8080/. Jeżeli widzisz stronę, która wyświetla napis Hello World – Twój bundle działa poprawnie.
+    Otwórz projekt w edytorze i przejrzyj katalog nowo utworzonego bundla.
+------------------------------------------------------------------------------------------------
+Zadanie 3 – usuwanie bundla
+
+W projekcie o nazwie projekt_1 usuń domyślnego bundla o nazwie AppBundle wykonując trzy kroki:
+
+    Usuń odpowiedni wpis w pliku routingu (/app/config/routing.yml),
+    Usuń kod tworzący nowy obiekt Bundla w kernelu (/app/AppKernel.php),
+    Usuń katalog Bundla.
+
+Żeby potwierdzić, że domyślny Bundle został poprawnie usunięty, wykonaj następujące czynności:
+
+    Wejdź na stronę http://localhost:8080/hello/world – powinien się pokazać błąd: No route found for "GET /"
+    Wejdź pod adres http://localhost:8080/. Strona powinna się poprawnie ładować.
+
