@@ -60,6 +60,28 @@ class firstController extends Controller {
         return new Response($text);
     }
     
+    /**
+     * @param Request $req
+     * @Route("/setSession/{value}")
+     */
+    public function setSessionAction(Request $req, $value) { 
+        $session = $req->getSession(); //param na gorze jako opcja, tu i bez tego dziala
+        $session->set("usertext", $value);
+        
+        return new Response("sesja usertext ustawiona");
+    }
+    
+    /**
+     * @param Request $req
+     * @Route("/getSession")
+     */
+    public function getSessionAction(Request $req) {
+        $session = $req->getSession();
+        $displaySession = $session->get("usertext", "sesja nie została ustawiona - skleroza");
+        
+        return new Response("dane sesji usertext: " . $displaySession);
+    }
+
 
 
 }
