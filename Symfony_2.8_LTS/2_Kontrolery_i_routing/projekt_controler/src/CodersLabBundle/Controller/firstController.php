@@ -138,5 +138,44 @@ class firstController extends Controller {
         // ['id' => random_int(1, 100)]
         //  );
     }
+    
+    /**
+     * @Route("/showAllLinks")
+     */
+    public function showAlllinksAction() {
+        $links = [
+            $this->generateUrl("coderslab_first_helloworld",[],
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_goodbye", ["username" => "przekierowanie"], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_welcome", ["name" => "przekierowanie", 
+                "surname" => "przekierowanie"], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_showpost", ["id" => mt_rand(1, 50)], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_getform", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_postform", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_setsession", ["value" => "przekierowanie"], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_getsession", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_setcookie", ["value" => "przekierowanie"], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_getcookie", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_deletecookie", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_redirectme", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_showalllinks", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL),
+            $this->generateUrl("coderslab_first_showalllinks", [], 
+                    UrlGeneratorInterface::ABSOLUTE_URL)
+        ];
+        return new Response(implode("<br/>", $links));
+    }
 
+    
 }
