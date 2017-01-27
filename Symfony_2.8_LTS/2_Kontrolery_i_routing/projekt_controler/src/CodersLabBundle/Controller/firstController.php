@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Cookie;
 
 /**
  * @Route("/first")
@@ -81,7 +82,47 @@ class firstController extends Controller {
         
         return new Response("dane sesji usertext: " . $displaySession);
     }
+    
+    /**
+     * @Route("/setCookie/{value}")
+     */
+    public function setCookieAction(Request $req, $value) {
+        $cookie = new Cookie("myCookie", $value, time() + 3600); //3600 - godzinka
+        $res = new Response("nowe ciacho ustawione...");
+        $res->headers->setCookie($cookie);
+        return $res;
+    }
+    
+    /**
+     * @Route("/getCookie")
+     */
+    public function getCookieAction(Request $req) {
+        $cookies = $req->cookies->all();
+        if (isset($cookies["myCookie"])) {
+            return new Response("ciacho: " . $cookies["myCookie"]);
+        } else {
+            return new Response("brak ciacha myCookie");
+        }
+        // isset($cookies['myCookie']) ? $cookies['myCookie'] : 'nie ma...'
+    }
+    
+    /**
+     * @Route("/deleteCookie")
+     */
+    public function deleteCookieAction(Request $req) {
+        $cookies = $req->cookies->all();
+        if (isset($cookies["myCookie"])) {
+            $cookie = new Cookie("myCookie", "", time() - 3600);
+            $res = new Response("ciacho skasowane");
+            $res->headers->setCookie($cookie);
+            return $res;
+        } else {
+            return new Response("ciacho myCookie nie było ustawione");
+        }
+        // $res = new Response('DELETED');
+        // $res->headers->clearCookie('myCookie');
+        // return $res;
+    }
 
-
-
+/*  */
 }
