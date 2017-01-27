@@ -37,7 +37,7 @@ class firstController extends Controller {
     }
     
     /**
-     * @Route("/showPost/{id}", requirements={"id"="\d+"})
+     * @Route("/showPost/{id}", name="show_post", requirements={"id"="\d+"})
      */
     public function showPostAction($id) {
         return new Response("Showing post " . $id);
@@ -92,6 +92,11 @@ class firstController extends Controller {
         $res = new Response("nowe ciacho ustawione...");
         $res->headers->setCookie($cookie);
         return $res;
+//        $response = new Response('OK');
+//        $response->headers->setCookie(
+//        new Cookie('myCookie', $value, time() + (3600 * 48))
+//        );
+//        return $response;
     }
     
     /**
@@ -150,8 +155,8 @@ class firstController extends Controller {
                     UrlGeneratorInterface::ABSOLUTE_URL),
             $this->generateUrl("coderslab_first_welcome", ["name" => "przekierowanie", 
                 "surname" => "przekierowanie"], 
-                    UrlGeneratorInterface::ABSOLUTE_URL),
-            $this->generateUrl("coderslab_first_showpost", ["id" => mt_rand(1, 50)], 
+                    UrlGeneratorInterface::ABSOLUTE_URL), // ['id' => random_int(1, 100)]
+            $this->generateUrl("show_post", ["id" => mt_rand(1, 50)], 
                     UrlGeneratorInterface::ABSOLUTE_URL),
             $this->generateUrl("coderslab_first_getform", [], 
                     UrlGeneratorInterface::ABSOLUTE_URL),
