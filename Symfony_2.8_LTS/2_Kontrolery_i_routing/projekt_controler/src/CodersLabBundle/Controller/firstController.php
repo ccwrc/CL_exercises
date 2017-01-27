@@ -55,8 +55,8 @@ class firstController extends Controller {
      * @Route("/form")
      * @Method("POST")
      */
-    public function postFormAction(Request $req) {
-        $text = $req->request->get("postem");
+    public function postFormAction(Request $req) { //request musi byc przekazywany przed 
+        $text = $req->request->get("postem"); //innymi parametrami, musi byc pierwszy
         return new Response($text);
     }
     
