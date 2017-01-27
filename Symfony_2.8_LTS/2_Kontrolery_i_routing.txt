@@ -1,12 +1,10 @@
 
 Zadanie A1 – tworzenie projektu
 
-Stwórz nowy projekt o nazwie projekt_controler (jeżeli dostaniesz błąd „Could not delete /tmp/…” nie przejmuj się – Symfony będzie działać poprawnie).
-
+Stwórz nowy projekt o nazwie projekt_controler.
 Następnie:
-
     Stwórz w nim nowy bundle (o nazwie CL).
-    Usuń AppBundle (wykonaj takie same kroki jak w zadaniu 2. z zadań dotyczących Podstaw Symfony).
+    Usuń AppBundle
 ----------------------------------------------------------------------------------------------------------
 Zadanie A2 – nowy kontroler
 
@@ -28,7 +26,6 @@ Stwórz nową akcję przypisaną do adresu /showPost/{id} gdzie {id} jest slugie
 Zadanie B4 – metody
 
 Stwórz dwie akcje:
-
     Pierwsza akcja ma być przypisana do adresu /form i metody GET. Ma ona wyświetlać formularz z polem do wpisania tekstu. Formularz ma wskazywać na ten sam adres.
     Druga akcja ma być przypisana do adresu /form i metody POST. Akcja ma – póki co – wyświetlać napis „Formularz przyjęty”. Nie przejmuj się – na tym etapie – przesłanymi danymi.
 ----------------------------------------------------------------------------------------------------------
@@ -43,26 +40,23 @@ Do drugiej akcji z zadania B4 dopisz kod, który będzie poprawnie będzie odczy
 Zadanie C2 – sesja
 
 Stwórz dwie akcje:
-
     Pierwsza ma być przypisana do adresu /setSession/{value}. Ma zapisywać do sesji przekazaną wartość (pod kluczem „usertext”),
     Druga ma być przypisana do adresu /getSession i wczytywać zawartość sesji będącą pod kluczem „usertext” i wyświetlać ją na stronie (jeżeli w sesji nie ma żadnej wartości – to powinna się wyświetlać odpowiednia informacja).
-
+----------------------------------------------------------------------------------------------------------
 Zadanie C3 – ciasteczko
 
 Stwórz trzy akcje:
-
     Pierwsza ma być przypisana do adresu /setCookie/{value}. Ma zapisywać do ciasteczka przekazaną wartość (pod kluczem „myCookie”).
     Druga ma być przypisana do adresu /getCookie i wczytywać zawartość ciasteczka „myCookie” i wyświetlać ją na stronie (jeżeli nie ma nic w tym ciasteczku – to powinna się wyświetlić odpowiednia informacja).
     Trzecia ma być przypisana do adresu /deleteCookie i powinna kasować ciasteczko o nazwie myCookie.
-
+----------------------------------------------------------------------------------------------------------
 Zadanie C4 – przekierowanie
 
 Napisz akcje przypisaną do adresu /redirectMe i powinna przekierowywać do akcji z punktu 3. poprzedniego zadania. Pamiętaj o podaniu danych do sluga.
+----------------------------------------------------------------------------------------------------------
 Zadanie C5 – generowanie linków
 
-Napisz akcje przypisaną do adresu /showAllLinks. Akcja powinna wyświetlać linki do wszystkich akcji, które dziś zrobiliśmy. Wygeneruj linki na dwa sposoby:
-
+Napisz akcje przypisaną do adresu /showAllLinks. Akcja powinna wyświetlać linki do wszystkich akcji. Wygeneruj linki na dwa sposoby:
     używając ścieżek względnych,
     używając całkowitych.
 
-Pamiętaj o przekazywaniu slugów, jeżeli jest taka potrzeba.
