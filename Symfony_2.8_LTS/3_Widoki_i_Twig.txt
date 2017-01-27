@@ -1,0 +1,70 @@
+Zadanie A1 – tworzenie projektu
+
+Stwórz nowy projekt o nazwie projekt_view. Następnie:
+
+    Stwórz w nim nowy bundle (o nazwie CL).
+    Usuń AppBundle.
+-------------------------------------------------------------------------------------------
+Zadanie A2 – nowy kontroler
+
+Wygeneruj nowy kontroler o nazwie views za pomocą odpowiedniej komendy konsolowej. Na razie nie generuj do niego żadnej akcji.
+-------------------------------------------------------------------------------------------
+Zadanie A3 – Korzystanie z szablonu
+
+Stwórz nową akcję przypisaną do adresu /render. Podepnij do niej widok view_ex_a3.html.twig (który możesz znaleźć w katalogu z zadaniami). Widok ten nie przyjmuje żadnych danych. Włóż ten szablon w dwa miejsca:
+
+    w katalog Bundla,
+    w katalog app/Resources/….
+
+Zobacz, który się wyświetla jako pierwszy. Usuń go i zobacz, co się stanie.
+-------------------------------------------------------------------------------------------
+Zadanie B1 – przekazywanie danych do szablonu
+
+Stwórz nową akcję przypisaną do adresu /render/{username}. Podepnij do niej widok view_ex_b1.html.twig (który możesz znaleźć w katalogu z zadaniami). Widok ten przyjmuje jedną zmienną o nazwie username. Przekaż ją.
+-------------------------------------------------------------------------------------------
+Zadanie B2 – adnotacje
+
+Przerób zadania A3 i B1 w taki sposób, żeby skorzystać z adnotacji @Template. Nie usuwaj starego rozwiązania, tylko je zakomentuj.
+-------------------------------------------------------------------------------------------
+Zadanie B3 – pierwszy szablon
+
+Stwórz akcję podpiętą do adresu /repeatSentence/{n}. Do akcji dopisz widok, który powtórzy n razy zdanie „Symfony jest fajne” . Pętle wykonaj w szablonie, przekaż do niego liczbę powtórzeń.
+
+Zmodyfikuj swoje rozwiązanie w taki sposób, żeby zdanie, które wyświetlasz, było przekazane z kontrolera. Dopiero w chwili, w której zdanie nie jest przekazane, ma się wyświetlić napis „Symfony jest fajne”.
+-------------------------------------------------------------------------------------------
+Zadanie B4 – zaawansowany szablon
+
+Stwórz akcję podpiętą do adresu /createRandoms/{start}/{end}/{n}. Akcja ma generować tablicę z n losowymi liczbami z zakresu start do end którą prześlesz do swojego widoku. Nastepnie w Twigu użyj pętli for żeby wyświetlić wszystkie przesłane liczby. Jeżeli tablica jest pusta (czyli podane n jest mniejsze lub równe 0) powinieneś wyświetlić odpowiednią informacje.
+-------------------------------------------------------------------------------------------
+Zadanie B5 – artykuł
+
+Stwórz szablon, który powinien wyświetlić artykuł. Klasę artykułu możesz znaleźć w katalogu z ćwiczeniami. Umieść go w folderze: /yourBundle/Entity (jeżeli go nie ma, to go stwórz).
+
+Pamiętaj o zmianie namespace na poprawny + dołączenia klasy Article do Twojego kontrolera:
+
+use <your_bundle>\Entity\Article;
+
+Następnie dopisz akcję /showArticle/{n}, która wczyta artykuł o podanym ID i go wyświetli.
+-------------------------------------------------------------------------------------------
+Zadanie C1 – wszystkie artykuły
+
+Stwórz akcję /showAllArticles, która wyświetli wszystkie artykuły. Do wyświetlenia artykułu użyj szablonu z zadania B5 Nie pisz wyświetlania od nowa, w pętli użyj zrobionego już szablonu.
+-------------------------------------------------------------------------------------------
+Zadanie C2 – szablon główny
+
+Stwórz szablon bazowy dla całej Twojej aplikacji. Powinien on dawać możliwość nadpisania:
+
+    Tytułu strony.
+    Nazwy kontrolera (jako głównego tytuły opakowanego w h1 ponad treścią strony).
+    Głównej części strony (opakowaną w div).
+
+Powinien zawierać menu (na razie zostaw puste). Menu powinno być widoczne zawsze. Popraw wszystkie szablony z poprzednich zadań, aby dziedziczyły po szablonie głównym i wypełniały odpowiednie bloki (czyli nadawały swój tytuł, nazwę swojego kontrolera i główną część strony).
+-------------------------------------------------------------------------------------------
+Zadanie D1 – menu
+
+Zmień główny szablon w taki sposób, żeby w menu wyświetlały się linki do wszystkich akcji z poprzednich zadań (pamiętaj o przekazaniu poprawnych slugów). Napisz menu dwa razy:
+
+    używając path(),
+    używając url().
+
+Zobacz, czym się różnią wygenerowanie linki.
