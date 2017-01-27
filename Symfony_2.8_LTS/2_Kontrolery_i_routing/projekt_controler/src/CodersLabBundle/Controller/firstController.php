@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * @Route("/first")
@@ -123,6 +124,19 @@ class firstController extends Controller {
         // $res->headers->clearCookie('myCookie');
         // return $res;
     }
+    
+    /**
+     * @Route("/redirectMe")
+     */
+    public function redirectMeAction(Request $req) {
+        $url = $this->generateUrl("coderslab_first_setcookie", [
+            "value" => "ciacho z przekierowania"
+        ]);
+        return $this->redirect($url);
+        //  $url = $this->generateUrl(
+        // 'show_post',
+        // ['id' => random_int(1, 100)]
+        //  );
+    }
 
-/*  */
 }
