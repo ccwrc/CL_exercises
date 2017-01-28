@@ -56,18 +56,12 @@ class viewsController extends Controller {
      * @Route("/showArticle/{n}")
      */
     public function showArticleAction($n) {
-        // $article = Article::GetArticlebyId($n);
-        // return ["article" => $article];
-        // return Article::GetArticlebyId($n);
         $article = Article::GetArticleById($n);
 
-        return [
-            'n' => $n,
-            'article' => $article
-        ];
+        return $this->render("CodersLabBundle:view:showArticle.html.twig", [
+                    'n' => $n,
+                    'article' => $article
+        ]);
     }
 
-    /* 
-
-Następnie dopisz akcję /showArticle/{n}, która wczyta artykuł o podanym ID i go wyświetli. */
 }

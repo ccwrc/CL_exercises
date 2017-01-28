@@ -1,15 +1,13 @@
-Artykuł o ID {{ n }} wygląda tak:
-
-<br /><br />
+Artykuł o ID {{ n }}: <br/><br/>
 
 {% if article %}
-    <strong>Title</strong><br />
+    <strong>Tytuł:</strong><br/>
     {{ article.title }}
 
-    <br />
+    <br/><br/>
 
-    <strong>Text</strong><br />
+    <strong>Treść:</strong><br/>
     {{ article.articleText }}
 {% else %}
-    Nie ma takie artykułu...
+    Nie ma artykułu o podanym ID.
 {% endif %}
