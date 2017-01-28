@@ -1,0 +1,15 @@
+Artykuł o ID {{ n }} wygląda tak:
+
+<br /><br />
+
+{% if article %}
+    <strong>Title</strong><br />
+    {{ article.title }}
+
+    <br />
+
+    <strong>Text</strong><br />
+    {{ article.articleText }}
+{% else %}
+    Nie ma takie artykułu...
+{% endif %}

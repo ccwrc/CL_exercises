@@ -5,6 +5,9 @@ namespace CodersLabBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
+
+use CodersLabBundle\Entity\Article;
 
 class viewsController extends Controller {
     
@@ -48,11 +51,23 @@ class viewsController extends Controller {
             "randomArray" => $randomArray
         ]);
     }
+    
+    /**
+     * @Route("/showArticle/{n}")
+     */
+    public function showArticleAction($n) {
+        // $article = Article::GetArticlebyId($n);
+        // return ["article" => $article];
+        // return Article::GetArticlebyId($n);
+        $article = Article::GetArticleById($n);
 
+        return [
+            'n' => $n,
+            'article' => $article
+        ];
+    }
 
-    /* Stwórz akcję podpiętą do adresu /createRandoms/{start}/{end}/{n}. Akcja ma generować 
-     * tablicę z n losowymi liczbami z zakresu start do end którą prześlesz do swojego widoku. 
-     * Nastepnie w Twigu użyj pętli for żeby wyświetlić wszystkie przesłane liczby. 
-     * Jeżeli tablica jest pusta (czyli podane n jest mniejsze lub równe 0) powinieneś 
-     * wyświetlić odpowiednią informacje. */
+    /* 
+
+Następnie dopisz akcję /showArticle/{n}, która wczyta artykuł o podanym ID i go wyświetli. */
 }
