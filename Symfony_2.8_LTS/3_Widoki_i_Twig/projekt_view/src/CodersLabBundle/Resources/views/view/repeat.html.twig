@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}symfony jest fajne w pętli{% endblock %}
+
+{% block body %}
+    <h1>symfony jest fajne w h1</h1>
+
+    {% if sentence is defined %}
+        {{ sentence }}
+    {% else %}
+        {% for n in 1..n %}
+            Symfony jest fajne. <br/>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+
+{# inny sposób (z powtorzeniem n stringa z kontrolera)
+
+<br /><br />
+
+{% for x in 1..n %}
+    {# Moja zajefajna petla 
+    {{ x }} -
+
+    {% if sentence is defined %}
+        {{ sentence }}
+    {% else %}
+        Symfony jest fajne :)
+    {% endif %}
+
+    <br />
+{% endfor %} #}

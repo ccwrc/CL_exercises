@@ -27,9 +27,21 @@ class viewsController extends Controller {
 //        ]);
         return ["username" => $username];
     }
+    
+    /**
+     * @Route("/repeatSentence/{n}")
+     */
+    public function repeatSentenceAction($n) {
+        return $this->render("CodersLabBundle:view:repeat.html.twig", [
+            "n" => $n, "sentence" => "zdanie przekazane z kontrolera jeden raz"]);
+    }
 
 
-    /* Stwórz nową akcję przypisaną do adresu /render/{username}. Podepnij do niej widok 
-     * view_ex_b1.html.twig (który możesz znaleźć w katalogu z zadaniami). 
-     * Widok ten przyjmuje jedną zmienną o nazwie username. Przekaż ją. */
+    /* Stwórz akcję podpiętą do adresu /repeatSentence/{n}. Do akcji dopisz widok, 
+     * który powtórzy n razy zdanie „Symfony jest fajne” . Pętle wykonaj w szablonie, 
+     * przekaż do niego liczbę powtórzeń.
+
+Zmodyfikuj swoje rozwiązanie w taki sposób, żeby zdanie, które wyświetlasz, 
+     * było przekazane z kontrolera. Dopiero w chwili, w której zdanie nie jest 
+     * przekazane, ma się wyświetlić napis „Symfony jest fajne”. */
 }
