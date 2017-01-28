@@ -59,9 +59,27 @@ class viewsController extends Controller {
         $article = Article::GetArticleById($n);
 
         return $this->render("CodersLabBundle:view:showArticle.html.twig", [
-                    'n' => $n,
+        // zbędne            'n' => $n,
                     'article' => $article
         ]);
     }
+    
+    /**
+     * @Route("/showAllArticles")
+     */
+    public function showAllArticlesAction() {
+        $articles = Article::GetAllArticles();
+        
+        return $this->render("CodersLabBundle:view:showAllArticles.html.twig", [
+            "articles" => $articles
+        ]);
+    }
+
+
+
+
+    /* Stwórz akcję /showAllArticles, która wyświetli wszystkie artykuły. 
+     * Do wyświetlenia artykułu użyj szablonu z zadania B5 Nie pisz wyświetlania od nowa, 
+     * w pętli użyj zrobionego już szablonu. */
 
 }
