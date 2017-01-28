@@ -35,13 +35,24 @@ class viewsController extends Controller {
         return $this->render("CodersLabBundle:view:repeat.html.twig", [
             "n" => $n, "sentence" => "zdanie przekazane z kontrolera jeden raz"]);
     }
+    
+    /**
+     * @Route("/createRandoms/{start}/{end}/{n}")
+     */
+    public function createRandomsAction($start, $end, $n) {
+        $randomArray = [];
+        for ($i = 1; $i <= $n; $i++) {
+            $randomArray[] = mt_rand($start, $end); //random_int($start, $end);
+        }
+        return $this->render("CodersLabBundle:view:create_randoms.html.twig", [
+            "randomArray" => $randomArray
+        ]);
+    }
 
 
-    /* Stwórz akcję podpiętą do adresu /repeatSentence/{n}. Do akcji dopisz widok, 
-     * który powtórzy n razy zdanie „Symfony jest fajne” . Pętle wykonaj w szablonie, 
-     * przekaż do niego liczbę powtórzeń.
-
-Zmodyfikuj swoje rozwiązanie w taki sposób, żeby zdanie, które wyświetlasz, 
-     * było przekazane z kontrolera. Dopiero w chwili, w której zdanie nie jest 
-     * przekazane, ma się wyświetlić napis „Symfony jest fajne”. */
+    /* Stwórz akcję podpiętą do adresu /createRandoms/{start}/{end}/{n}. Akcja ma generować 
+     * tablicę z n losowymi liczbami z zakresu start do end którą prześlesz do swojego widoku. 
+     * Nastepnie w Twigu użyj pętli for żeby wyświetlić wszystkie przesłane liczby. 
+     * Jeżeli tablica jest pusta (czyli podane n jest mniejsze lub równe 0) powinieneś 
+     * wyświetlić odpowiednią informacje. */
 }

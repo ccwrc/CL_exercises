@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}liczby losowe{% endblock %}
+
+{% block body %}
+    <h1>liczby losowe</h1>
+
+    {% if randomArray is empty %}
+        Tablica jest pusta.
+    {% else %}
+        {% for item in randomArray %}
+            {{ item }} <br/>
+        {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}
+
+
+{#alternatywy {% for liczba in numbers %}
+    {{ liczba }}
+    <br >
+{% else %}
+    Tablica jest pusta...
+{% endfor %}
+
+
+<hr />
+
+
+{% if numbers|length > 0 %}
+    {% for number in numbers %}
+        {{ number }}
+        <br >
+    {% endfor %}
+{% else %}
+    Tablica jest pusta...
+{% endif %}#}
