@@ -1,15 +1,23 @@
-{# Artykuł o ID {{ n }}: <br/><br/> #}
+{% extends "CodersLabBundle:Default:index.html.twig" %}
 
-{% if article %}
-    <strong>Tytuł:</strong><br/>
-    {{ article.title }}
+{% block title %}pokaż artykuł{% endblock %}
 
-    <br/><br/>
+{% block controller_name %} {{ _self.getTemplateName() }} {% endblock %}
 
-    <strong>Treść:</strong><br/>
-    {{ article.articleText }} <br/><br/>
-{% else %}
-    Nie ma artykułu o podanym ID.
-{% endif %}
+{% block body %}
+    {# Artykuł o ID {{ n }}: <br/><br/> #}
 
-<hr/>
+    {% if article %}
+        <strong>Tytuł:</strong><br/>
+        {{ article.title }}
+
+        <br/><br/>
+
+        <strong>Treść:</strong><br/>
+        {{ article.articleText }} <br/><br/>
+    {% else %}
+        Nie ma artykułu o podanym ID.
+    {% endif %}
+
+    <hr/>
+{% endblock %}

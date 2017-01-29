@@ -1,7 +1,16 @@
+{% extends "CodersLabBundle:Default:index.html.twig" %}
 
-{% for article in articles %}
-    {{ include("CodersLabBundle:view:showArticle.html.twig", {"article":article}) }}
-{% endfor %}
+{% block title %}pokaż wszystkie artykuły{% endblock %}
+
+{% block controller_name %} {{ _self.getTemplateName() }} {% endblock %}
+
+{% block body %}
+
+    {% for article in articles %}
+        {{ include("CodersLabBundle:view:showArticle.html.twig", {"article":article}) }}
+    {% endfor %}
+
+{% endblock %}
 
 
 

@@ -12,6 +12,8 @@
 
         <div>{% block body %}
             Widok domyślny - blok body
+            {{ _self.getTemplateName() }}
+            {{ dump(_self) }}
             {% endblock %}</div>
                 
         <div class="menu">Menu na stałe, klejone na dół</div>   
@@ -30,12 +32,4 @@
         </body>
     </html>
 
-{# Stwórz szablon bazowy dla całej Twojej aplikacji. Powinien on dawać możliwość nadpisania:
 
-    Tytułu strony.
-    Nazwy kontrolera (jako głównego tytuły opakowanego w h1 ponad treścią strony).
-    Głównej części strony (opakowaną w div).
-
-Powinien zawierać menu (na razie zostaw puste). Menu powinno być widoczne zawsze. 
-Popraw wszystkie szablony z poprzednich zadań, aby dziedziczyły po szablonie głównym i wypełniały 
-odpowiednie bloki (czyli nadawały swój tytuł, nazwę swojego kontrolera i główną część strony). #}

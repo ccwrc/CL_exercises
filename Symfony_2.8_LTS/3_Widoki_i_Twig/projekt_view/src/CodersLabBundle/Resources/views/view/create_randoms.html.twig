@@ -1,6 +1,8 @@
-{% extends "::base.html.twig" %}
+{% extends "CodersLabBundle:Default:index.html.twig" %}
 
 {% block title %}liczby losowe{% endblock %}
+
+{% block controller_name %} {{ _self.getTemplateName() }} {% endblock %}
 
 {% block body %}
     <h1>liczby losowe</h1>
@@ -13,7 +15,6 @@
         {% endfor %}
 
     {% endif %}
-
 
 {% endblock %}
 

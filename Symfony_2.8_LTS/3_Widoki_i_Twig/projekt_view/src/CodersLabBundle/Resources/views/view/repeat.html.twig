@@ -1,6 +1,8 @@
-{% extends "::base.html.twig" %}
+{% extends "CodersLabBundle:Default:index.html.twig" %}
 
-{% block title %}symfony jest fajne w pętli{% endblock %}
+{% block title %}powtórz{% endblock %}
+
+{% block controller_name %} {{ _self.getTemplateName() }} {% endblock %}
 
 {% block body %}
     <h1>symfony jest fajne w h1</h1>

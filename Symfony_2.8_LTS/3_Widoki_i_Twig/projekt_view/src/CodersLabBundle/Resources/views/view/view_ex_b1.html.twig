@@ -1,6 +1,8 @@
-{% extends "::base.html.twig" %}
+{% extends "CodersLabBundle:Default:index.html.twig" %}
 
-{% block title %}Witaj w widoku dla zadania B1{% endblock %}
+{% block title %}widok b1{% endblock %}
+
+{% block controller_name %} {{ _self.getTemplateName() }} {% endblock %}
 
 {% block body %}
     <h1>Witaj w widoku dla zadania B1</h1>
