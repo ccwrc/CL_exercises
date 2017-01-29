@@ -36,7 +36,9 @@ class viewsController extends Controller {
      */
     public function repeatSentenceAction($n) {
         return $this->render("CodersLabBundle:view:repeat.html.twig", [
-            "n" => $n, "sentence" => "zdanie przekazane z kontrolera jeden raz"]);
+            "n" => $n, 
+         //   "sentence" => "zdanie przekazane z kontrolera jeden raz"
+            ]);
     }
     
     /**

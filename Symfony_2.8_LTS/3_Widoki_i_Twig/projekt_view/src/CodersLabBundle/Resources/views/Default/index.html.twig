@@ -5,31 +5,48 @@
         <title>{% block title %}3 - widoki i twig{% endblock %}</title>
     </head>
 
-<body>
-    <h1>{% block controller_name %}
-        Widok domyślny - nazwa kontrolera
-        {% endblock %}</h1>
+    <body>
+        <h1>{% block controller_name %}
+            Widok domyślny - nazwa kontrolera
+            {% endblock %}</h1>
 
-        <div>{% block body %}
-            Widok domyślny - blok body
-            {{ _self.getTemplateName() }}
-            {{ dump(_self) }}
-            {% endblock %}</div>
-                
-        <div class="menu">Menu na stałe, klejone na dół</div>   
-        <style>
-            div.menu {
-                clear: both;
-                position: fixed;
-                bottom: 0;
-                min-height:80px;
-                margin: 5px;
-                border-radius: 7px;
-                text-align: center;
-                color: black; 
-            }
-        </style>
-        </body>
-    </html>
+            <div>{% block body %}
+                Widok domyślny - blok body
+                {{ _self.getTemplateName() }}
+                {{ dump(_self) }}
+                {% endblock %}</div>
+
+                <div class="menu">
+                    <a href="{{ path('coderslab_default_index') }}">index</a>
+                    <a href="{{ path('coderslab_views_render') }}">render</a>
+                    <a href="{{ path('coderslab_views_renderusername' , {"username" : "FunkyKoval"}) }}">render username</a>
+                    <a href="{{ path('coderslab_views_repeatsentence' , {"n" : "11"}) }}">repeat sentence</a>
+                    <a href="{{ path('coderslab_views_createrandoms' , {"start":"1", "end":"100", "n" : "11"}) }}">create randoms</a>
+                    <a href="{{ path('coderslab_views_showarticle' , {"n" : "11"}) }}">show article</a>
+                    <a href="{{ path('coderslab_views_showallarticles') }}">show all articles</a>
+                    <br/>
+                    <a href="{{ url('coderslab_default_index') }}">index</a>
+                    <a href="{{ url('coderslab_views_render') }}">render</a>
+                    <a href="{{ url('coderslab_views_renderusername' , {"username" : "FunkyKoval"}) }}">render username</a>
+                    <a href="{{ url('coderslab_views_repeatsentence' , {"n" : "11"}) }}">repeat sentence</a>
+                    <a href="{{ url('coderslab_views_createrandoms' , {"start":"1", "end":"100", "n" : "11"}) }}">create randoms</a>
+                    <a href="{{ url('coderslab_views_showarticle' , {"n" : "11"}) }}">show article</a>
+                    <a href="{{ url('coderslab_views_showallarticles') }}">show all articles</a>
+                </div>   
+
+                <style>
+                    div.menu {
+                        clear: both;
+                        position: fixed;
+                        bottom: 0;
+                        min-height:80px;
+                        margin: 5px;
+                        border-radius: 7px;
+                        text-align: center;
+                        color: black; 
+                    }
+                </style>
+            </body>
+        </html>
 
 
