@@ -1,1 +1,16 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}3 - widoki i twig{% endblock %}</title>
+        
+        {% block stylesheets %}{% endblock %}
+        
+    </head>
+    <body>
+        {% block body %}
+        
+        Widok domyślny - blok body
+        {% endblock %}
+    </body>
+</html>
