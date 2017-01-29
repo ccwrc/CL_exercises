@@ -3,14 +3,39 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}3 - widoki i twig{% endblock %}</title>
-        
-        {% block stylesheets %}{% endblock %}
-        
     </head>
-    <body>
-        {% block body %}
-        
-        Widok domyślny - blok body
-        {% endblock %}
-    </body>
-</html>
+
+<body>
+    <h1>{% block controller_name %}
+        Widok domyślny - nazwa kontrolera
+        {% endblock %}</h1>
+
+        <div>{% block body %}
+            Widok domyślny - blok body
+            {% endblock %}</div>
+                
+        <div class="menu">Menu na stałe, klejone na dół</div>   
+        <style>
+            div.menu {
+                clear: both;
+                position: fixed;
+                bottom: 0;
+                min-height:80px;
+                margin: 5px;
+                border-radius: 7px;
+                text-align: center;
+                color: black; 
+            }
+        </style>
+        </body>
+    </html>
+
+{# Stwórz szablon bazowy dla całej Twojej aplikacji. Powinien on dawać możliwość nadpisania:
+
+    Tytułu strony.
+    Nazwy kontrolera (jako głównego tytuły opakowanego w h1 ponad treścią strony).
+    Głównej części strony (opakowaną w div).
+
+Powinien zawierać menu (na razie zostaw puste). Menu powinno być widoczne zawsze. 
+Popraw wszystkie szablony z poprzednich zadań, aby dziedziczyły po szablonie głównym i wypełniały 
+odpowiednie bloki (czyli nadawały swój tytuł, nazwę swojego kontrolera i główną część strony). #}
