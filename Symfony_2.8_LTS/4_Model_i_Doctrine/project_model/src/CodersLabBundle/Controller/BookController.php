@@ -37,15 +37,30 @@ class BookController extends Controller {
         
         $em->persist($newBook);
         $em->flush();
+        // return new Response("książka o id: " . $newBook->getId() . " została utworzona");
+        return $this->render("CodersLabBundle:Book:show_book.html.twig", [
+            "id" => $newBook->getId(),
+            "book" => $newBook
+        ]);
+    }
+    
+    /**
+     * @Route("/showBook/{id}")
+     */
+    public function showBookAction($id) {
+        $bookRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Book");
+        $book = $bookRepo->find($id);
         
-        return new Response("książka o id: " . $newBook->getId() . " została utworzona");
+        return $this->render("CodersLabBundle:Book:show_book.html.twig", [
+            "book" => $book
+        ]);
     }
 
 
 
 
-    /* Stwórz akcję /createBook. Akcja ta ma pobierać informacje z POST-a i na jej podstawie 
-     * tworzyć i zapamiętywać do bazy danych nową książkę. Na razie powinna wyświetlać 
-     * statyczną informację o tym, że udało się stworzyć książkę (co zweryfikuj za pomocą 
-     * PHPMyAdmin). */
+    /* Stwórz akcję /showBook/{id}, która ma pobierać książkę o podanym id z bazy danych i 
+     * wyświetlać jej informację na stronie. Zmodyfikuj akcję /createBook tak żeby 
+     * po stworzeniu nowej książki przekierowywała do akcji /showBook 
+     * dla nowo dodanej książki. */
 }
