@@ -67,11 +67,25 @@ class BookController extends Controller {
             "books" => $books
         ]);
     }
+    
+    /**
+     * @Route("/deleteBook/{id}")
+     */
+    public function deleteBookAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $bookRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Book");
+        $book = $bookRepo->find($id);
+        
+        if (!$book) {
+            return new Response("wprowadziłeś błędne ID");
+        }
+        $em->remove($book);
+        $em->flush();
+        
+        return new Response("Książka usunięta");
+    }
 
 
-    /*  C4 – lista książek
-
-Stwórz akcję podpiętą do adresu /showAllBooks. Powinna ona wczytać wszystkie książki i
-     *  wyświetlić ich tytuły. Przy każdej książce powinien być link do wyświetlenia 
-     * pełnej informacji o niej. */
+    /*  Stwórz akcję podpiętą do adresu /deleteBook/{id}. Powinna ona usuwać książkę o
+     *  podanym id i pokazywać o tym informacje. */
 }
