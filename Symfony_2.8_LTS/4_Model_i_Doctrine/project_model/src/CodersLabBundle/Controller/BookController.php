@@ -55,12 +55,23 @@ class BookController extends Controller {
             "book" => $book
         ]);
     }
+    
+    /**
+     * @Route("/showAllBooks")
+     */
+    public function showAllBooksAction() {
+        $bookRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Book");
+        $books = $bookRepo->findAll();
+        
+        return $this->render("CodersLabBundle:Book:show_all_books.html.twig", [
+            "books" => $books
+        ]);
+    }
 
 
+    /*  C4 – lista książek
 
-
-    /* Stwórz akcję /showBook/{id}, która ma pobierać książkę o podanym id z bazy danych i 
-     * wyświetlać jej informację na stronie. Zmodyfikuj akcję /createBook tak żeby 
-     * po stworzeniu nowej książki przekierowywała do akcji /showBook 
-     * dla nowo dodanej książki. */
+Stwórz akcję podpiętą do adresu /showAllBooks. Powinna ona wczytać wszystkie książki i
+     *  wyświetlić ich tytuły. Przy każdej książce powinien być link do wyświetlenia 
+     * pełnej informacji o niej. */
 }
