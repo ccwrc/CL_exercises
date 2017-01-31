@@ -127,27 +127,4 @@ class Book
     {
         return $this->rating;
     }
-
-    /**
-     * Set author
-     *
-     * @param \CodersLabBundle\Entity\Author $author
-     * @return Book
-     */
-    public function setAuthor(\CodersLabBundle\Entity\Author $author = null)
-    {
-        $this->author = $author;
-
-        return $this;
-    }
-
-    /**
-     * Get author
-     *
-     * @return \CodersLabBundle\Entity\Author 
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
 }
