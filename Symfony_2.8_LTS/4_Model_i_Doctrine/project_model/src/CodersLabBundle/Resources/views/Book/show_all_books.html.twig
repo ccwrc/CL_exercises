@@ -1,10 +1,10 @@
 {% block body %}
 
     {% for book in books %}
-    Tytuł: {{ book.title }} <br/>
-    Rating: {{ book.rating }} <br/>
-    <a href="{{ path('coderslab_book_showbook', {"id":book.id}) }}">szczegółowe informacje</a>
-    <br/><br/>
+        Tytuł: {{ book.title }} <br/>
+        Rating: {{ book.rating }} <br/>
+        <a href="{{ path('coderslab_book_showbook', {"id":book.id}) }}">szczegółowe informacje</a>
+        <br/><br/>
     {% else %}
         Brak książek w bazie.
     {% endfor %}

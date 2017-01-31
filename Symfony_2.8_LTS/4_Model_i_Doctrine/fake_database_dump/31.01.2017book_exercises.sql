@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 30, 2017 at 03:36 PM
+-- Generation Time: Jan 31, 2017 at 12:29 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -38,16 +38,11 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`id`, `title`, `description`, `rating`) VALUES
-(1, 'tytuł1', 'opis1', 11),
-(2, 'tytuł1', 'opis1', 11),
-(3, 'tytuł1', 'opis1', 11),
-(4, 'tytuł222', 'opis222', 4),
-(5, 'tytuł', 'opis', 6),
-(7, 'tytuł', 'opis', 69),
-(8, 'tytuł', 'opis', 69),
-(9, 'tytuł', 'opis', 69),
-(10, 'tytułqq', 'opisqq', 1),
-(11, 'tytułee', 'opisee', 44);
+(2, 'tytuł książki', 'opis książki', 22),
+(3, 'tytuł książki2', 'opis książki2', 221),
+(4, '4 ksiazka', '4 opis książki', 4),
+(5, '5t', 'o5', 5),
+(6, '5t', 'o5', 5);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +62,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
