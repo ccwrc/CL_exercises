@@ -1,5 +1,15 @@
 {% block body %}
     <form action="/createBook" method="POST">
+        
+        Autor:
+        <select name="authorId">
+            {% for author in authors %}
+                <option value="{{ author.id }}">
+                    {{ author.nameSurname }}
+                </option>
+            {% endfor %}
+        </select> <br/>
+        
         <input type="text" name="title" value="tytuł książki"/> <br/>
         <input type="text" name="description" value="opis książki"/> <br/>
         rating: <input type="number" name="rating" value="0.00"/> <br/>

@@ -16,7 +16,12 @@ class BookController extends Controller {
      * @Route("/newBook")
      */
     public function newBookAction() {
-        return $this->render("CodersLabBundle:Book:new_book.html.twig");
+        $authorsRepo = $this->getDoctrine()->getRepository('CodersLabBundle:Author');
+        $allAuthors = $authorsRepo->findAll();
+        
+        return $this->render("CodersLabBundle:Book:new_book.html.twig", [
+            "authors" => $allAuthors
+        ]);
     }
 
     /**
@@ -29,11 +34,15 @@ class BookController extends Controller {
         $bookTitle = $req->request->get('title');
         $bookDescription = $req->request->get('description');
         $bookRating = $req->request->get('rating');
+        
+        $authorRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Author");
+        $bookAuthor = $authorRepo->find($req->request->get("authorId"));
 
         $newBook = new Book();
         $newBook->setTitle($bookTitle);
         $newBook->setDescription($bookDescription);
         $newBook->setRating($bookRating);
+        $newBook->setAuthor($bookAuthor);
 
         $em->persist($newBook);
         $em->flush();
