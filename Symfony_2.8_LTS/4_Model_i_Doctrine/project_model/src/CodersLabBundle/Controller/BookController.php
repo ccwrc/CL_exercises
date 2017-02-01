@@ -93,5 +93,43 @@ class BookController extends Controller {
 
         return new Response("Książka usunięta");
     }
+    
+    /**
+     * @Route("/showBooksWhereIdIsBigger/{id}")
+     */
+    public function showBooksWhereIdIsBiggerAction($id) {
+        $bookRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Book");
+        $books = $bookRepo->showBooksWhereIdIsBigger($id);
+        
+        return $this->render("CodersLabBundle:Book:show_all_books.html.twig", [
+            "books" => $books
+        ]);
+    }
+    
+    /**
+     * @Route("/showBooksWhereRatingIsBigger/{rating}")
+     */
+    public function showBooksWhereRatingIsBiggerAction($rating) {
+        $bookRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Book");
+        $books = $bookRepo->showBooksWhereRatingIsBigger($rating);
+        
+        return $this->render("CodersLabBundle:Book:show_all_books.html.twig", [
+            "books" => $books
+        ]);        
+    }
+    
+    /**
+     * @Route("/showBooksWhereTitleContains/{string}")
+     */
+    public function showBooksWhereTitleContainsAction($string) {
+        $bookRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Book");
+        $books = $bookRepo->showBooksWhereTitleContains($string);
+        
+        return $this->render("CodersLabBundle:Book:show_all_books.html.twig", [
+            "books" => $books
+        ]);  
+    }
+    
+
 
 }

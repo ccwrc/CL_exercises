@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 31, 2017 at 09:11 PM
+-- Generation Time: Feb 01, 2017 at 03:32 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -41,7 +41,11 @@ INSERT INTO `author` (`id`, `nameSurname`, `description`) VALUES
 (2, 'name 2', 'opis 2'),
 (3, 'name 3', 'opis 3'),
 (4, 'nameAutor 4', 'opisAutor 4'),
-(5, 'nameAutor 5', 'opisAutor 5');
+(5, 'nameAutor 5', 'opisAutor 5'),
+(6, 'imie autora środa', 'opis autora środa'),
+(7, 'imie autora środa', 'opis autora środa'),
+(8, 'imie autora środa', 'opis autora środa'),
+(9, 'czwartekautor', 'opisczwartekautor');
 
 -- --------------------------------------------------------
 
@@ -66,7 +70,23 @@ INSERT INTO `book` (`id`, `title`, `description`, `rating`, `author_id`) VALUES
 (3, 'tytuł książki2', 'opis książki2', 221, NULL),
 (4, '4 ksiazka', '4 opis książki', 4, NULL),
 (5, '5t', 'o5', 5, NULL),
-(6, '5t', 'o5', 5, NULL);
+(6, '5t', 'o5', 5, NULL),
+(7, 'tytuł książki', 'opis książki', 22, 3),
+(8, 'tytuł książki', 'opis książki', 9, NULL),
+(9, 'tytuł książki', 'opis książki', 3, 5),
+(10, 'tytuł książki', 'opis książki', 11, 5),
+(12, 'tytuł książki', 'opis książki', 2, 5),
+(13, 'tytuł książki', 'opis książki', 2, 5),
+(14, 'tytuł książki', 'opis książki', 22, 2),
+(15, 'tytuł książki', 'opis książki', 999, 5),
+(16, 'aa', 'aaaopius', 33, 2),
+(17, 'aa', 'aaaopius', 33, 2),
+(18, 'aa', 'aaaopius', 33, 2),
+(19, 'aa', 'aaaopius', 33, 2),
+(20, 'aa', 'aaaopius', 33, 2),
+(21, 'tytuł książki', 'opis książki', 444, 3),
+(22, 'tytuł książkiczwartek', 'opis książkiczwartek', 2, 9),
+(23, 'tytuł', 'opis książki', 2, 2);
 
 --
 -- Indexes for dumped tables
@@ -93,12 +113,12 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- Constraints for dumped tables
 --
