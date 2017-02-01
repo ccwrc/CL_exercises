@@ -35,10 +35,16 @@ class AuthorController extends Controller {
 
         $em->persist($newAuthor);
         $em->flush();
- 
-        return $this->render("CodersLabBundle:Author:display_author.html.twig", [
-                    "id" => $newAuthor->getId(),
-                    "author" => $newAuthor
+        
+//        $allBooks = $newAuthor->getBooks();
+// 
+//        return $this->render("CodersLabBundle:Author:display_author.html.twig", [
+//                    "id" => $newAuthor->getId(),
+//                    "author" => $newAuthor,
+//                    "books" => $allBooks
+//        ]);
+        return $this->redirectToRoute("coderslab_author_displayauthor", [
+            "id" => $newAuthor->getId()
         ]);
     }
 
@@ -48,9 +54,11 @@ class AuthorController extends Controller {
     public function displayAuthorAction($id) {
         $authorRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Author");
         $author = $authorRepo->find($id);
+        $allBooks = $author->getBooks();
         
         return $this->render('CodersLabBundle:Author:display_author.html.twig', array(
-            "author" => $author
+            "author" => $author,
+            "books" => $allBooks
         ));
     }
 

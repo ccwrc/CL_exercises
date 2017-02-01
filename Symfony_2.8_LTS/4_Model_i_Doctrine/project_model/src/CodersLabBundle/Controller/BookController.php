@@ -86,7 +86,7 @@ class BookController extends Controller {
         $book = $bookRepo->find($id);
 
         if (!$book) {
-            return new Response("wprowadziłeś błędne ID");
+            return new Response("Wprowadziłeś błędne ID");
         }
         $em->remove($book);
         $em->flush();
@@ -94,5 +94,4 @@ class BookController extends Controller {
         return new Response("Książka usunięta");
     }
 
-    /*  */
 }
