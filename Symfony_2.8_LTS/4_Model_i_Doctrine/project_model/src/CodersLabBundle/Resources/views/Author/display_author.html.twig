@@ -5,15 +5,15 @@
 {% block body %}
 
     Autor o id: {{ author.id }} <br/>
-    Opis: {{ author.description }} <br/>
+    Opis: {{ author.description }} <br/> 
     Imię i nazwisko: {{ author.nameSurname }} <br/><br/>
-    {% for book in books %}
+    {% for book in author.books %}  
         Tytuł książki: {{ book.title }} <br/>
         Opis książki: {{ book.description }} <br/>
         <a href="{{ path('coderslab_book_showbook', {'id': book.id }) }}">detale 
-        książki</a> <br/><br/>
+            książki</a> <br/><br/>
         {% else %}
-            Ten autor nie napisał jeszcze żadnej książki <br/>
+        Ten autor nie napisał jeszcze żadnej książki <br/>
     {% endfor %}
 
 {% endblock %}

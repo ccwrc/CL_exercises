@@ -31,9 +31,9 @@ class BookController extends Controller {
     public function createBookAction(Request $req) {
         $em = $this->getDoctrine()->getManager();
 
-        $bookTitle = $req->request->get('title');
-        $bookDescription = $req->request->get('description');
-        $bookRating = $req->request->get('rating');
+        $bookTitle = $req->request->get('title', 'domyślny tytuł książki');
+        $bookDescription = $req->request->get('description', 'domyślny opis książki');
+        $bookRating = (double)$req->request->get('rating', 0.00);
         
         $authorRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Author");
         $bookAuthor = $authorRepo->find($req->request->get("authorId"));
@@ -46,9 +46,8 @@ class BookController extends Controller {
 
         $em->persist($newBook);
         $em->flush();
-        // return new Response("książka o id: " . $newBook->getId() . " została utworzona");
+
         return $this->render("CodersLabBundle:Book:show_book.html.twig", [
-                    "id" => $newBook->getId(),
                     "book" => $newBook
         ]);
     }

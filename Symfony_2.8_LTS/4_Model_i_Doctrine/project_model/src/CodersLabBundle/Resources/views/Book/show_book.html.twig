@@ -8,12 +8,12 @@
     Tytuł: {{ book.title }} <br/>
     Opis: {{ book.description }} <br/>
     Rating: {{ book.rating }} <br/>
-    
-    {% if book.author.nameSurname is defined %}
-    Autor: {{ book.author.nameSurname }} <br/>
-    <a href="{{ path('coderslab_author_displayauthor', {'id': book.author.id }) }}">strona 
-        autora</a> <br/><br/>
-    {% endif %}    
+
+    {% if book.author is not null %} {# poprzednio: if book.author.nameSurname is defined #}
+        Autor: {{ book.author.nameSurname }} <br/>
+        <a href="{{ path('coderslab_author_displayauthor', {'id': book.author.id }) }}">strona 
+            autora</a> <br/><br/>
+        {% endif %}    
 
 {% endblock %}
 

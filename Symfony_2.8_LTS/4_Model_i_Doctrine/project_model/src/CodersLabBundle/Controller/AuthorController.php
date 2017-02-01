@@ -13,6 +13,14 @@ use CodersLabBundle\Entity\Author;
 class AuthorController extends Controller {
     
     /**
+     * @Route("/")
+     */
+    public function indexAction()
+    {
+        return new Response("Hello localhost!");
+    }
+    
+    /**
      * @Route("/newAuthor")
      */
     public function newAuthorAction() {
@@ -26,8 +34,8 @@ class AuthorController extends Controller {
     public function createAuthorAction(Request $req) {
         $em = $this->getDoctrine()->getManager();
 
-        $authorNameSurname = $req->request->get('nameSurname');
-        $authorDescription = $req->request->get('description');
+        $authorNameSurname = $req->request->get('nameSurname', 'domyślne imię i nazwisko');
+        $authorDescription = $req->request->get('description', 'domyślny opis');
 
         $newAuthor = new Author();
         $newAuthor->setDescription($authorDescription);
@@ -36,13 +44,6 @@ class AuthorController extends Controller {
         $em->persist($newAuthor);
         $em->flush();
         
-//        $allBooks = $newAuthor->getBooks();
-// 
-//        return $this->render("CodersLabBundle:Author:display_author.html.twig", [
-//                    "id" => $newAuthor->getId(),
-//                    "author" => $newAuthor,
-//                    "books" => $allBooks
-//        ]);
         return $this->redirectToRoute("coderslab_author_displayauthor", [
             "id" => $newAuthor->getId()
         ]);
@@ -54,11 +55,9 @@ class AuthorController extends Controller {
     public function displayAuthorAction($id) {
         $authorRepo = $this->getDoctrine()->getRepository("CodersLabBundle:Author");
         $author = $authorRepo->find($id);
-        $allBooks = $author->getBooks();
         
         return $this->render('CodersLabBundle:Author:display_author.html.twig', array(
-            "author" => $author,
-            "books" => $allBooks
+            "author" => $author
         ));
     }
 
