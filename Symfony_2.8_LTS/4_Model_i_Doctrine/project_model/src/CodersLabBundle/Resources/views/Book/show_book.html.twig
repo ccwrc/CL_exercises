@@ -5,5 +5,12 @@
     Opis: {{ book.description }} <br/>
     Rating: {{ book.rating }} <br/>
     Autor: {{ book.author.nameSurname }} <br/>
+    <a href="{{ path('coderslab_author_displayauthor', {'id': book.author.id }) }}">strona 
+        autora</a> <br/><br/>
 
 {% endblock %}
+
+
+{# Zmodyfikuj wyświetlania zarówno książki, jak i autora. Książka powinna pokazywać dane swojego
+autora (imię i nazwisko) i podawać link do jego strony. Autor powinien wypisywać, ile ma książek.
+Następnie w liście pokazywać ich nazwy i linki do stron książek. #}
