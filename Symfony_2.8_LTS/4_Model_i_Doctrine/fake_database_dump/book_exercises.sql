@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 01, 2017 at 03:32 PM
+-- Generation Time: Feb 03, 2017 at 03:06 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -45,7 +45,10 @@ INSERT INTO `author` (`id`, `nameSurname`, `description`) VALUES
 (6, 'imie autora środa', 'opis autora środa'),
 (7, 'imie autora środa', 'opis autora środa'),
 (8, 'imie autora środa', 'opis autora środa'),
-(9, 'czwartekautor', 'opisczwartekautor');
+(9, 'czwartekautor', 'opisczwartekautor'),
+(10, '', ''),
+(11, '', ''),
+(12, 'domyślne imię i nazwisko', 'opis');
 
 -- --------------------------------------------------------
 
@@ -86,7 +89,18 @@ INSERT INTO `book` (`id`, `title`, `description`, `rating`, `author_id`) VALUES
 (20, 'aa', 'aaaopius', 33, 2),
 (21, 'tytuł książki', 'opis książki', 444, 3),
 (22, 'tytuł książkiczwartek', 'opis książkiczwartek', 2, 9),
-(23, 'tytuł', 'opis książki', 2, 2);
+(23, 'tytuł', 'opis książki', 2, 2),
+(24, 'ww', 'ww', 1, 3),
+(25, '', 'ww', 1, 3),
+(26, '', 'opis książki', 22, 2),
+(27, '', 'opis książki', 7, 2),
+(28, 'tytuł książki', 'opis książki', 0, 2),
+(29, 'tytuł książki', 'opis książki', 1111, 2),
+(30, 'tytuł książki', 'opis książki', 11, 2),
+(31, '', 'opis książki', 11, 3),
+(32, 'tytuł książki', 'opis książki', 232, 3),
+(33, 'tytuł książki', 'opis książki', 0, 3),
+(34, 'tytuł książki', 'opis książki', 1111, 2);
 
 --
 -- Indexes for dumped tables
@@ -113,12 +127,12 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- Constraints for dumped tables
 --
