@@ -5,6 +5,7 @@ namespace ExamBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class ccwrcController extends Controller {
     
@@ -17,6 +18,7 @@ class ccwrcController extends Controller {
     
     /**
      * @Route("/setUsername/{userName}")
+     * @Method("GET")
      */
     public function setUsernameAction(Request $req, $userName) {
         $session = $req->getSession();
@@ -28,12 +30,20 @@ class ccwrcController extends Controller {
     }
 
     /**
-     * @Route("/sayHello")
+     * @Route("/sayHello/{n}", defaults={"n" = "10"}, requirements={"n"="\d+"})
+     * @Method("GET")
      */
-    public function sayHelloAction()
-    {
+    public function sayHelloAction(Request $req, $n) {
+        $session = $req->getSession();
+        $userName = $session->get("userName");
+        
+        if (!$userName) {
+            $userName = "Witaj nieznajomy";
+        }
+        
         return $this->render('ExamBundle:ccwrc:say_hello.html.twig', array(
-            // ...
+            "n" => $n,
+            "userName" => $userName
         ));
     }
 

@@ -4,4 +4,11 @@
 
 {% block body %}
 <h1>Welcome to the ccwrc:sayHello page</h1>
+
+{% for i in 1..n %}
+    {{ userName }} <br/>
+{% else %}
+    Nie przekazano wartości.
+{% endfor %}
+
 {% endblock %}
