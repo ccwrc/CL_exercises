@@ -4,16 +4,26 @@ namespace ExamBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
-class ccwrcController extends Controller
-{
+class ccwrcController extends Controller {
+    
     /**
-     * @Route("/setUsername")
+     * @Route("/")
      */
-    public function setUsernameAction()
-    {
+    public function indexAction() {
+        return $this->render('ExamBundle:Default:index.html.twig');
+    }
+    
+    /**
+     * @Route("/setUsername/{userName}")
+     */
+    public function setUsernameAction(Request $req, $userName) {
+        $session = $req->getSession();
+        $session->set("userName", $userName);
+        
         return $this->render('ExamBundle:ccwrc:set_username.html.twig', array(
-            // ...
+            "userName" => $userName
         ));
     }
 
