@@ -54,6 +54,15 @@ class ccwrcController extends Controller {
      * @Method("GET")
      */
     public function createCookieAction(Request $req, $cookieName, $cookieValue, $cookieTime) {
+        
+//   alternatywa:    $resp = $this->render('ExamBundle:user:create_cookie.html.twig', [
+//                'cookie' => $cookie,
+//    ]);                     // metoda render ZWRACA obiekt typu Responce wygenerowany za pomocą Twiga
+//    $cookie = new Cookie($cookieName, $cookieValue, time() + $cookieTime);
+//
+//    $resp->headers->setCookie($cookie);
+//    return $resp;
+        
         $cookie = new Cookie($cookieName, $cookieValue, time() + ($cookieTime * 60));
 
         $resp = $this->render('ExamBundle:ccwrc:create_cookie.html.twig', array(
