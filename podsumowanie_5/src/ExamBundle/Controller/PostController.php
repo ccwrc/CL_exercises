@@ -61,11 +61,17 @@ class PostController extends Controller {
     /**
      * @Route("/deletePosts")
      */
-    public function deletePostsAction()
-    {
-        return $this->render('ExamBundle:Post:delete_posts.html.twig', array(
-            // ...
-        ));
+    public function deletePostsAction() {
+        $raiting = 5;
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+                        "DELETE ExamBundle:Post p WHERE p.raiting > $raiting"
+                )->execute();
+
+        $query = $em->createQuery("SELECT p FROM ExamBundle:Post p");
+        $postCounter = $query->getResult();
+
+        return new Response("Liczba pozostałych postów to: " . count($postCounter));
     }
 
 }
