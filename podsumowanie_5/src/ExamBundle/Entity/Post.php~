@@ -5,12 +5,12 @@ namespace ExamBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tweet
+ * Post
  *
- * @ORM\Table(name="tweet")
- * @ORM\Entity(repositoryClass="ExamBundle\Repository\TweetRepository")
+ * @ORM\Table(name="post")
+ * @ORM\Entity(repositoryClass="ExamBundle\Repository\PostRepository")
  */
-class Tweet
+class Post
 {
     /**
      * @var int
@@ -24,22 +24,23 @@ class Tweet
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=50)
+     * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tweet_text", type="text")
+     * @ORM\Column(name="post_text", type="string", length=255)
      */
-    private $tweetText;
-    
+    private $postText;
+
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="tweets")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @var int
+     *
+     * @ORM\Column(name="raiting", type="integer")
      */
-    private $user;
+    private $raiting;
 
 
     /**
@@ -56,7 +57,7 @@ class Tweet
      * Set title
      *
      * @param string $title
-     * @return Tweet
+     * @return Post
      */
     public function setTitle($title)
     {
@@ -76,48 +77,48 @@ class Tweet
     }
 
     /**
-     * Set tweetText
+     * Set postText
      *
-     * @param string $tweetText
-     * @return Tweet
+     * @param string $postText
+     * @return Post
      */
-    public function setTweetText($tweetText)
+    public function setPostText($postText)
     {
-        $this->tweetText = $tweetText;
+        $this->postText = $postText;
 
         return $this;
     }
 
     /**
-     * Get tweetText
+     * Get postText
      *
      * @return string 
      */
-    public function getTweetText()
+    public function getPostText()
     {
-        return $this->tweetText;
+        return $this->postText;
     }
 
     /**
-     * Set user
+     * Set raiting
      *
-     * @param \ExamBundle\Entity\User $user
-     * @return Tweet
+     * @param integer $raiting
+     * @return Post
      */
-    public function setUser(\ExamBundle\Entity\User $user = null)
+    public function setRaiting($raiting)
     {
-        $this->user = $user;
+        $this->raiting = $raiting;
 
         return $this;
     }
 
     /**
-     * Get user
+     * Get raiting
      *
-     * @return \ExamBundle\Entity\User 
+     * @return integer 
      */
-    public function getUser()
+    public function getRaiting()
     {
-        return $this->user;
+        return $this->raiting;
     }
 }
