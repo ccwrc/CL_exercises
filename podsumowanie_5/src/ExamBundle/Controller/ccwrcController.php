@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Response;
 
 class ccwrcController extends Controller {
     
@@ -67,13 +68,36 @@ class ccwrcController extends Controller {
     }
 
     /**
-     * @Route("/deleteCookie")
+     * @Route("/deleteCookie/{cookieName}")
+     * @Method("GET")
      */
-    public function deleteCookieAction()
-    {
+    public function deleteCookieAction(Request $req, $cookieName) {
+        $cookies = $req->cookies->all();
+
+        if (isset($cookies[$cookieName])) {
+            $cookieValue = $cookies[$cookieName];
+        } else {
+            $cookieValue = false;
+        }
+
+        if ($cookieValue) {
+            $cookie = new Cookie($cookieName, "", time() - 200);
+            $resp = new Response();
+            $resp->headers->setCookie($cookie);
+            $resp->send();
+
+            $message = "Zawartość ciasteczka o nazwie " . $cookieName . " to " . $cookieValue;
+            $message .= " ciasteczko o zawartości " . $cookieValue . " usunięte";
+        } else {
+            $message = "Brak ciasteczka";
+        }
+
         return $this->render('ExamBundle:ccwrc:delete_cookie.html.twig', array(
-            // ...
+                    "message" => $message
         ));
-    }
+        //też działa:  $res->headers->clearCookie($cookieName);
+    }      
 
 }
+
+
