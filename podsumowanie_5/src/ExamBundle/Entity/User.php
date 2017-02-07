@@ -41,6 +41,11 @@ class User
      * @ORM\Column(name="password", type="string", length=25)
      */
     private $password;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Tweet", mappedBy="user")
+     */
+    private $tweets;
 
 
     /**
@@ -120,5 +125,45 @@ class User
     public function getPassword()
     {
         return $this->password;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tweets = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add tweets
+     *
+     * @param \ExamBundle\Entity\Tweet $tweets
+     * @return User
+     */
+    public function addTweet(\ExamBundle\Entity\Tweet $tweets)
+    {
+        $this->tweets[] = $tweets;
+
+        return $this;
+    }
+
+    /**
+     * Remove tweets
+     *
+     * @param \ExamBundle\Entity\Tweet $tweets
+     */
+    public function removeTweet(\ExamBundle\Entity\Tweet $tweets)
+    {
+        $this->tweets->removeElement($tweets);
+    }
+
+    /**
+     * Get tweets
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTweets()
+    {
+        return $this->tweets;
     }
 }

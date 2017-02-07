@@ -34,6 +34,12 @@ class Tweet
      * @ORM\Column(name="tweet_text", type="text")
      */
     private $tweetText;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tweets")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
 
     /**

@@ -41,6 +41,11 @@ class User
      * @ORM\Column(name="password", type="string", length=25)
      */
     private $password;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Tweet", mappedBy="user")
+     */
+    private $tweets;
 
 
     /**

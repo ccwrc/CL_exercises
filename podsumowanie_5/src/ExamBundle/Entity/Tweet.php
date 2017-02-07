@@ -34,6 +34,12 @@ class Tweet
      * @ORM\Column(name="tweet_text", type="text")
      */
     private $tweetText;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tweets")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
 
     /**
@@ -90,5 +96,28 @@ class Tweet
     public function getTweetText()
     {
         return $this->tweetText;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \ExamBundle\Entity\User $user
+     * @return Tweet
+     */
+    public function setUser(\ExamBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \ExamBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
