@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class ccwrcController extends Controller {
     
@@ -48,13 +49,21 @@ class ccwrcController extends Controller {
     }
 
     /**
-     * @Route("/createCookie")
+     * @Route("/createCookie/{cookieName}/{cookieValue}/{cookieTime}", requirements={"cookieTime"="\d+"})
+     * @Method("GET")
      */
-    public function createCookieAction()
-    {
-        return $this->render('ExamBundle:ccwrc:create_cookie.html.twig', array(
-            // ...
+    public function createCookieAction(Request $req, $cookieName, $cookieValue, $cookieTime) {
+        $cookie = new Cookie($cookieName, $cookieValue, time() + ($cookieTime * 60));
+
+        $resp = $this->render('ExamBundle:ccwrc:create_cookie.html.twig', array(
+            "cookieName" => $cookieName
         ));
+        $resp->headers->setCookie($cookie);
+
+        return $resp;
+//        $resp = new Response(); - alternatywa
+//        $resp->headers->setCookie($cookie);
+//        $resp->send();
     }
 
     /**
