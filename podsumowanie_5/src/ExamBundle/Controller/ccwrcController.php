@@ -55,13 +55,15 @@ class ccwrcController extends Controller {
      */
     public function createCookieAction(Request $req, $cookieName, $cookieValue, $cookieTime) {
         
-//   alternatywa:    $resp = $this->render('ExamBundle:user:create_cookie.html.twig', [
+//public function createCookieAction($cookieName, $cookieValue, $cookieTime) {
+//    $resp = $this->render('ExamBundle:user:create_cookie.html.twig', [
 //                'cookie' => $cookie,
-//    ]);                     // metoda render ZWRACA obiekt typu Responce wygenerowany za pomocą Twiga
-//    $cookie = new Cookie($cookieName, $cookieValue, time() + $cookieTime);
+//    ]); // metoda render ZWRACA obiekt typu Responce wygenerowany za pomocą Twiga
+//    $cookie = new Cookie($cookieName, $cookieValue, time() + ($cookieTime * 60));
 //
 //    $resp->headers->setCookie($cookie);
 //    return $resp;
+//}  // wersja alternatywna
         
         $cookie = new Cookie($cookieName, $cookieValue, time() + ($cookieTime * 60));
 
