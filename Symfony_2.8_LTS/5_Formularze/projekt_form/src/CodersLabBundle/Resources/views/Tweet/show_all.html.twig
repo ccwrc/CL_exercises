@@ -3,10 +3,10 @@
 {% block title %}CodersLabBundle:Tweet:showAll{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Tweet:showAll page</h1>
+    <h1>Welcome to the Tweet:showAll page</h1>
 
     {% for tweet in tweets %}
-    nazwa: {{ tweet.name }} tekst: {{ tweet.text }} <br/>
+        ({{ tweet.id }})   <b>nazwa:</b> {{ tweet.name }} <b>tekst:</b> {{ tweet.text }} <br/>
     {% else %}
         Brak tweetów w bazie
     {% endfor %}
