@@ -1,0 +1,36 @@
+
+Zadanie A1 – tworzenie projektu
+
+Stwórz nowy projekt o nazwie projekt_form. Następnie:
+
+    Stwórz w nim nowy bundle (o nazwie CL).
+    Usuń AppBundle 
+------------------------------------------------------------------
+Zadanie A2 – Tweet
+
+Wygeneruj model Tweet, który ma zawierać:
+
+    id,
+    nazwę,
+    tekst.
+
+Wygeneruj dla niego Kontroler z następującymi akcjami:
+
+    create,
+    new,
+    showAll.
+
+Póki co napisz akcję showAll, która wyświetli tytuły wszystkich Tweetów w bazie danych.
+-----------------------------------------------------------------
+Zadanie A3 – tworzenie Tweeta
+
+Napisz dla Tweeta następujące akcje:
+
+    new, która ma wyświetlać formularz,
+    create, która ma na podstawie formularza tworzyć nową encję i zapisywać do bazy danych.
+-----------------------------------------------------------------
+Zadanie A4 – modyfikacja Tweeta
+
+Dopisz akcję /update/{id}.
+
+Jeżeli wejdziemy na nią metodą GET, to ma wczytać Tweet o podanym id i następnie wyświetlić do niego formularz do edycji. Jeżeli wejdziemy na nią metodą POST, to powinna zapamiętać wysłane informacje do bazy danych.
