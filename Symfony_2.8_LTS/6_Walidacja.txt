@@ -1,0 +1,33 @@
+Zadanie A1 – tworzenie projektu
+
+Stwórz nowy projekt o nazwie project_validation. Następnie:
+
+    Stwórz w nim nowy bundle (o nazwie CL).
+    Usuń AppBundle.
+-----------------------------------------------------------------------------------
+Zadanie A2 – encja Książka
+
+W projekcie stwórz nową encję Książka, która ma mieć następujące pola i walidacje:
+
+    id,
+    title – napis, co najmniej pięć znaków,
+    rating – float w przedziale od 0.00 do 10.00,
+    description – tekst, maksymalnie 600 znaków,
+    pages – int, większy od 0.
+-----------------------------------------------------------------------------------
+Zadanie A3 – encja Autor
+
+W projekcie stwórz nową encję Autor, która ma mieć następujące pola i walidacje:
+
+    id,
+    name – napis, co najmniej 5 znaków,
+    description – tekst, maksymalnie 600 znaków,
+    age – int, co najmniej 18,
+-----------------------------------------------------------------------------------
+Zadanie A4 – relacje
+
+Połącz stworzone encje relacją wiele do jednego (dwukierunkową). Pamiętaj o wygenerowaniu odpowiednich setterów i getterów dla relacji (użyj do tego konsoli). Pamiętaj o walidacji – w przypadku Książki – Autor musi być nastawiony (nie może być null)!
+-----------------------------------------------------------------------------------
+Zadanie 5 – CRUD
+
+Stwórz kontrolery dla książki i autora. Stwórz w nich wszystkie akcje potrzebne do implementacji CRUD.
