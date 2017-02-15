@@ -128,44 +128,4 @@ class Author
     {
         return $this->age;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->books = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add books
-     *
-     * @param \CodersLabBundle\Entity\Book $books
-     * @return Author
-     */
-    public function addBook(\CodersLabBundle\Entity\Book $books)
-    {
-        $this->books[] = $books;
-
-        return $this;
-    }
-
-    /**
-     * Remove books
-     *
-     * @param \CodersLabBundle\Entity\Book $books
-     */
-    public function removeBook(\CodersLabBundle\Entity\Book $books)
-    {
-        $this->books->removeElement($books);
-    }
-
-    /**
-     * Get books
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getBooks()
-    {
-        return $this->books;
-    }
 }
