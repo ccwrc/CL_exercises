@@ -23,21 +23,21 @@ class Author
 
     /**
      * @var string
-     *
+     * @Assert\MinLength(limit=5, message="Minimalna ilość znaków to {{ limit }}")
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
-     *
+     * @Assert\MaxLength(limit=600, message="Maksymalna ilość znaków to {{ limit }}")
      * @ORM\Column(name="description", type="text")
      */
     private $description;
 
     /**
      * @var int
-     *
+     * @Assert\Min(limit=18, message="Minimalna wartość to {{ limit }}")
      * @ORM\Column(name="age", type="integer")
      */
     private $age;
