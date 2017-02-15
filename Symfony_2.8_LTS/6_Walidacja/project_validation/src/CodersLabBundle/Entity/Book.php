@@ -23,28 +23,29 @@ class Book
 
     /**
      * @var string
-     *
+     * @Assert\MinLength(limit=5, message="Minimum to {{ limit }} znaków")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var float
-     *
+     * @Assert\Range(min="0.00", max="10.00", minMessage="Minimalna wartość to {{ min }}",
+     *  maxMessage="Maksymalna wartość to {{ max }}")
      * @ORM\Column(name="rating", type="float")
      */
     private $rating;
 
     /**
      * @var string
-     *
+     * @Assert\MaxLength(limit=600, message="Maksymalna ilość znaków to: {{ limit }}")
      * @ORM\Column(name="description", type="string", length=600)
      */
     private $description;
 
     /**
      * @var int
-     *
+     * @Assert\Min(limit=0, message="Minimalna wartość to: {{ limit }}")
      * @ORM\Column(name="pages", type="integer")
      */
     private $pages;
