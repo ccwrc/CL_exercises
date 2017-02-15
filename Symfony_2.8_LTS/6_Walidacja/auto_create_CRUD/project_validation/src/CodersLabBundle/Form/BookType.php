@@ -5,6 +5,7 @@ namespace CodersLabBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class BookType extends AbstractType
 {
@@ -13,7 +14,8 @@ class BookType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('rating')->add('description')->add('pages')->add('author')        ;
+        $builder->add('title')->add('rating')->add('description')->add('pages')
+                ->add('author', EntityType::class, ["class" => "CodersLabBundle:Author"]);
     }
     
     /**

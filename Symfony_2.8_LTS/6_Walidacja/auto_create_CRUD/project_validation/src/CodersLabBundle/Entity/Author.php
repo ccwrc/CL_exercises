@@ -168,4 +168,9 @@ class Author
     {
         return $this->books;
     }
+    
+    // chce stringa to ma stringa
+    public function __toString() {
+        return (string) $this->name;
+    }
 }
