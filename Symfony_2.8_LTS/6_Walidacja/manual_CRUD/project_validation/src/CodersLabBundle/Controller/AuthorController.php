@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use CodersLabBundle\Entity\Author;
 
 class AuthorController extends Controller {
-    
+
     /**
      * @Route("/createAuthor")
      */
@@ -60,12 +60,31 @@ class AuthorController extends Controller {
     }
 
     /**
-     * @Route("/editAuthor")
+     * @Route("/editAuthor/{id}")
      */
-    public function editAuthorAction()
-    {
+    public function editAuthorAction(Request $req, $id) {
+        $author = $this->getDoctrine()->getRepository("CodersLabBundle:Author")->find($id);
+        if ($author == null) {
+            throw $this->createNotFoundException("brak id w bazie");
+        }
+        $form = $this->createFormBuilder($author)
+                ->setMethod("POST")
+                ->add("name", "text")
+                ->add("description", "text")
+                ->add("age", "integer")
+                ->add("save", "submit")
+                ->getForm();
+
+        $form->handleRequest($req);
+        if ($form->isValid() && $form->isSubmitted()) {
+            $author = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            return $this->redirectToRoute("coderslab_author_showallauthors");
+        }
+
         return $this->render('CodersLabBundle:Author:edit_author.html.twig', array(
-            // ...
+                    "form" => $form->createView()
         ));
     }
 
