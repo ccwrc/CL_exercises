@@ -7,7 +7,8 @@
 
     {% for author in authors %}
         {{ author.name }} <br/>
-        {{ author.description }} <br/><br/>
+        {{ author.description }} <br/>
+        <a href="{{ path("coderslab_author_editauthor", {"id":author.id}) }}">Edytuj</a> <br/><br/>
     {% else %}
         Brak autorów w bazie
     {% endfor %}
