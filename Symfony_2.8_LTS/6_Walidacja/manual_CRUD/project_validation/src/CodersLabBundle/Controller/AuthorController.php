@@ -5,6 +5,8 @@ namespace CodersLabBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+use CodersLabBundle\Entity\Author;
+
 class AuthorController extends Controller
 {
     /**
@@ -18,12 +20,24 @@ class AuthorController extends Controller
     }
 
     /**
-     * @Route("/showAuthor")
+     * @Route("/showAuthor/{id}")
      */
-    public function showAuthorAction()
-    {
+    public function showAuthorAction($id) {
+        $author = $this->getDoctrine()->getRepository("CodersLabBundle:Author")->find($id);
+
         return $this->render('CodersLabBundle:Author:show_author.html.twig', array(
-            // ...
+                    "author" => $author
+        ));
+    }
+
+    /**
+     * @Route("/showAllAuthors")
+     */
+    public function showAllAuthorsAction() {
+        $authors = $this->getDoctrine()->getRepository("CodersLabBundle:Author")->findAll();
+
+        return $this->render('CodersLabBundle:Author:show_all_authors.html.twig', array(
+                    "authors" => $authors
         ));
     }
 

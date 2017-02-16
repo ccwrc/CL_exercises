@@ -5,14 +5,12 @@
 {% block body %}
     <h1>Welcome to the Author:showAuthor page</h1>
 
-    {{ author.name }} <br/>
-    {{ author.description }} <br>
-    {{ author.age }} <br/> <br/>
-
-    {% for book in author.books %}
-        {{ book.title }}
+    {% for author in authors %}
+        {{ author.name }} <br/>
+        {{ author.description }} <br/><br/>
     {% else %}
-        Autor nie napisał żadnej książki
+        Brak autorów w bazie
     {% endfor %}
 
 {% endblock %}
+
