@@ -1,0 +1,33 @@
+Zadanie A1 – tworzenie projektu
+
+Stwórz nowy projekt o nazwie project_static_user. Następnie:
+
+    Stwórz w nim nowy bundle (o nazwie CL).
+    Usuń AppBundle.
+---------------------------------------------------------------------
+Zadanie A2 – nowy kontroler
+
+W projekcie stwórz kontroler z dwoma akcjami:
+
+    /all,
+    /restricted.
+
+Następnie skonfiguruj Symfony tak, żeby akcja restricted była dostępna tylko po zalogowaniu. Zrób to używając komponentu Security i statycznych użytkowników (wpisanych na stałe do plików konfiguracyjnych).
+---------------------------------------------------------------------
+Zadanie B1 – tworzenie projektu
+
+Stwórz nowy projekt o nazwie project_fos_user. Następnie:
+
+    Stwórz w nim nowy bundle (o nazwie CL).
+    Usuń AppBundle.
+---------------------------------------------------------------------
+Zadanie B2
+
+W nowym projekcie uruchom FosUserBundle. Projekt – póki co – ma dawać następujące możliwości:
+
+    logowania,
+    rejestracji,
+    wylogowywania,
+    edycji swojego konta.
+
+Poza podstawowymi informacjami, które trzyma FosUserBundle, nasz użytkownik powinien jeszcze trzymać swój opis. Spróbuj podmienić widoki na własne (żeby nie używać widoków przygotowanych przez FOS).
