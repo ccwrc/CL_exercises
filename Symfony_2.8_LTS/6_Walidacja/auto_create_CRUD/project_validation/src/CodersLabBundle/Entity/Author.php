@@ -173,4 +173,10 @@ class Author
     public function __toString() {
         return (string) $this->name;
     }
+    
+    /* Chodziło dokładnie o ustawienie EntityType oraz w opcjach podanie atrybutu class.
+W idealnym rozwiązaniu zbędna jest metoda __toString, natomiast w opcjach pola EntityType 
+* brakuje 'choice_label' (patrz z dokumentacji:
+This is the property that should be used for displaying the entities as text in the HTML 
+ element:) */
 }
