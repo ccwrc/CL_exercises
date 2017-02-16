@@ -32,8 +32,8 @@ class Book
 
     /**
      * @var float
-     * @Assert\Range(min="0.00", max="10.00", minMessage="Minimalna wartość to {{ min }}",
-     *  maxMessage="Maksymalna wartość to {{ max }}")
+     * @Assert\Range(min="0.00", max="10.00", minMessage="Minimalna wartość to {{ limit }}",
+     *  maxMessage="Maksymalna wartość to {{ limit }}")
      * @ORM\Column(name="rating", type="float")
      */
     private $rating;

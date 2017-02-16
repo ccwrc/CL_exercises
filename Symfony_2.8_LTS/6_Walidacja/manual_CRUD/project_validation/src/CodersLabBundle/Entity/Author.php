@@ -168,4 +168,8 @@ class Author
     {
         return $this->books;
     }
+    
+    public function __toString() {
+        return (string)  $this->name;
+    }
 }

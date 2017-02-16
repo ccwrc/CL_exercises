@@ -3,5 +3,14 @@
 {% block title %}CodersLabBundle:Book:showAllBooks{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Book:showAllBooks page</h1>
+    <h1>Welcome to the Book:showAllBooks page</h1>
+
+    {% for book in books %}
+        {{ book.title }} <br/>
+        {{ book.description }} <br/>
+        {{ book.author }} <br/><br/>
+    {% else %}
+        Brak książek w bazie
+    {% endfor %}
+
 {% endblock %}
