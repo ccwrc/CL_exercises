@@ -5,7 +5,14 @@ security:
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    admin1:
+                        password: $2y$14$iU8KAIKIq6eucR/7mBz9iuBeJkOiD/5oRIYXOc5GbHrZRuk4HQ6k.
+                        roles: "ROLE_ADMIN"
+                    admin2:
+                        password: $2y$14$/xQRRNAKTn57Su/ab.NWd.pFhSgUrV9AUBTvKE.r3QnPsZO72cTAu
+                        roles: "ROLE_ADMIN"
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -17,8 +24,16 @@ security:
             anonymous: ~
             # activate different ways to authenticate
 
-            # http_basic: ~
+            http_basic: ~
             # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            
+    access_control:
+        - { path: ^/restricted, roles: ROLE_ADMIN }
+        
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 14
