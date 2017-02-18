@@ -1,3 +1,18 @@
+# app/config/config.yml
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: CodersLabBundle\Entity\User
+    from_email:
+        address: ccwrc@ccwrc.pl
+        sender_name: ccwrctest
+    registration:
+        form:
+            type: CodersLabBundle\Form\RegistrationType     
+    profile:
+        form:
+            type: CodersLabBundle\Form\ProfileFormType            
+
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
