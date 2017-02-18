@@ -1,11 +1,11 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-    test przed
-    
+
+    <h3>Logowanie - już po dziedziczeniu</h3><br/>
+
     {{ include('@FOSUser/Security/login_content.html.twig') }}
-    
-    test po
+
 {% endblock fos_user_content %}
 
 
