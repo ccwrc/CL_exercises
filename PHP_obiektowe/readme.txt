@@ -84,7 +84,7 @@ Stwórz klasę HourlyEmployee, która ma reprezentować pracownika któremu prac
     Dziedziczyć po klasie Employee.
     Mieć dodatkową metodę computePayment($hours) która będzie zwracała kwotę do wypłacenia pracownikowi za ilość wyproacowanych godzin.
 -------------------------------------------------------------------------------------------
-Zadanie B3
+Zadanie B4
 
 Stwórz klasę SalariedEmployee, która ma reprezentować pracownika z którym pracodawca ma umowę miesięczną. Klasa ma spełniać następujące wymogi:
 
