@@ -23,8 +23,17 @@
   Wartością numeryczną,
   Wieksza od 0
   Posiadać metodę prontInfo nie przyjmującą żadnych parametrów. Metoda ta ma wyświetlić
- * informację o numerze konta i jego stanie.
- */
+ * informację o numerze konta i jego stanie.  */
+
+/* Zmień kalsę BankAccount w taki sposób żeby konstruktor sam nadawał numer konta bankowego. 
+ * Dla uproszczenia będziemy nadawać kolejne liczby całkowite zaczynając od jedynki. 
+ * Zeby to zrobić:
+    Dodaj do klasy statyczny prywatny atrybut nextAccNumber.
+    Nastaw jego wartość na 1.
+    Zmodyfikuj konstruktor w taki sposób żeby nie przyjmował numeru konta, tylko przypisywał 
+ * wartość atrybutu nextAccNumber do swojego atrybutu number, a nastepnie zwiększał 
+ * nextAccNumber o jeden.
+Przetestuj jak generowane są numery twoich kont.  */
 
 class BankAccount {
 
@@ -33,7 +42,7 @@ class BankAccount {
     static private $nextAccNumber = 1;
 
     public function __construct() {
-// $this->number = $number; przerobka na potrzeby zadania C2
+        // $this->number = $number; przerobka na potrzeby zadania C2
         $this->number = self::$nextAccNumber; //numer konta bedzie wynosil 1
         self::$nextAccNumber++; // i nastepne utworzone konto dzieki ++ zmiennej stat. bedzie mialo inny numer
         $this->cash = 0;
