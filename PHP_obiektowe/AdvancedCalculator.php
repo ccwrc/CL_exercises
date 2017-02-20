@@ -9,6 +9,12 @@
  * operacji ma zapamiętać napis: "root num2 of num1 equals result".
   Pamiętaj o nastawieniu atrybutów klasy Calculator na protected. */
 
+/* Do klasy AdvancedCalculator dopisz:
+    Statyczny atrybut PI, który będzie miał przypisaną wartość 3.14.
+    Statyczną funkcję computeCircleRadius($r) która będzie zwracała pole koła. 
+ * Ta metoda nie będzie dopisywać obliczeń do tablicy (napisz w komentarzu, 
+ * dlaczego nie może tego robić).  */
+
 include_once 'Calculator.php';
 
 class AdvancedCalculator extends Calculator {
