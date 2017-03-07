@@ -46,7 +46,7 @@ W bazie danych o nazwie cinemas_db stwórz następujące tabele:
 
     Załóż odpowiednie atrybuty na pola (np. każde id powinno być kluczem głównym, być automatycznie numerowane).
     Napisz odpowiednie zapytania SQL, używając phpMyAdmin (lub konsoli).
-    W pliku exercise2.php napisz skrypt, który będzie tworzył bazę danych (pamiętaj o stworzeniu i zamknięciu połączenia).
+    Pamiętaj o stworzeniu i zamknięciu połączenia.
     Jeżeli tabela już istnieje, to nie da się jej stworzyć.
 ----------------------------------------------------------------------
 
