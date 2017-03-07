@@ -20,7 +20,7 @@ W bazie danych o nazwie exercises_db stwórz następujące tabele:
 ----------------------------------------------------------------------
 Zadanie A3
 
-Stwórz nową bazę danych o nazwie cinemas_db. Kod MySQL zapisz jako komentarz w pliku exercise1.php. Następnie napisz skrypt PHP, który stworzy połączenie do tej bazy danych.
+Stwórz nową bazę danych o nazwie cinemas_db. Kod MySQL zapisz jako komentarz. Następnie napisz skrypt PHP, który stworzy połączenie do tej bazy danych.
 ----------------------------------------------------------------------
 Zadanie A4
 
