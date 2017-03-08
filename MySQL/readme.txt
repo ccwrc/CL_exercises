@@ -1,3 +1,5 @@
+----------------------------część 1-------------------------------------------------------------------------
+
 Zadanie A1 
 Stwórz nową bazę danych o nazwie exercises_db. Następnie napisz skrypt PHP, który stworzy połączenie do tej bazy danych.
 
@@ -117,19 +119,18 @@ Do skryptu z zadania B4. dopisz link (widoczny przy każdym elemencie wczytanym 
 ----------------------------------------------------------------------
 Zadanie D3
 
-Dodaj do tabeli Film kolumnę trzymającą rating danego filmu (wartość numeryczna z dwoma miejscami po przecinku). Zapytanie dopisz na górze pliku exercise2.php.
+Dodaj do tabeli Film kolumnę trzymającą rating danego filmu (wartość numeryczna z dwoma miejscami po przecinku).
 
 ----------------------------------------------------------------------
 Zadanie D4 
 
 Stwórz miniportal, w którym:
-
     Możemy dodać/usuwać kina, filmy, bilety i płatności.
     Możemy wyświetlać wszystkie kina, wyszukiwać je po nazwie.
     Możemy wyświetlać wszystkie filmy, wyszukiwać je po nazwie lub ratingu.
     Możemy wyświetlać wszystkie płatności, wyszukiwać je po dacie (uwzględnij wyszukiwanie starszych niż/nowszych niż/z danego zakresu/z danej daty).
 
-----------------------------------------------------------------------
+----------------------------------część 2---------------------------------------------------------------
 Zadanie E1
 
 Stwórz nową tabelę UserAddress zawierającą:
