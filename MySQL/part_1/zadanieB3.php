@@ -29,19 +29,17 @@
  * INSERT INTO payment (payment_type, payment_date) VALUES ('transfer', '2016-12-10');
  */
 
-$serverName = "localhost";
-$userName = "root";
-$password = "coderslab";
-$database = "cinemas_db";
-$conn = new mysqli($serverName, $userName, $password, $database);
-
-// dodawanie kina do switcha
-function addCinema($cinemaName, $cinemaAddress, &$message) {
+function createDbConnection() { //podlaczenie do bazy danych
     $serverName = "localhost";
     $userName = "root";
     $password = "coderslab";
     $database = "cinemas_db";
-    $conn = new mysqli($serverName, $userName, $password, $database);
+    return new mysqli($serverName, $userName, $password, $database);
+}
+
+// dodawanie kina do switcha
+function addCinema($cinemaName, $cinemaAddress, &$message) {
+    $conn = createDbConnection();
 
     if ($cinemaName == '') {
         $cinemaName = 'puste pole';
@@ -69,11 +67,7 @@ function addCinema($cinemaName, $cinemaAddress, &$message) {
 
 // dodawanie filmu do switcha    
 function addMovie($movieName, $movieDesc, $movieRating, &$message) {
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "coderslab";
-    $database = "cinemas_db";
-    $conn = new mysqli($serverName, $userName, $password, $database);
+    $conn = createDbConnection();
 
     if ($movieRating < 0 || $movieRating > 10) {
         $message = "Wprowadziłeś błędny rating";
@@ -99,11 +93,7 @@ function addMovie($movieName, $movieDesc, $movieRating, &$message) {
 
 // doddawanie biletu do switcha    
 function addTicket($ticketPrice, $ticketQuantity, &$message) {
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "coderslab";
-    $database = "cinemas_db";
-    $conn = new mysqli($serverName, $userName, $password, $database);
+    $conn = createDbConnection();
 
     if ($ticketPrice < 0) {
         $message = "Wprowadziłeś nieprawidłową cenę";
@@ -129,11 +119,7 @@ function addTicket($ticketPrice, $ticketQuantity, &$message) {
 
 // dodawanie platnosci do switcha    
 function addPayment($paymentType, $paymentDate, &$message) {
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "coderslab";
-    $database = "cinemas_db";
-    $conn = new mysqli($serverName, $userName, $password, $database);
+    $conn = createDbConnection();
 
     if ($conn->connect_error) {
         die("Nieudane połączenie, błąd $conn->error, numer błędu $conn->errno ");
@@ -153,7 +139,7 @@ function addPayment($paymentType, $paymentDate, &$message) {
 }
 
 $message = "Wypełnij pola:";
-
+// i switch
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     switch ($_POST['submit']) {
         case 'cinema':
