@@ -1,4 +1,4 @@
-----------------------------część 1-------------------------------------------------------------------------
+----------------------------część 1-----------------------------------------------------------------------------------------
 
 Zadanie A1 
 Stwórz nową bazę danych o nazwie exercises_db. Następnie napisz skrypt PHP, który stworzy połączenie do tej bazy danych.
@@ -130,7 +130,7 @@ Stwórz miniportal, w którym:
     Możemy wyświetlać wszystkie filmy, wyszukiwać je po nazwie lub ratingu.
     Możemy wyświetlać wszystkie płatności, wyszukiwać je po dacie (uwzględnij wyszukiwanie starszych niż/nowszych niż/z danego zakresu/z danej daty).
 
-----------------------------------część 2---------------------------------------------------------------
+----------------------------------część 2----------------------------------------------------------------------------------
 Zadanie E1
 
 Stwórz nową tabelę UserAddress zawierającą:
