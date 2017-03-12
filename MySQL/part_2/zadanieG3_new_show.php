@@ -33,3 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_cinema'])
 $conn->close();
 $conn = null;
 
+//SELECT * FROM Cinemas 
+//LEFT JOIN show_cm ON Cinemas.id=show_cm.cinema_id
+//LEFT JOIN Movies ON Movies.id=show_cm.movie_id
+//WHERE Movies.id=1;
