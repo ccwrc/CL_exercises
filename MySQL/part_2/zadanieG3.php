@@ -36,7 +36,6 @@ $cinemaSql = "SELECT * FROM Cinemas";
 $cinemaResult = $conn->query($cinemaSql);
 $movieSql = "SELECT * FROM Movies";
 $movieResult = $conn->query($movieSql);
-
 ?>
 <form method="POST" action="zadanieG3_new_show.php">
     <label> Wybierz kino
@@ -82,6 +81,24 @@ echo "<hr/> <b>wszystkie kina mające w repertuarze dany film</b>";
 <input type="submit" value="kliknij">
 </form>
 
+<?php
+// Napisz stronę, na której wypisane są wszystkie filmy wyświetlane w danym kinie
+echo "<hr/> <b>wszystkie filmy wyświetlane w danym kinie</b>";
+?>
+<form method="POST" action="zadanieG3_show_movie.php">
+</label>
+<label> Wybierz kino
+    <select name="cinema_list_id">
+        <option></option>
+        <?php
+        foreach ($cinemaResult as $row) {
+            echo "<option value=" . $row['id'] . ">" . $row['name'] . "</option>";
+        }
+        ?>
+    </select>
+</label>
+<input type="submit" value="kliknij">
+</form>
 
 <?php
 $conn->close();
