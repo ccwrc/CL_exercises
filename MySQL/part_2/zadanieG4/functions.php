@@ -26,3 +26,17 @@ function displayShowingByCinemaId($id, $conn) {
         echo "<br/>";
     }
 }
+
+function showCinemasBymovieId($id, $conn) {
+    $showCinemasSql = "SELECT Cinemas.name as cinema_name FROM Cinemas JOIN show_cm ON "
+            . "show_cm.cinema_id=Cinemas.id LEFT JOIN Movies ON Movies.id=show_cm.movie_id "
+            . "WHERE Movies.id = $id GROUP BY cinema_name ORDER BY cinema_name ASC";
+    $result = $conn->query($showCinemasSql);
+
+    if ($result->num_rows > 0) {
+        echo "<b> Lista kin wyświetlających film: </b><br/>";
+        foreach ($result as $row) {
+            echo $row['cinema_name'] . "<br/>";
+        }
+    }
+}
