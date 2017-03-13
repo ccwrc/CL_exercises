@@ -1,4 +1,5 @@
 <?php
+include 'menu.php';
 include 'connection.php';
 include 'functions.php';
 
@@ -35,6 +36,8 @@ $cinemaResult = $conn->query($cinemaSql);
 $movieSql = "SELECT * FROM Movies";
 $movieResult = $conn->query($movieSql);
 ?>
+
+<h3>dodaj seans</h3>
 
 <form method="POST" action="">
     <label> Wybierz kino

@@ -1,6 +1,5 @@
 <?php
-// zobaczyć wszystkie filmy (w stronie zobaczyć opis, rating + listę kin, która go wyświetla)
-
+include 'menu.php';
 include 'connection.php';
 include 'functions.php';
 
@@ -14,6 +13,8 @@ $conn->query($setEncodingSql);
 
 $showMoviesSql = "SELECT * FROM Movies ORDER BY name ASC";
 $showMoviesResult = $conn->query($showMoviesSql);
+
+echo "<h3>wszystkie filmy</h3>";
 
 if ($showMoviesResult->num_rows > 0) {
 

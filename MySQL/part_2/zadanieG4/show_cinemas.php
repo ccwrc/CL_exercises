@@ -1,6 +1,5 @@
 <?php
-// zobaczyć wszystkie kina (na stronie kina wypisz wszystkie filmy + seanse w tym kinie)
-
+include 'menu.php';
 include 'connection.php';
 include 'functions.php';
 
@@ -14,6 +13,8 @@ $conn->query($setEncodingSql);
 
 $showCinemaSql = "SELECT * FROM Cinemas ORDER BY name ASC";
 $showCinemasResult = $conn->query($showCinemaSql);
+
+echo "<h3>wszystkie kina</h3>";
 
 if($showCinemasResult->num_rows > 0) {
     
