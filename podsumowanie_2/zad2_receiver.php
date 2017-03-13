@@ -33,3 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['userId']) && is_numeric(
 } else {
     echo "Proszę wejść na stronę metodą GET";
 }
+
+$conn->close();
+$conn = null;
