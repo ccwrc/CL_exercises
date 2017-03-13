@@ -12,10 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_cinema'])
     $cinema = $conn->real_escape_string($_POST['add_cinema']);
     $movie = $conn->real_escape_string($_POST['add_movie']);
 
-    if ($conn->connect_error) {
-        die('Błąd połączenia' . $conn->connect_error);
-    }
-
     $newShowSql = "INSERT INTO show_cm (id, cinema_id, movie_id) VALUES (NULL, $cinema, $movie)";
     $result = $conn->query($newShowSql);
 
@@ -23,13 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_cinema'])
         echo "Utworzyłeś nowy seans o ID " . $conn->insert_id;
     }
 }
-
-if ($conn->connect_error) {
-    die('Błąd połączenia' . $conn->connect_error);
-}
-
-$setEncodingSql = "SET CHARSET utf8";
-$conn->query($setEncodingSql);
 
 $cinemaSql = "SELECT * FROM Cinemas";
 $cinemaResult = $conn->query($cinemaSql);

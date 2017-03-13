@@ -5,12 +5,6 @@ include 'functions.php';
 
 $conn = connectToCinemaDb();
 
-if ($conn->connect_error) {
-    die('Błąd połączenia' . $conn->connect_error);
-}
-$setEncodingSql = "SET CHARSET utf8";
-$conn->query($setEncodingSql);
-
 $showMoviesSql = "SELECT * FROM Movies ORDER BY name ASC";
 $showMoviesResult = $conn->query($showMoviesSql);
 

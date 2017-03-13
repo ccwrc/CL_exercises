@@ -5,12 +5,6 @@ include 'functions.php';
 
 $conn = connectToCinemaDb();
 
-if ($conn->connect_error) {
-    die('Błąd połączenia' . $conn->connect_error);
-}
-$setEncodingSql = "SET CHARSET utf8";
-$conn->query($setEncodingSql);
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['movie_name'] != '' 
         && $_POST['movie_description'] != '' && is_numeric($_POST['movie_rating'])) {
 
