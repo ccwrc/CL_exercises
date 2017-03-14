@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4deb1+deb.cihar.com~xenial.1
+-- version 4.6.6deb1+deb.cihar.com~xenial.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 01 Wrz 2016, 21:09
--- Wersja serwera: 5.7.13-0ubuntu0.16.04.2
--- Wersja PHP: 7.0.8-0ubuntu0.16.04.2
+-- Generation Time: Mar 14, 2017 at 05:21 PM
+-- Server version: 5.7.17-0ubuntu0.16.04.1
+-- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `exam_2`
+-- Database: `exam`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `Items`
+-- Table structure for table `Destinations`
+--
+
+CREATE TABLE `Destinations` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `address` text COLLATE utf8_polish_ci,
+  `lat` decimal(13,10) DEFAULT NULL,
+  `my_long` decimal(13,10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Items`
 --
 
 CREATE TABLE `Items` (
@@ -34,7 +48,7 @@ CREATE TABLE `Items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `Items`
+-- Dumping data for table `Items`
 --
 
 INSERT INTO `Items` (`id`, `name`, `description`, `price`) VALUES
@@ -47,12 +61,35 @@ INSERT INTO `Items` (`id`, `name`, `description`, `price`) VALUES
 (7, 'Test item 7', 'Description for test item 7', 43.60),
 (8, 'Test item 8', 'Description for test item 8', 1.50),
 (9, 'Test item 9', 'Description for test item 9', 73.90),
-(10, 'Test item 10', 'Description for test item 10', 67.80);
+(10, 'Test item 10', 'Description for test item 10', 67.80),
+(11, 'nejm', 'desc', 1111.00),
+(12, 'wew', 'wew', 1111.00),
+(13, '2222', '2222', 22.00),
+(14, '1111', '11111111', 11.00);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `Messages`
+-- Table structure for table `items_orders`
+--
+
+CREATE TABLE `items_orders` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Dumping data for table `items_orders`
+--
+
+INSERT INTO `items_orders` (`id`, `item_id`, `order_id`) VALUES
+(1, 2, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Messages`
 --
 
 CREATE TABLE `Messages` (
@@ -62,7 +99,7 @@ CREATE TABLE `Messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `Messages`
+-- Dumping data for table `Messages`
 --
 
 INSERT INTO `Messages` (`id`, `user_id`, `message`) VALUES
@@ -74,7 +111,7 @@ INSERT INTO `Messages` (`id`, `user_id`, `message`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `Orders`
+-- Table structure for table `Orders`
 --
 
 CREATE TABLE `Orders` (
@@ -83,7 +120,7 @@ CREATE TABLE `Orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `Orders`
+-- Dumping data for table `Orders`
 --
 
 INSERT INTO `Orders` (`id`, `description`) VALUES
@@ -96,12 +133,14 @@ INSERT INTO `Orders` (`id`, `description`) VALUES
 (7, 'Description for test order 7'),
 (8, 'Description for test order 8'),
 (9, 'Description for test order 9'),
-(10, 'Description for test order 10');
+(10, 'Description for test order 10'),
+(11, 'Przykładowy opis 1'),
+(12, 'Przykładowy opis 1');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `Users`
+-- Table structure for table `Users`
 --
 
 CREATE TABLE `Users` (
@@ -112,7 +151,7 @@ CREATE TABLE `Users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `Users`
+-- Dumping data for table `Users`
 --
 
 INSERT INTO `Users` (`id`, `username`, `email`, `password`) VALUES
@@ -127,14 +166,29 @@ INSERT INTO `Users` (`id`, `username`, `email`, `password`) VALUES
 (18, 'Test user 9', 'test9@test.pl', '$2y$10$vAfwssehdA/cxwUfTjQ.HulyX8aeZKP1c0fXvEg4KSwMJrkoANH0.');
 
 --
--- Indeksy dla zrzutów tabel
+-- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `Destinations`
+--
+ALTER TABLE `Destinations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `Items`
 --
 ALTER TABLE `Items`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `items_orders`
+--
+ALTER TABLE `items_orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `order_id` (`order_id`);
 
 --
 -- Indexes for table `Messages`
@@ -160,31 +214,54 @@ ALTER TABLE `Users`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `Items`
+-- AUTO_INCREMENT for table `Destinations`
+--
+ALTER TABLE `Destinations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `Items`
 --
 ALTER TABLE `Items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
--- AUTO_INCREMENT dla tabeli `Messages`
+-- AUTO_INCREMENT for table `items_orders`
+--
+ALTER TABLE `items_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `Messages`
 --
 ALTER TABLE `Messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT dla tabeli `Orders`
+-- AUTO_INCREMENT for table `Orders`
 --
 ALTER TABLE `Orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT dla tabeli `Users`
+-- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
--- Ograniczenia dla zrzutów tabel
+-- Constraints for dumped tables
 --
 
 --
--- Ograniczenia dla tabeli `Messages`
+-- Constraints for table `Destinations`
+--
+ALTER TABLE `Destinations`
+  ADD CONSTRAINT `Destinations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
+
+--
+-- Constraints for table `items_orders`
+--
+ALTER TABLE `items_orders`
+  ADD CONSTRAINT `items_orders_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `Items` (`id`),
+  ADD CONSTRAINT `items_orders_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `Orders` (`id`);
+
+--
+-- Constraints for table `Messages`
 --
 ALTER TABLE `Messages`
   ADD CONSTRAINT `Messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
