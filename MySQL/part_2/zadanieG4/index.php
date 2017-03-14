@@ -1,5 +1,5 @@
 <?php
-include 'menu.php';
+include 'src/menu.php';
 /* Stwórz aplikację, na której można:
 
 zobaczyć wszystkie filmy (w stronie filmu zobaczyć opis, rating + listę kin, która go wyświetla),

@@ -1,7 +1,7 @@
 <?php
-include 'menu.php';
-include 'connection.php';
-include 'functions.php';
+include 'src/menu.php';
+include 'src/connection.php';
+include 'src/functions.php';
 
 $conn = connectToCinemaDb();
 
