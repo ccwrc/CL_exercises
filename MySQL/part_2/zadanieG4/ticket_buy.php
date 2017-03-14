@@ -9,6 +9,9 @@ JOIN show_cm ON Cinemas.id=show_cm.cinema_id
 JOIN Movies ON Movies.id=show_cm.movie_id";
 
 $result = $conn->query($sql);
+
+$conn->close();
+$conn = null;
 ?>
 
 <h3>Kup bilet na seans</h3>
