@@ -10,11 +10,11 @@ $date = date('Y-m-d');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['show_id'] != '' && is_numeric($_POST['show_id'])) {
 
-    $showId = $_POST['show_id'];
+    $showId = $_POST['show_id'];   
 
     $sql = "INSERT INTO `Tickets` (`id`, `quantity`, `price`, `show_id`) "
-            . "VALUES (NULL, '1', '10', '$showId')";
-    $result = $conn->query($sql);
+            . "VALUES (NULL, 1, 10, $showId)";   
+    $result = $conn->query($sql);    
     if ($result) {
         $message = "Bilet zakupiony, wybierz płatność: ";
         $_SESSION['ticket_id'] = $conn->insert_id;

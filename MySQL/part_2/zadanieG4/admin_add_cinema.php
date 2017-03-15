@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['cinema_name'] != ''
     
     $cinemaName = $conn->real_escape_string($_POST['cinema_name']);
     $cinemaAddress = $conn->real_escape_string($_POST['cinema_address']);
-    // mozna dodac sprawdzanie dlugosci i sanityzacje kodu
+    // mozna ew. dodac sprawdzanie dlugosci i sanityzacje kodu
 
     $sql = "INSERT INTO `Cinemas` (`id`, `name`, `adress`) VALUES "
             . "(NULL, '$cinemaName', '$cinemaAddress')";
