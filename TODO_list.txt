@@ -1,2 +1,10 @@
 MySQL - dokończyć zadanie D4
 
+JavaScript - całość
+
+podsumowanie_3 - całość
+
+podsumowanie_4 - całość
+
+PHP_zaawansowane - uzupełnić readme + całość
+
