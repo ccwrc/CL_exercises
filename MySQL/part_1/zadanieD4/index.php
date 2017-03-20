@@ -12,6 +12,13 @@
 <a href="add_movie.php">dodaj film</a> | 
 <a href="add_ticket.php">dodaj bilet</a> | 
 <a href="add_payment.php">dodaj płatność</a> | 
+<a href="show_all.php">wyświetl kina/bilety/filmy/płatności</a> 
+
+<br/><br/>
+
+<a href="search_cinema.php">wyszukaj kino</a> | 
+<a href="search_movie.php">wyszukaj film</a> | 
+<a href="add_payment.php">wyszukaj płatność</a> 
 
 <br/><br/>
 
