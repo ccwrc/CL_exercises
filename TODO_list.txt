@@ -6,5 +6,9 @@ podsumowanie_3 - całość
 
 podsumowanie_4 - całość
 
-PHP_zaawansowane - uzupełnić readme + całość
+PHP_zaawansowane - całość
+
+PHP_TDD - całość
+
+HTML_CSS - całość
 

@@ -6,3 +6,9 @@
     Możemy wyświetlać wszystkie płatności, wyszukiwać je po dacie (uwzględnij 
  * wyszukiwanie starszych niż/nowszych niż/z danego zakresu/z danej daty). */
 
+?>
+<!-- menu -->
+<a href="add_cinema.php">dodaj kino</a> | 
+
+
+
