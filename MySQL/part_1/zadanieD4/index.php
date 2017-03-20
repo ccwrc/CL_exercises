@@ -9,6 +9,11 @@
 ?>
 <!-- menu -->
 <a href="add_cinema.php">dodaj kino</a> | 
+<a href="add_movie.php">dodaj film</a> | 
+<a href="add_ticket.php">dodaj bilet</a> | 
+<a href="add_payment.php">dodaj płatność</a> | 
+
+<br/><br/>
 
 
 
