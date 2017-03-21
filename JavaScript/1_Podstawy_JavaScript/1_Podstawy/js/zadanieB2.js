@@ -1,11 +1,12 @@
-/**
- * Created by Jacek on 2016-01-11.
- */
 
 
 function canCreateTriagle(a, b, c) {
     // Do liczb odwołuj się przez zmienne a, b i c.
     // Pamiętaj o zwróceniu poprawnych danych (return true albo return false).
+    if (a+b>c && b+c>a && c+a>b) {
+        return true;
+    }
+    return false;
 }
 
 console.log("z liczb 5, 6, 4 można stworzyć trójkąt (powinno zwrócić true) " + canCreateTriagle(5, 6, 4));
