@@ -18,7 +18,7 @@
 
 <a href="search_cinema.php">wyszukaj kino</a> | 
 <a href="search_movie.php">wyszukaj film</a> | 
-<a href="add_payment.php">wyszukaj płatność</a> 
+<a href="search_payment.php">wyszukaj płatność</a> 
 
 <br/><br/>
 
