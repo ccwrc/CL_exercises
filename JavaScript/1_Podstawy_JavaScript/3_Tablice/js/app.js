@@ -66,6 +66,48 @@ function printTable(array) {
     }
 }
 
+/* Zadanie B3
+Napisz funkcję factors, która ma przyjmować tylko jeden argument – liczbę, która musi być większa 
+od 0. Funkcja ta ma zwracać tablicę zawierającą wszystkie dzielniki podanej liczby
+ (w kolejności malejącej). Jeżeli liczba jest mniejsza lub równa 0, to funkcja ma zwracać 
+ pustą tablicę.
+
+factors(2) => [2, 1]
+factors(54) => [54, 27, 18, 9, 6, 3, 2, 1]
+factors(-4) => []    */
+
+function factors(number) {
+    var array = [];
+    if (number <= 0) {
+        return array;
+    }
+    for (var i = 1; i <= number; i++) {
+        if ((number % i) === 0) {
+            array.unshift(i);
+        }
+    }
+    return array;
+}
+
+/* B4
+ * Napisz funkcję getMissingElement, która ma przyjmować tylko jeden argument – tablicę 
+ * zawierającą rosnące liczby całkowite. Funkcja ta ma zwracać brakującą liczbę 
+ * (czyli miejsca, w którym tablica skacze o dwa zamiast o jeden). Jeżeli w tablicy nie ma 
+ * brakujących liczb, to funkcja ma zwracać null.
+
+getMissingElement([1,2,3,4,5,6,7]) => null
+getMissingElement([6,7,8,10,11,12,13,14,15]) => 9
+getMissingElement([-4,-3,-2,0,1,2,3,4]]) => -1     */
+
+function getMissingElement(array) { 
+    
+    for (var i = 0; i < array.length; i++) {
+        if (array[i+1]-array[i] > 1 ) {
+            return array[i]+1;
+        }
+    }
+    return null;
+}
 
 
 
