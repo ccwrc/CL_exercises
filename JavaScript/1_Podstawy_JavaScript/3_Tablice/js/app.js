@@ -109,9 +109,29 @@ function getMissingElement(array) {
     return null;
 }
 
+/* Zadanie B5 
+Stwórz tablicę zawierającą w w każdej komórce rok urodzenia. Następnie napisz funkcję, która 
+przyjmie tę tablicę jako argument i wyświetli:
 
+    rok urodzenia najstarszej osoby i jej wiek,
+    rok urodzenia najmłodszej osoby i jej wiek. Użyj pętli do iteracji tablicy, ale postaraj się
+     pobierać elementy metodą pop lub shift.  */
 
+function ageOfBirth(array) {
+    actualDate = new Date();
+    actualYear = actualDate.getFullYear();
+    array = array.sort((a,b) => a-b);
 
+    var rookieYear = array.pop()
+    var rookieAge = actualYear - rookieYear;
+    console.log("rookie: " + rookieYear + " obecny wiek: " + rookieAge);
+
+    var oldieYear = array.shift()
+    var oldieAge = actualYear - oldieYear;
+    console.log("oldie: " + oldieYear + " obecny wiek: " + oldieAge);
+}
+
+ageOfBirth([1978, 2010]);
 
 
 
