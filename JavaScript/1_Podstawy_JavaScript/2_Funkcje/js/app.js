@@ -56,3 +56,23 @@ Opis może przyjmować następujące wartości: "Bardzo dobra obsluga" => 25% na
 Przykład:
 input -> 100, "Bardzo dobra obsluga"
 output -> 25     */
+
+function calculateTip(amount, rating) {
+    switch (rating) {
+        case "Bardzo dobra obsluga": //wrazliwy na wielkosc liter
+            console.log(amount * 0.25);
+            break;
+        case "Dobra obsluga":
+            console.log(amount * 0.2);
+            break;
+        case "Srednia obsluga":
+            console.log(amount * 0.15);
+            break;
+        case "Zla obsluga":
+            console.log(0);
+            break;
+        default:
+            console.log("Opis nieczytelny");
+    }
+}
+// calculateTip(100, "Sredni obsluga");
