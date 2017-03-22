@@ -40,3 +40,53 @@ function distFromAvarage(array) {
     }
     console.log(diff);
 }
+
+/* Zadanie B1
+Stwórz tablicę z listą swoich ulubionych owoców. Następnie:
+    Wypisz pierwszy owoc w konsoli.
+    Wypisz ostatni owoc w konsoli (skorzystaj z atrybutu length).
+    W pętli wypisz wszystkie owoce (skorzystaj z atrybutu length).  */
+
+var owoce = ["grusz", "jabk", "pomaran", "mandar", "sliwa", "granat"];
+function fruits(array) {
+    console.log("pierwszy: " + array[0]);
+    console.log("ostatni: " + owoce[array.length - 1]);
+    for (var i = 0; i < array.length; i++) {
+        console.log(array[i]);
+    }
+}
+
+/* Zadanie B2
+Napisz funkcję printTable(array), która przyjmuje tylko jeden parametr – tablicę. Następnie przy
+ pomocy pętli for przeiteruj (przejdź) po każdym elemencie i wypisz każdy z nich w konsoli. */
+
+function printTable(array) {
+    for (var i = 0; i < array.length; i++) {
+        console.log(array[i]);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
