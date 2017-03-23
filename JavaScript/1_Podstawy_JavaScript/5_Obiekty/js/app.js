@@ -17,6 +17,7 @@ var funnyTextWithSpace = "Javascript jest super".upperLower();
 output ->
 jAvAsCrIpT jEsT sUpEr */ 
 
+// ponizsza wersja zlicza spacje jako znaki
 String.prototype.upperLower = function () {
     var newText = "";
     for (var i = 0; i < this.length; i++) {
@@ -28,5 +29,138 @@ String.prototype.upperLower = function () {
     }
     return newText;
 };
+
+// a ponizsza wersja radzi sobie ze spacjami
+String.prototype.upperLowerNew = function () {
+    var newText = "";
+    var count = 0;
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] === " ") {
+            count = 1;
+        }
+        if (count % 2 === 0) {
+            newText += this[i].toLowerCase();
+            count++;
+        } else {
+            newText += this[i].toUpperCase();
+            count++;
+        }
+    }
+    return newText;
+};
+
+/* Zadanie 2
+Stwórz obiekt samochód, utwórz dla niego odpowiednie atrybuty i metody.
+Atrybuty:
+
+    markę,
+    kolor,
+    liczbę przejechanych kilometrów (na początku 0).
+
+Metody:
+
+    printCarinfo() – metoda powinna wypisywać informacje o samochodzie (kolor, markę i 
+    liczbę przejechanych kilometrów).
+    drive(km) – która dodaje do przejechanych kilometrów podaną wartość. Użyj słowa kluczowego 
+    this, żeby odwołać się do obiektu w środku metody. */
+
+var Car = function(color, brand) {
+    this.color = color;
+    this.brand = brand;
+    this.course = 0;
+    
+    Car.prototype.printCarInfo = function() {
+        console.log("kolor: " + this.color);
+        console.log("marka: " + this.brand);
+        console.log("przebieg: " + this.course);
+    };
+    
+    Car.prototype.drive = function(km) {
+        this.course += km;
+    };
+};
+
+
+var demoCar = {
+    color: "szary",
+    brand: "zwykła marka",
+    course: 300,
+    
+    printCarInfo: function() {
+        console.log(this.color);
+        console.log(this.brand);
+        console.log(this.course);
+    },
+    
+    drive: function(km) {
+        this.course += km;
+    }
+};
+
+/* Zadanie 3
+Do obiektu samochód z zadania 2. dodaj tablicę z listą dat przeglądów (niech będą to 
+zwykłe napisy). Dodaj ten nowy atrybut poza ciałem obiektu. Dodaj też następujące metody:
+
+    metodę dodającą wpis do tej tablicy,
+    metodę wyświetlającą wszystkie przeglądy samochodu.
+
+Użyj słowa kluczowego this, żeby odwołać się do obiektu w środku metody. */
+
+Car.prototype.reviewDate = [];
+
+Car.prototype.addReviewDate = function(date) {
+    this.reviewDate.push(date);
+};
+
+Car.prototype.showAllReviews = function() {
+    for (var i = 0; i < this.reviewDate.length; i++) {
+        console.log(this.reviewDate[i]);
+    }
+};
+
+/* Zadanie 5
+Stwórz konstruktor dla obiektów Rectangle, który będzie przyjmować informację na temat długości
+ i szerokości nowo stworzonej figury. Następnie przy pomocy prototypu klasy dodaj do niej 
+ następujące metody:
+
+    getArea() – metoda ma zwracać pole powierzchni,
+    getPerimiter() – metoda ma zwracać obwód.
+
+Stwórz kilka obiektów i zobacz, czy metody działają tak jak powinny. */
+
+
+
+
+
+
+
+/* - wyswietla komunikat po 5 sekundach
+var timeout = setTimeout(function () {
+    console.log("wywolanie po 5 sek");
+}, 5000); // tu czas w ms
+
+console.log("timer id " + timeout);
+// clearTimeot(timeout) - kas czasu
+*/
+
+/* wywolanie funkcji co 3 sekundty
+var interval = setInterval(function () {
+    console.log('jestem co 3sek');
+}, 3000);
+   
+console.log(interval);
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
