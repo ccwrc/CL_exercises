@@ -80,8 +80,8 @@ var Car = function(color, brand) {
     };
 };
 
-
-var demoCar = {
+// ponizej tylko test
+var demoCar = { 
     color: "szary",
     brand: "zwykła marka",
     course: 300,
@@ -128,28 +128,27 @@ Stwórz konstruktor dla obiektów Rectangle, który będzie przyjmować informac
 
 Stwórz kilka obiektów i zobacz, czy metody działają tak jak powinny. */
 
+var Rectangle = function(length, width) {
+    this.length = length;
+    this.width = width;
+    
+    Rectangle.prototype.getArea = function() {
+        return (this.length * this.width);
+    };
+    
+    Rectangle.prototype.getPermimeter = function() {
+        return (2*this.length + 2*this.width);
+    };
+};
+//var prosto = new Rectangle(2,3);
+//console.log(prosto);
+//console.log(prosto.getArea());
+//console.log(prosto.getPermimeter());
 
 
 
 
 
-
-/* - wyswietla komunikat po 5 sekundach
-var timeout = setTimeout(function () {
-    console.log("wywolanie po 5 sek");
-}, 5000); // tu czas w ms
-
-console.log("timer id " + timeout);
-// clearTimeot(timeout) - kas czasu
-*/
-
-/* wywolanie funkcji co 3 sekundty
-var interval = setInterval(function () {
-    console.log('jestem co 3sek');
-}, 3000);
-   
-console.log(interval);
- */
 
 
 
