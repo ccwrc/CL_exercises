@@ -1,24 +1,27 @@
-/**
- * Funkcje wyższego rzędu.
+/**Funkcje wyższego rzędu.
  * Prześledź krok po kroku każdą linijkę kodu. Każdą!
  * Spróbuj napisać komentarze dla każdej z linijek kodu
- */
+ * 
+ * Zadanie 3
+Zajrzyj do pliku zadanie03.js i przetestuj działanie funkcji sortArray. Aby potwierdzić 
+zrozumienie tematu spróbuj napisać komentarz przy każdej z linii kodu.  */
 
-//Twój komentarz ...
+
+//deklaracja funkcji, ktora nie przyjmuje zadnych argumentow
 function sortArray() {
 
-    //Twój komentarz ...
+    //deklaracja zmiennej - tablica + jej wypelnienie
     var points = [41, 3, 6, 1, 114, 54, 64];
 
-    //Twój komentarz ...
+    //wywolanie na tablicy funkcji sortujacej...
     points.sort(function(a, b) {
-        //Twój komentarz ...
+        //wg. schematu a-b, czyli rosnaco (b-a byloby malejaco)
         return a-b;
     });
 
-    //Twój komentarz ...
+    //zwrot juz posortowanej tablicy
     return points;
 }
 
-//Twój komentarz ...
+//zwykle wywolanie funkcji
 sortArray();
