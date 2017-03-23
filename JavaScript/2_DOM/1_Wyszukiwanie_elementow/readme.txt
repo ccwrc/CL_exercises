@@ -8,7 +8,7 @@ Zadanie 1
     Wyszukaj na stronie i zapisz do odpowiednio nazwanej zmiennej tag article o klasie first.
     W kolejnym etapie:
 
-    wypisz w konsoli, ile elementów h1 znajduje się w tym tagu.
+    wypisz w konsoli, ile elementów h2 znajduje się w tym tagu.
     wyszukaj w nim wszystkie elementy o klasie oferts, przeiteruj je i wypisz je w konsoli,
     wyszukaj w nim wszystkie elementy div, przeiteruj je i wypisz je w konsoli.
 
