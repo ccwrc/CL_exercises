@@ -145,8 +145,68 @@ var Rectangle = function(length, width) {
 //console.log(prosto.getArea());
 //console.log(prosto.getPermimeter());
 
+/* Zadanie 6
+Stwórz konstruktor dla obiektów Calculator. Konstruktor ma nie przyjmować żadnych danych. 
+Każdy nowo stworzony obiekt powinien mieć pustą tablicę, w której będzie trzymać historię 
+wywołanych operacji. Następnie przy pomocy prototypu klasy dodaj do niej następujące metody:
 
+    add(num1, num2) – metoda ma dodać do siebie dwie zmienne i zwrócić wynik. Dodatkowo w tablicy 
+    operacji ma zapamiętać napis: "added num1 to num2 got result" (oczywiście z wartościami 
+    zmiennych podstawionymi w odpowiednie miejsce).
 
+    multiply(num1, num2) – metoda ma pomnożyć przez siebie dwie zmienne i zwrócić wynik. 
+    Dodatkowo w tablicy operacji ma zapamiętać napis: "multiplied num1 with num2 got result" 
+    (oczywiście z wartościami zmiennych podstawionymi w odpowiednie miejsce).
+
+    subtract(num1, num2) – metoda ma odjąć od siebie dwie zmienne i zwrócić wynik. Dodatkowo 
+    w tablicy operacji ma zapamiętać napis: "subtracted num1 from num2 got result" 
+    (oczywiście z wartościami zmiennych podstawionymi w odpowiednie miejsce).
+
+    divide(num1, num2) – metoda ma podzielić przez siebie dwie zmienne i zwrócić wynik. 
+    Dodatkowo w tablicy operacji ma zapamiętać napis: "divided num1 by num2 got result" 
+    (oczywiście z wartościami zmiennych podstawionymi w odpowiednie miejsce).
+
+    printOperations() – metoda ma wypisać wszystkie operacje zapamiętane w pamięci.
+
+    clearoperations() – metoda ma wyczyścić wszystkie operacje z pamięci.  */
+
+var Calculator = function() {
+    this.historyOperation = [];
+    
+    Calculator.prototype.add = function(num1, num2) {
+        var result = num1 + num2;
+        this.historyOperation.push("subtracted " + num1 + " from " + num2 + " got " + result);
+        return result;
+    };
+    
+    Calculator.prototype.multiply = function(num1, num2) {
+        var result = num1 * num2;
+        this.historyOperation.push("multiplied " + num1 + " with " + num2 + " got " + result);
+        return result;
+    };
+    
+    Calculator.prototype.subtract = function(num1, num2) {
+        var result = num1 - num2;
+        this.historyOperation.push("subtracted " + num1 + " from " + num2 + " got " + result);
+        return result;
+    };
+    
+    Calculator.prototype.divide = function(num1, num2) {
+        var result = num1 / num2;
+        this.historyOperation.push("divided " + num1 + " by " + num2 + " got " + result);
+        return result;
+    };
+    
+    Calculator.prototype.printOperations = function() {
+        for (var i = 0; i < this.historyOperation.length; i++) {
+            console.log(this.historyOperation[i]);
+        }
+    };
+    
+    Calculator.prototype.clearOperations = function() {
+        this.historyOperation = [];
+    };
+};
 
 
 
