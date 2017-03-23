@@ -13,9 +13,9 @@ function sortArray() {
     //deklaracja zmiennej - tablica + jej wypelnienie
     var points = [41, 3, 6, 1, 114, 54, 64];
 
-    //wywolanie na tablicy funkcji sortujacej...
+    //wywolanie na tablicy funkcji sortujacej numerycznie...
     points.sort(function(a, b) {
-        //wg. schematu a-b, czyli rosnaco (b-a byloby malejaco)
+        //...wg. schematu a-b, czyli rosnaco (b-a byloby malejaco)
         return a-b;
     });
 
