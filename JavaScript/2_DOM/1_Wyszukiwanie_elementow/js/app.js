@@ -54,5 +54,21 @@ var idHome3 = document.querySelector("#home"); // 3 sposob
 var firstLiWithoutData = document.querySelector("nav ul li:not([data-direction])");
 var firstElWithBlockClass = document.querySelector(".block");
 
+/* Zadanie 4
+Wyszukaj na stronie następujące elementy i zapisz je do odpowiednio nazwanych zmiennych:
+    Wszystkie elementy li znajdujące się w tagu nav.
+    Wszystkie paragrafy należące do wszystkich elementów div.
+    Wszystkie divy znajdujące się w tagu article.
+Pamiętaj, żeby za każdym razem sprawdzić, czy wczytałeś odpowiednie elementy. 
+Pamiętaj, żeby używać funkcji, które wyszukują wiele elementów. Za każdym razem 
+wypisz w konsoli, ile znalazłeś elementów. */
+
+var allLiInNavTag = document.querySelectorAll("nav li");
+console.log("allLiInNavTag: " + allLiInNavTag.length);
+var allParagraphsInDivs = document.querySelectorAll("div p");
+console.log("allParagraphsInDivs: " + allParagraphsInDivs.length);
+var allDivsInArticle = document.querySelectorAll("article div");
+console.log("allDivsInArticle: " + allDivsInArticle.length);
+
 
 });
