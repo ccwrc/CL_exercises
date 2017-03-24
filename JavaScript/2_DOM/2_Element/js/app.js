@@ -18,6 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
     homeElement.setAttribute("class", homeElementId);
     homeElement.setAttribute("id", homeElementClass);
 
+    /* Zadanie 2 
+     Przeanalizuj kod HTML i JavaScript tego zadania. Wypisz w konsoli wszystkie wcześniej 
+     przygotowane zmienne i ich typy. W przypadku tablic przeiteruj (używając np. pętli 
+     for), wypisując wartość i typ dla każdego elementu, który znajduje się w tablicy. */
+
+    function showElement(element) {
+        if (element.length > 0) {
+            for (var i = 0; i < element.length; i++) {
+                console.log(element[i].tagName);
+                console.log(element[i]);
+            }
+        } else {
+            console.log(element.tagName);
+            console.log(element);
+        }
+    }
+    showElement(homeElement);
+    showElement(childElements);
+    showElement(banner);
+    showElement(blocks);
+    showElement(links);
 
 
 });
