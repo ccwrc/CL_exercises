@@ -12,26 +12,33 @@ document.addEventListener("DOMContentLoaded", function () {
      które wyszukują wiele elementów. Za każdym razem wypisz w konsoli, ile jest znalezionych 
      przez Ciebie elementów. */
 
-    var article = document.querySelector('article.first');
-    console.log(article);
+//    var article = document.querySelector("article.first");
+//    console.log(article);
+//
+//    var searchH2InArticle = article.querySelectorAll("h2");
+//    console.log("ilość h2 w article: " + searchH2InArticle.length);
+//    //alternatywa: article.getElemetsByTagName('h2')
+//
+//    var oferts = article.querySelectorAll(".oferts");
+//    console.log(oferts);
+//    console.log("ilosc znalezionych oferts: " + oferts.length);
+//    for (var i = 0; i < oferts.length; i++) {
+//        console.log(oferts[i]);
+//    }
+//
+//    var divs = article.getElementsByTagName("div");
+//    console.log("ilosc znalezionych divs: " + divs.length);
+//    for (var i = 0; i < divs.length; i++) {
+//        console.log(divs[i]);
+//    }
+    
+    /* Zadanie 2 
+Wyszukaj na stronie i zapisz do zmiennej element o id exercise2, który znajduje się
+ w menu. Skorzystaj z selektora CSS. Nie odwołuj się bezpośredniego do klasy lub id
+  jakiegokolwiek elementu. Użyj selektorów potomków, dzieci, n-tych dzieci itp. */
 
-    var searchH2InArticle = article.querySelectorAll("h2");
-    console.log("ilość h2 w article: " + searchH2InArticle.length);
-    //alternatywa: article.getElemetByTagName('h2')
-
-    var oferts = article.querySelectorAll(".oferts");
-    console.log(oferts);
-    console.log("ilosc znalezionych oferts: " + oferts.length);
-    for (var i = 0; i < oferts.length; i++) {
-        console.log(oferts[i]);
-    }
-
-    var divs = article.getElementsByTagName("div");
-    console.log("ilosc znalezionych divs: " + divs.length);
-    for (var i = 0; i < divs.length; i++) {
-        console.log(divs[i]);
-    }
-
+    var exer2 = document.querySelector("nav ul li:nth-child(5) a");
+    console.log("exer2: " + exer2);
 
 
 });
