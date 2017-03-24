@@ -37,8 +37,22 @@ Wyszukaj na stronie i zapisz do zmiennej element o id exercise2, który znajduje
  w menu. Skorzystaj z selektora CSS. Nie odwołuj się bezpośredniego do klasy lub id
   jakiegokolwiek elementu. Użyj selektorów potomków, dzieci, n-tych dzieci itp. */
 
-    var exer2 = document.querySelector("nav ul li:nth-child(5) a");
-    console.log("exer2: " + exer2);
+//    var exer2 = document.querySelector("nav ul li:nth-child(5) a");
+//    console.log("exer2: " + exer2);
+
+/* Zadanie 3
+Wyszukaj na stronie następujące elementy i zapisz je do odpowiednio nazwanych zmiennych:
+    Element o id home (na dwa sposoby).
+    Pierwszy element li nieposiadający atrybutu data-direction.
+    Pierwszy element o klasie block.
+Pamiętaj, żeby za każdym razem sprawdzić, czy wczytałeś odpowiedni element. Używaj 
+funkcji wyszukujących tylko jeden element. */
+
+var idHome = document.getElementById("home"); // 1 sposob
+var idHome2 = document.querySelector("body header"); // 2 sposob
+var idHome3 = document.querySelector("#home"); // 3 sposob
+var firstLiWithoutData = document.querySelector("nav ul li:not([data-direction])");
+var firstElWithBlockClass = document.querySelector(".block");
 
 
 });
