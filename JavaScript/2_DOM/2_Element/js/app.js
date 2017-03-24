@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
      W pliku js dopisz kod, który zamieni miejscami klasę i id dla elementu znajdującego
      się w zmiennej homeElement */
 
-    var homeElementId = homeElement.getAttribute("id");
-    var homeElementClass = homeElement.getAttribute("class");
-
-    homeElement.setAttribute("class", homeElementId);
-    homeElement.setAttribute("id", homeElementClass);
+//    var homeElementId = homeElement.getAttribute("id");
+//    var homeElementClass = homeElement.getAttribute("class");
+//
+//    homeElement.setAttribute("class", homeElementId);
+//    homeElement.setAttribute("id", homeElementClass);
 
     /* Zadanie 2 
      Przeanalizuj kod HTML i JavaScript tego zadania. Wypisz w konsoli wszystkie wcześniej 
@@ -47,10 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
      strony. */
 
     for (var i = 0; i < blocks.length; i++) {
-        // po przypisaniu stary kod html zostal zastapiony stringiem
+       // po przypisaniu stary kod html zostal zastapiony stringiem
         blocks[i].innerHTML = "Nowa wartość diva o klasie blocks";
         console.log(blocks[i].innerHTML); // tylko wew. html
         console.log(blocks[i].outerHTML); // calosc z zewnetrznym html
     }
+    
+    /* Zadanie 4
+Wypisz w konsoli id elementu kryjącego się w zmiennej homeElement. */
+    
+    console.log(homeElement.getAttribute("id"));
+    console.log(homeElement.id); //sposob drugi
 
 });
