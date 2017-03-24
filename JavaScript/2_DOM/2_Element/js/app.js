@@ -23,22 +23,34 @@ document.addEventListener("DOMContentLoaded", function () {
      przygotowane zmienne i ich typy. W przypadku tablic przeiteruj (używając np. pętli 
      for), wypisując wartość i typ dla każdego elementu, który znajduje się w tablicy. */
 
-    function showElement(element) {
-        if (element.length > 0) {
-            for (var i = 0; i < element.length; i++) {
-                console.log(element[i].tagName);
-                console.log(element[i]);
-            }
-        } else {
-            console.log(element.tagName);
-            console.log(element);
-        }
-    }
-    showElement(homeElement);
-    showElement(childElements);
-    showElement(banner);
-    showElement(blocks);
-    showElement(links);
+//    function showElement(element) {
+//        if (element.length > 0) {
+//            for (var i = 0; i < element.length; i++) {
+//                console.log(element[i].tagName);
+//                console.log(element[i]);
+//            }
+//        } else {
+//            console.log(element.tagName);
+//            console.log(element);
+//        }
+//    }
+//    showElement(homeElement);
+//    showElement(childElements);
+//    showElement(banner);
+//    showElement(blocks);
+//    showElement(links);
 
+    /* Zadanie 3
+     Wypisz w konsoli wartości innerHTML i outerHTML dla elementów zmiennej blocks. 
+     Napisz w komentarzu, czym się od siebie różnią. Nastaw wartość innerHTML na 
+     "Nowa wartość diva o klasie blocks". Przeanalizuj, jak zmienił się kod HTML 
+     strony. */
+
+    for (var i = 0; i < blocks.length; i++) {
+        // po przypisaniu stary kod html zostal zastapiony stringiem
+        blocks[i].innerHTML = "Nowa wartość diva o klasie blocks";
+        console.log(blocks[i].innerHTML); // tylko wew. html
+        console.log(blocks[i].outerHTML); // calosc z zewnetrznym html
+    }
 
 });
