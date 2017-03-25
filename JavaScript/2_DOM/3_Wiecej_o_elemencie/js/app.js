@@ -85,6 +85,29 @@ document.addEventListener("DOMContentLoaded", function () {
     spanColor.innerHTML = "żółtobrązowoczerwnoniebieski";
     spanFood.innerHTML = "kły dzika w sosie sarny";
 
+    /* Zadanie 5
+     Na stronie jest proste menu. Zarówno kod HTML, jak i CSS jest już do niego 
+     przygotowany. Niestety ktoś zapomniał dodać odpowiednie klasy do odpowiednich elementów.
+     Wyszukaj element ul i dodaj mu klasę menu.
+     Wyszukaj wszystkie elementy li i dodaj im klasę menuElement (użyj do tego pętli).
+     Uważaj, żeby nie wykasować klasy selected.
+     Zauważ, że jeden z elementów ma czerwony kolor tekstu. Jest to spowodowane tym,
+     że ma klasę error. Zabierz mu ją (najlepiej, jeżeli zabierzesz tę klasę 
+     wszystkim elementom, które ją mają).  */
+
+    var elementsEx5 = document.querySelector("div.exercise.ex5");
+    elementsEx5.querySelector("ul").classList.add("menu");
+    var allLiToAddClass = elementsEx5.querySelectorAll("li");
+    for (var i = 0; i < allLiToAddClass.length; i++) {
+        allLiToAddClass[i].classList.add("menuElement");
+        allLiToAddClass[i].classList.remove("error");
+    }
+// wersja 2 zadania 5 (forEach jest wolniejsze)
+    document.querySelector("div.exercise.ex5 ul").classList.add("menu");
+    document.querySelectorAll("div.exercise.ex5 li").forEach(function (item) {
+        item.classList.add("menuElement");
+        item.classList.remove("error");
+    });
 
 
 });
