@@ -71,11 +71,19 @@ document.addEventListener("DOMContentLoaded", function () {
     divsEx3[4].querySelector("a").innerText = "Firefox";
     // kod css dopisywany jest bezposrednio w tagach html - jest on nadrzedny nad wszystkimi innymi
 
+    /* Zadanie 4
+     Na stronie jest lista, w której wpisz swoje imię i nazwisko, ulubiony kolor i potrawę.
+     Wyszukaj wszystkie spany i zapisz je do odpowiednich zmiennych.
+     Za pomocą innerHTML wypełnij w nich odpowiednie informacje.  */
 
+    var spanName = document.getElementById("name");
+    // ew. np. document.querySelector("div.exercise.ex4 span#name");
+    var spanColor = document.getElementById("fav_color");
+    var spanFood = document.getElementById("fav_meal");
 
-
-
-
+    spanName.innerHTML = "Funky Koval";
+    spanColor.innerHTML = "żółtobrązowoczerwnoniebieski";
+    spanFood.innerHTML = "kły dzika w sosie sarny";
 
 
 
