@@ -29,5 +29,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /* Zadanie 2
+     W zadaniu (plik index.html) znajduje się prosty formularz z polem wyboru select.
+     Ustaw każdemu elementowi option wartość opisu z atrybutu value. 
+     Dodaj każdemu elementowi atrybut data-year, użyj dataset, ale wynikowa wartość
+     ma być o 20 większa niż w atrybucie value, czyli np. 2020 -> 2040. */
+
+    var selectEx2 = document.querySelector("div.exercise.ex2 select");
+    for (var i = 0; i < selectEx2.options.length; i++) {
+        console.log("text: " + selectEx2.options[i].text);
+        console.log("value: " + selectEx2.options[i].value);
+
+        selectEx2.options[i].text = selectEx2.options[i].value;
+        selectEx2.options[i].dataset.year = parseInt(selectEx2.options[i].value) + 20;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
