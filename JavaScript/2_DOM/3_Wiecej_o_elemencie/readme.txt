@@ -51,7 +51,7 @@ Zadanie 6
 Dodaj do każdego elementu listy atrybut data-id przyjmujący kolejne liczby całkowite (zaczynając od 1). Rozwiąż to zadanie na dwa sposoby:
 
     Używając datasetu.
-    Używając matody setAttribute.
+    Używając metody setAttribute.
 
 
 

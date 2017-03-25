@@ -102,12 +102,29 @@ document.addEventListener("DOMContentLoaded", function () {
         allLiToAddClass[i].classList.add("menuElement");
         allLiToAddClass[i].classList.remove("error");
     }
-// wersja 2 zadania 5 (forEach jest wolniejsze)
+    // wersja 2 zadania 5 (forEach jest wolniejsze)
     document.querySelector("div.exercise.ex5 ul").classList.add("menu");
     document.querySelectorAll("div.exercise.ex5 li").forEach(function (item) {
         item.classList.add("menuElement");
         item.classList.remove("error");
     });
 
+    /*Zadanie 6
+     Dodaj do każdego elementu listy atrybut data-id przyjmujący kolejne liczby
+     całkowite (zaczynając od 1). Rozwiąż to zadanie na dwa sposoby:
+     Używając datasetu.
+     Używając metody setAttribute.  */
+
+    var allLiEx6 = document.querySelectorAll("div.exercise.ex6 li");
+    for (var i = 0; i < allLiEx6.length; i++) {
+        // allLiEx6[i].dataset.id = i+1; // sposob 1
+        allLiEx6[i].setAttribute("data-id", i + 1); // sposob 2
+    }
+    // wersja 2 zadania 6
+    var i = 1;
+    document.querySelectorAll("div.exercise.ex6 li").forEach(function (item) {
+        item.dataset.id = i;
+        item.setAttribute("data-id", i++);
+    });
 
 });
