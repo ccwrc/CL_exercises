@@ -37,22 +37,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var selectEx2 = document.querySelector("div.exercise.ex2 select");
     for (var i = 0; i < selectEx2.options.length; i++) {
-        console.log("text: " + selectEx2.options[i].text);
-        console.log("value: " + selectEx2.options[i].value);
-
+//        console.log("text: " + selectEx2.options[i].text);
+//        console.log("value: " + selectEx2.options[i].value);
         selectEx2.options[i].text = selectEx2.options[i].value;
         selectEx2.options[i].dataset.year = parseInt(selectEx2.options[i].value) + 20;
     }
 
+    /* Zadanie 3
+     Na stronie są trzy obrazki z ikonami najpopularniejszych przeglądarek internetowych.
+     Niestety zarówno obrazki, jak i linki prowadzące do ich stron zawierają błędy. 
+     Napisz kod JavaScript, który wprowadzi następujące zmiany:
+     
+     Poprawi elementy tak, żeby do każdej przeglądarki było podpięte odpowiednie logo 
+     (obrazek jest nastawiany za pomocą background-image).
+     Poprawi linki tak, żeby każdy miał poprawny opis i atrybut href.
+     Poprawi szerokość elementu o klasie chrome (powinno być 100px).
+     
+     Podejrzyj w konsoli, jak wygląda kod CSS dopisany przez JavaScript. Zastanów się,
+     dlaczego dopisywany jest w tym miejscu. Napisz odpowiedź na to pytanie w 
+     komentarzu do zadania. */
 
-
-
-
-
-
-
-
-
+    var divsEx3 = document.querySelectorAll("div.exercise.ex3 div");
+    // console.log(divsEx3);
+    // poprawianie chroma
+    divsEx3[0].querySelector("div.chrome").style.width = "100px";
+    divsEx3[0].querySelector("a").innerText = "Chrome";
+    // poprawianie edzia
+    divsEx3[2].querySelector("div").style.backgroundImage = "url('assets/img/edge.png')";
+    divsEx3[2].querySelector("a").setAttribute("href", "https://www.microsoft.com/pl-pl/windows/microsoft-edge");
+    // poprawa firefoxa
+    divsEx3[4].querySelector("div").style.backgroundImage = "url('assets/img/firefox.png')";
+    divsEx3[4].querySelector("a").setAttribute("href", "https://www.mozilla.org/pl/firefox/new/");
+    divsEx3[4].querySelector("a").innerText = "Firefox";
+    // kod css dopisywany jest bezposrednio w tagach html - jest on nadrzedny nad wszystkimi innymi
 
 
 
