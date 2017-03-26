@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CL</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+
+        Wielkość okna:
+        Szerokość: <span id="windowHeight"></span>
+        Wysokość: <span id="windowWidth"></span>
+
+
+        <script>
+            /* Zadanie 9
+             Na stronie znajdują się dwa elementy pokazujące wielkość okna. Dopisz event do 
+             okna (element window), który spowoduje, że elementy te będą pokazywały poprawne
+             wartości nawet po przeskalowaniu okna. */
+            document.querySelector("#windowHeight").innerText = window.innerHeight;
+            document.querySelector("#windowWidth").innerText = window.innerWidth;
+
+            window.onresize = function (event) {
+                document.querySelector("#windowHeight").innerText = window.innerHeight;
+                document.querySelector("#windowWidth").innerText = window.innerWidth;
+            };
+        </script>
+
+    </body>
+
+</html>
