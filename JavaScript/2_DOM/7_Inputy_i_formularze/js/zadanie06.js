@@ -12,22 +12,27 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    var resultTable = document.querySelector("table.table-bordered");
-    var newTr = document.createElement("tr");
-    var newTdTeam1 = document.createElement("td");
-    var newTdTeam2 = document.createElement("td");
-    var newTdPoints = document.createElement("td");
+    document.querySelector("p button").addEventListener("click", function (e) {
+        var team1 = document.querySelector("#team1").value;
+        var team2 = document.querySelector("#team2").value;
+        var points1 = document.querySelector("#points1").value;
+        var points2 = document.querySelector("#points2").value;
 
-    newTdTeam1.innerText = "bla"
-    newTdTeam2.innerText = "bla1"
-    newTdPoints.innerText = "bla1"
+        if ((team1 !== team2) && (points1 >= 0) && (points2 >= 0)) {
+            var trToClone = document.querySelector("table tbody tr:nth-child(3)");
+            var newTr = trToClone.cloneNode(true);
+            allTd = newTr.querySelectorAll("td");
 
-    var addTd = resultTable.appendChild(newTr);
-    addTd.appendChild(newTdTeam1);
-    addTd.appendChild(newTdTeam2);
-    addTd.appendChild(newTdPoints);
+            allTd[0].innerText = team1;
+            allTd[1].innerText = team2;
+            allTd[2].innerText = points1 + " - " + points2;
+            document.querySelector("table tbody").appendChild(newTr);
 
+            e.preventDefault();
+        } else {
+            e.preventDefault();
+        }
 
-
+    });
 
 });
