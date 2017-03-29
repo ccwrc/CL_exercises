@@ -1,0 +1,29 @@
+#lewy1 {
+    width: 200px;
+    height: 200px;
+    float: left; 
+    border: 1px dotted black;
+    background-color: #00A010; 
+}
+
+#prawy1 {
+    width: 200px;
+    height: 200px;
+    float: right; 
+    border: 1px dotted black;
+    background-color: #D5A010; 
+}
+
+.reset {
+    clear: both; 
+}
+
+.wlinii {
+    display: inline-block;
+    width: 350px;
+    height: 300px;
+    border: 1px dashed grey; 
+    font-size: 40px;
+    color: grey; 
+    font-family: Georgia, Courier New; 	
+}
