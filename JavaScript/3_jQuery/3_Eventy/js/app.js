@@ -20,6 +20,7 @@ $(document).ready(function () {
     button1.on("click", function () {
         console.log("kliknięto mnie");
     });
+    // alt button1.click(function() {console.log('kliknięto mnie')});
 
     button2.one("click", function () {
         console.log("kliknięto mnie, ale już drugi raz nie dam się kliknąć");
@@ -28,8 +29,11 @@ $(document).ready(function () {
     button3.on("click", function () {
         button1.off("click");
         button2.off("click");
-        $(this).off("click");
+        $(this).off("click"); // alt .find('button').off();
     });
+
+
+
 
 
 
