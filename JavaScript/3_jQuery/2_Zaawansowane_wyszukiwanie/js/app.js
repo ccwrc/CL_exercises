@@ -21,7 +21,27 @@ $(document).ready(function () {
         $(this).closest(".cart-item").toggleClass("cart-updated");
     }); // zadanie 1, wersja 2
 
+    /* Zadanie 2
+     Znajdź w pliku index.html element o klasie films, zmień kod następująco:
+     1. Po kliknięciu w przycisk rozwiń, rozwinie się opis filmu.
+     2. Po kliknięciu w przycisk zamknij, zwinie się opis filmu (tylko ten, który chcemy 
+     zwinąć, nie wszystkie).
+     3. Po kliknięciu w zamknij, zwiną się wszystkie opisy.  */
 
+    $(".films").find("a.expand").on("click", function () {
+        event.preventDefault();
+        $(this).parent().next().slideDown("slow");
+    }); // 1
+
+//    $(".films").find("a.close").on("click", function () {
+//        event.preventDefault();
+//        $(this).parent().slideUp("slow"); //.hide();
+//    }); // 2
+
+    $(".films").find("a.close").on("click", function () {
+        event.preventDefault();
+        $(".container").slideUp("slow");
+    }); //3
 
 
 });
