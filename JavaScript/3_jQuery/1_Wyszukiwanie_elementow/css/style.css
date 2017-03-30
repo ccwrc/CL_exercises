@@ -1,3 +1,11 @@
+.redLinks {
+    color: red;
+}
+
+.fontTest4 {
+    font-size: 25px;
+}
+
 /*Style do zadania 2*/
 .borderClass {
    border:1px solid purple;
