@@ -3,7 +3,7 @@
  czy DOM został załadowany. */
 
 $(document).ready(function () {
-    
+
     console.log("DOM załadowany");
 
     /* Zadanie 2 ----------------------------------
@@ -36,20 +36,30 @@ $(document).ready(function () {
 //        $(this).fadeOut(2000);
 //        $(this).fadeIn(2000);
 //    });
-    
-/* Zadanie 4
-Za pomocą jQuery wykonaj następujące operacje:
-    - Wyszukaj wszystkie linki i ustaw im czerwony kolor za pomocą funkcji css().
-    - Zmodyfikuj kod tak, aby kolor czerwony miały linki tylko z menu.
-    - Dodaj klasę redLinks w pliku style.css (ustaw w niej kolor tekstu na czerwony) 
-    i za pomocą addClass nadaj ją elementom li w menu.
-    - Spraw, aby pierwszy element menu miał większy font niż inne. Stwórz odpowiednią 
-    klasę w pliku style.css. Pamiętaj, aby wykonać to w odpowiedniej funkcji.  */    
 
-//$(".menu a").css("color", "red");
-$(".menu a").addClass("redLinks");
-$(".menu a").first().addClass("fontTest4");
+    /* Zadanie 4
+     Za pomocą jQuery wykonaj następujące operacje:
+     - Wyszukaj wszystkie linki i ustaw im czerwony kolor za pomocą funkcji css().
+     - Zmodyfikuj kod tak, aby kolor czerwony miały linki tylko z menu.
+     - Dodaj klasę redLinks w pliku style.css (ustaw w niej kolor tekstu na czerwony) 
+     i za pomocą addClass nadaj ją elementom li w menu.
+     - Spraw, aby pierwszy element menu miał większy font niż inne. Stwórz odpowiednią 
+     klasę w pliku style.css. Pamiętaj, aby wykonać to w odpowiedniej funkcji.  */
 
+    $(".menu a").css("color", "red");
+    $(".menu a").addClass("redLinks");
+    $(".menu a").first().addClass("fontTest4");
+
+    /* Zadanie 5   
+     Sprawdź, czy h1 ma klasę creepyHeader.    
+     Jeśli nie ma – dodaj ją do tego elementu.
+     Jeśli ma – wypisz w konsoli, że nagłówek ma już taką klasę.  */
+
+    if ($("h1").attr("class") === "creepyHeader") {
+        console.log("h1 ma już klasę creepyHeader");
+    } else {
+        $("h1").attr("class", "creepyHeader");
+    }
 
 
 });
