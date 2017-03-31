@@ -77,5 +77,17 @@ $("button.show-hide-btn").on("click", function(e) {
 //
 //        haslo.attr('type', haslo.attr('type') == 'text' ? 'password' : 'text');
 
+/* Zadanie 5
+Po najechaniu kursorem myszy na element w menu wypisz w konsoli tekst "Hura". */
+    
+    $("nav.menu").on("mouseenter", function() {
+        console.log("Hura");
+    }); // alt $('nav.menu').mouseover(function()
+    
+    
+    
+    
+    
+
 
 });
