@@ -32,39 +32,39 @@ $(document).ready(function () {
         $(this).off("click"); // alt .find("button").off();
     });
 
-/* Zadanie 3
-Znajdź w pliku html sekcję o klasie superhero-description, a następnie napisz funkcję, w której:
+    /* Zadanie 3
+     Znajdź w pliku html sekcję o klasie superhero-description, a następnie napisz funkcję, w której:
+     
+     Ukryj domyślnie wszystkie elementy dd.
+     Po kliknięciu w element dt spraw, by elementy dd:
+     
+     rozwijały się, jeśli są ukryte,
+     zwijały się, jeśli są widoczne.  */
 
-    Ukryj domyślnie wszystkie elementy dd.
-    Po kliknięciu w element dt spraw, by elementy dd:
-
-    rozwijały się, jeśli są ukryte,
-    zwijały się, jeśli są widoczne.  */
-    
     //$("dd").fadeOut(500);
     $("dd").css("display", "none");
     $("dt").click(function () {
         $(this).next().toggle(); //alt .slideToggle()
     });
-    
-/* Zadanie 4
-W pliku index.html znajdź formularz o klasie login. W pliku app.js stwórz funkcję, 
-która będzie reagować na wciśnięcie przycisku show-hide-btn. Na początek ustaw event 
-tak, aby po wciśnięciu wypisał w konsoli "działam". Następnie funkcja ma sprawdzać, 
-jakiego typu jest element przechowujący hasło. Jeśli password – zmień type na text. 
-Jeśli text – zmień na password. */    
 
-$("button.show-hide-btn").on("click", function(e) {
-    console.log("działam");
-    
-    if ($("input.user-pass").attr("type") === "text") {
-        $("input.user-pass").attr("type", "password");
-    } else {
-        $("input.user-pass").attr("type", "text");
-    }
-    
-    e.preventDefault();
-});
+    /* Zadanie 4
+     W pliku index.html znajdź formularz o klasie login. W pliku app.js stwórz funkcję, 
+     która będzie reagować na wciśnięcie przycisku show-hide-btn. Na początek ustaw event 
+     tak, aby po wciśnięciu wypisał w konsoli "działam". Następnie funkcja ma sprawdzać, 
+     jakiego typu jest element przechowujący hasło. Jeśli password – zmień type na text. 
+     Jeśli text – zmień na password. */
+
+    $("button.show-hide-btn").on("click", function (e) {
+        console.log("działam");
+
+        if ($("input.user-pass").attr("type") === "text") {
+            $("input.user-pass").attr("type", "password");
+        } else {
+            $("input.user-pass").attr("type", "text");
+        }
+
+        e.preventDefault();
+    });
 
     // alt 1
 //    if ( $('input.user-pass')[0].type=='password') {
@@ -72,22 +72,31 @@ $("button.show-hide-btn").on("click", function(e) {
 //    } else {
 //            $('input.user-pass')[0].type = 'password';
 //    }
-   // alt 2
+    // alt 2
 //        var haslo = $(this).prev();
 //
 //        haslo.attr('type', haslo.attr('type') == 'text' ? 'password' : 'text');
 
-/* Zadanie 5
-Po najechaniu kursorem myszy na element w menu wypisz w konsoli tekst "Hura". */
-    
-    $("nav.menu").on("mouseenter", function() {
+    /* Zadanie 5
+     Po najechaniu kursorem myszy na element w menu wypisz w konsoli tekst "Hura". */
+
+    $("nav.menu").on("mouseenter", function () {
         console.log("Hura");
     }); // alt $('nav.menu').mouseover(function()
-    
-    
-    
-    
-    
+
+    /* Zadanie 6
+     Znajdź w pliku index.html formularz o klasie login, a następnie napisz funkcję, w której:
+     
+     ustaw lekki cień wewnętrzny po kliknięciu wewnątrz inputa,
+     zmień background-color na szary po wyjściu kursorem z pola input.  */
+
+    $("input").on("click", function () {
+        $(this).css("box-shadow", "0 0 0 #e0e0d1");
+    });
+
+    $("input").on("mouseleave", function () {
+        $(this).css("background-color", "grey");
+    });
 
 
 });
