@@ -29,10 +29,23 @@ $(document).ready(function () {
     button3.on("click", function () {
         button1.off("click");
         button2.off("click");
-        $(this).off("click"); // alt .find('button').off();
+        $(this).off("click"); // alt .find("button").off();
     });
 
+/* Zadanie 3
+Znajdź w pliku html sekcję o klasie superhero-description, a następnie napisz funkcję, w której:
 
+    Ukryj domyślnie wszystkie elementy dd.
+    Po kliknięciu w element dt spraw, by elementy dd:
+
+    rozwijały się, jeśli są ukryte,
+    zwijały się, jeśli są widoczne.  */
+    
+    $("dd").fadeOut(500);
+
+    $("dt").click(function () {
+        $(this).next().toggle(); //alt .slideToggle()
+    });
 
 
 
