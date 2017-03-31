@@ -1,0 +1,31 @@
+p {
+    text-indent: 20px;
+    color: grey;
+    font-size: 14px; 
+    line-height: 20px;
+    font-family: sans-serif;
+    font-weight:  600;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;	
+}
+
+#container {
+    width: 500px;
+}
+
+h1 {
+    background-color: #ACC4CE;
+    color: white; 
+    font-size: 20px; 
+    text-align: center; 
+    text-shadow: 2px 2px 2px #878787;
+    padding-bottom: 10px; 
+}
+
+span {
+    letter-spacing: 10px;
+    color: #395075; 
+    font-weight:  bold;
+}
