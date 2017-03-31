@@ -1,0 +1,44 @@
+#color1 {
+    color: red; 
+}
+
+#color2 {
+    color: yellow; 
+}
+
+#color3 {
+    color: #00C020; 
+}
+
+#color4 {
+    color: #F5AC10; 
+}
+
+#color5 {
+    color: #871020; 
+}
+
+div {
+    background-color: rgba(255,  1,  60,  .25);
+}
+
+.hsla-class {
+    background-color: hsla(20,  90%,  45%,  .35);
+}
+
+.container {
+    width: 200px;
+    background-color: grey; 
+}
+
+#par1 {
+    width: 50%;
+    background-color: yellow;
+    font-size: 2em;
+}
+
+#par2 {
+    width: 20%;
+    background-color: maroon; 
+    font-size: 1.5em; 
+}
