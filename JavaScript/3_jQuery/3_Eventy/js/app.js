@@ -41,13 +41,41 @@ Znajdź w pliku html sekcję o klasie superhero-description, a następnie napisz
     rozwijały się, jeśli są ukryte,
     zwijały się, jeśli są widoczne.  */
     
-    $("dd").fadeOut(500);
-
+    //$("dd").fadeOut(500);
+    $("dd").css("display", "none");
     $("dt").click(function () {
         $(this).next().toggle(); //alt .slideToggle()
     });
+    
+/* Zadanie 4
+W pliku index.html znajdź formularz o klasie login. W pliku app.js stwórz funkcję, 
+która będzie reagować na wciśnięcie przycisku show-hide-btn. Na początek ustaw event 
+tak, aby po wciśnięciu wypisał w konsoli "działam". Następnie funkcja ma sprawdzać, 
+jakiego typu jest element przechowujący hasło. Jeśli password – zmień type na text. 
+Jeśli text – zmień na password. */    
 
+$("button.show-hide-btn").on("click", function(e) {
+    console.log("działam");
+    
+    if ($("input.user-pass").attr("type") === "text") {
+        $("input.user-pass").attr("type", "password");
+    } else {
+        $("input.user-pass").attr("type", "text");
+    }
+    
+    e.preventDefault();
+});
 
+    // alt 1
+//    if ( $('input.user-pass')[0].type=='password') {
+//            $('input.user-pass')[0].type = 'text';
+//    } else {
+//            $('input.user-pass')[0].type = 'password';
+//    }
+   // alt 2
+//        var haslo = $(this).prev();
+//
+//        haslo.attr('type', haslo.attr('type') == 'text' ? 'password' : 'text');
 
 
 });
