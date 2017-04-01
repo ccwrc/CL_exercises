@@ -1,0 +1,38 @@
+.zad12 {
+    /* background-color: rgba(120, 120, 114, .4);  */
+    background-color: #787872; 
+    opacity: .4; 
+    /* Podanie parametru opacity (ogolnie, nie tylko dla backgroud-color) ma wplyw rowniez na tekst. */
+}
+
+.zad3 {
+    background: #b3dced;
+    background: -moz-linear-gradient(top, #b3dced 0%, #b5dded 4%, #bce0ee 15%, #29b8e5 91%, #29b8e5 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #b3dced), color-stop(4%, #b5dded), color-stop(15%, #bce0ee), color-stop(91%, #29b8e5), color-stop(100%, #29b8e5));
+    background: -webkit-linear-gradient(top, #b3dced 0%, #b5dded 4%, #bce0ee 15%, #29b8e5 91%, #29b8e5 100%);
+    background: -o-linear-gradient(top, #b3dced 0%, #b5dded 4%, #bce0ee 15%, #29b8e5 91%, #29b8e5 100%);
+    background: -ms-linear-gradient(top, #b3dced 0%, #b5dded 4%, #bce0ee 15%, #29b8e5 91%, #29b8e5 100%);
+    background: linear-gradient(to bottom, #b3dced 0%, #b5dded 4%, #bce0ee 15%, #29b8e5 91%, #29b8e5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#29b8e5', GradientType=0 );
+}
+
+.zad4 {
+    background-image: url("http://images71.fotosik.pl/687/5cf6300db428acac.jpg"); 
+    width: 500px;
+    height: 220px;
+}
+
+.zad5 {
+    background-image: url("http://images71.fotosik.pl/687/5cf6300db428acac.jpg"); 
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat; 
+}
+
+.zad6 {
+    background-image: url("http://images71.fotosik.pl/687/5cf6300db428acac.jpg"); 
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
