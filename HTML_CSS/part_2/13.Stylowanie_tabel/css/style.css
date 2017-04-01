@@ -1,0 +1,18 @@
+table tr th {
+    background-color: #000066;
+    color: white;
+    /* naglowek (th) ma czcionke pogrubiona standardowo */
+}
+
+/* Stworz regule CSS ktora spowoduje ze kazda komorka tabeli bedzie miala wlasny 
+border (nie polaczony z innymi)
+th, td {
+border: 1px solid black;
+padding: 5px 5px;
+}  */
+
+/* Stworz regule CSS ktora spowoduje ze kazda komorka tabeli bedzie miala border (polaczony z innymi). */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse; 
+} 
