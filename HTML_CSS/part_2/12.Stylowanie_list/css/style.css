@@ -1,0 +1,10 @@
+ul {
+    list-style-type: square;
+}
+
+div ul li {
+    display: inline-block;
+    margin: 1px 10px;
+    color: #116493;
+    font-weight: bold; 
+}
