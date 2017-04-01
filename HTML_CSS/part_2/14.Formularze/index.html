@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>formularze</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+
+    </head>
+    <body>
+
+        <div> <!-- formularz 1 -->
+            <form>
+                <label>podaj swoje imię:</label> <br/>
+                <input class="form1" type="text" name="imie" placeholder="tu wpisz swoje imię" /> <br/>
+
+                <label>podaj swój adres e-mail:</label> <br/>
+                <input class="form1" type="text" placeholder="tu wpisz swój adres e-mail" /> <br/>
+
+                <label>
+                    Dodatkowe uwagi wpisz poniżej: </br>
+                    <textarea class="form1" cols="50" rows="10" placeholder="tu możesz wprowadzić tekst"></textarea>
+                </label> <br/>
+
+                <input type="submit" value="Send">
+            </form>
+        </div>
+
+        <hr/>
+
+        <div class="form2"> <!-- formularz 2 -->
+
+            <h1>Run your inteligent robo-car</h1>
+            <form>
+
+                <h2>Select Country:</h2>
+                <label>
+                    <input class="checkpoint" type="radio" name="country"
+                           value="1" checked>Poland
+                </label>
+                <label>
+                    <input class="checkpoint" type="radio" name="country"
+                           value="2">US
+                </label>
+                <label>
+                    <input class="checkpoint" type="radio" name="country"
+                           value="3">San Marino
+                </label>
+
+                <h2>Select Car:</h2>
+                <label>
+                    <input type="radio" name="car"
+                           value="1" checked>BMW
+                </label>
+                <label>
+                    <input type="radio" name="car"
+                           value="2">Jaguar
+                </label>
+
+                <h2>When?</h2>
+                <label>Date:</label>
+                <input type="text" name="date" placeholder="dd.mm.rrrr" />
+
+                <h2>Start engine.</h2>
+                <label>Enter Password<sup>*</sup>:</label>
+                <input type="password" name="pass" >
+                <br/><br/>
+                <input type="submit" value="RUN YOUR CAR">
+            </form>
+        </div>
+
+    </body>
+</html>
