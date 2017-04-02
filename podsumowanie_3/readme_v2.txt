@@ -1,23 +1,5 @@
 
-
-Odpowiedzi do zadań tekstowych (zadanie 1. i 2.) wpisz w pliku zadanie01_02.txt.
-
-Resztę zadań rozwiąż w odpowiednich plikach js.
-
-Nie zmieniaj nic w plikach HTML.
-----------------------------------------------------------
 Zadanie 1
-
-Opisz własnymi słowami co to jest NaN i jak możemy sprawdzić czy dana zmienna ma wartość NaN.
-----------------------------------------------------------
-Zadanie 2
-
-pisz własnymi słowami różnicę między następującymi wartościami:
-
-    null
-    undefined
-----------------------------------------------------------
-Zadanie 3
 
 Palindrom to wyrażenie brzmiące tak samo czytane zarówno od lewej do prawej, jak i od prawej do lewej. Napisz funkcję checkPalindrom(string) sprawdzającą, czy dany string jest palindromem.
 
@@ -27,7 +9,7 @@ checkPalindrom("Devil lived") // => true
 checkPalindrom("Kamil ślimak") // => true
 checkPalindrom("Czarne kropki") // => false
 ----------------------------------------------------------
-Zadanie 4
+Zadanie 2
 
 Za pomocą JavaScript lub jQuery wykonaj następujące polecenia:
 
@@ -37,7 +19,7 @@ Za pomocą JavaScript lub jQuery wykonaj następujące polecenia:
     Znajdź wszystkie linki i wypisz adresy, na które wskazują.
     Znajdź element o id super_form i wypisz w konsoli tagi wszystkich jego dzieci.
 ----------------------------------------------------------
-Zadanie 5
+Zadanie 3
 
 Za pomocą JavaScript lub jQuery dopisz do wszystkich divów o klasie color następujący event:
 
@@ -45,7 +27,7 @@ Za pomocą JavaScript lub jQuery dopisz do wszystkich divów o klasie color nast
     Po zjechaniu z diva tekst ma zniknąć, a kolor – nie.
     Ponowne najechanie powinno zmienić kolor tła i znowu wyświetlić tekst.
 ----------------------------------------------------------
-Zadanie 6
+Zadanie 4
 
 Za pomocą JavaScript lub jQuery dopisz event do formularza. Event ma reagować na jego wysłanie. Po wciśnięciu przycisku submit funkcja eventu powinna:
 
