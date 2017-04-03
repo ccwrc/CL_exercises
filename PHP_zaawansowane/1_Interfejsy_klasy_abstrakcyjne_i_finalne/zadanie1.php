@@ -45,11 +45,46 @@ class Admin extends User {
 
     protected function checkLogin($username, $password) {
         if ($this->username === $username && $this->password === $password 
-                && $_SERVER['REMOTE_ADDR'] === '192.168.33.22') {
+              //  && $_SERVER['REMOTE_ADDR'] === '192.168.33.22') {
+                && $_SERVER['REMOTE_ADDR'] === '127.0.0.1') {  
             return true;
         } else {
             return false;
         }
+    }
+
+}
+// var_dump($_SERVER['REMOTE_ADDR']); //obecny IP do testow
+
+
+class Client extends User {
+
+    public function setLogin($username) {
+        if (strlen($username) >= 8) {
+            $this->username = $username;
+        }
+    }
+
+    public function setPassword($password) {
+        if (strlen($password) >= 8) {
+            $this->password = $password;
+        }
+    }
+
+    protected function checkLogin($username, $password) {
+        if ($this->username === $username && $this->password === $password) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getlogin() {
+        return $this->username;
+    }
+
+    public function getPassword() {
+        return $this->password;
     }
 
 }
