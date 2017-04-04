@@ -7,13 +7,30 @@ document.addEventListener("DOMContentLoaded", function () {
     var inputTag = document.querySelector("#tagInput");
 
     showButton.addEventListener("click", function () {
-        console.log("show");
+        console.log(inputTag.value);
+        var show = inputTag.value;
+        inputTag.value = "";
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].dataset.tag.indexOf(show) > 0) {
+                images[i].classList.remove("invisible");
+            } else { // dodane zeby uniknac balaganu w obrazkach na stronie
+                images[i].classList.add("invisible");
+            }
+        }
     });
 
     hideButton.addEventListener("click", function () {
-        console.log("hide");
+        console.log(inputTag.value);
+        var hide = inputTag.value;
+        inputTag.value = "";
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].dataset.tag.indexOf(hide) > 0) {
+                images[i].classList.add("invisible");
+            } else {
+                images[i].classList.remove("invisible");
+            }
+        }
     });
-
 
 
 });
