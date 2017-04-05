@@ -88,3 +88,29 @@ class Client extends User {
     }
 
 }
+
+// 3x admin
+$admin1 = new Admin();
+$admin1->setLogin("admin1wew1");
+$admin1->setPassword("admin1pass1");
+
+$admin2 = new Admin();
+$admin2->setLogin("admin1wew2");
+$admin2->setPassword("admin1pass2");
+
+$admin3 = new Admin();
+$admin3->setLogin("admin1wew3");
+$admin3->setPassword("admin1pass3");
+
+// 3x client
+$client1 = new Client();
+$client1->setLogin("client1logi1");
+$client1->setPassword("clinetpass1");
+
+$client2 = new Client();
+$client2->setLogin("client1logi2");
+$client2->setPassword("clinetpass2");
+
+$client3 = new Client();
+$client3->setLogin("client1logi3");
+$client3->setPassword("clinetpass3");
