@@ -4,10 +4,10 @@
 $(document).ready(function () {
 
     var allQuestions = $("h1");
-    var allAnswers = $("p");
+    // var allAnswers = $("p"); //zbedne
 
     allQuestions.on("click", function () {
-        console.log("klikniecie w h1");
+        $(this).next().slideToggle(500);
     });
 
 });
