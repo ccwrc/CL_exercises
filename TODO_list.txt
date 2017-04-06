@@ -1,14 +1,16 @@
 
 
-JavaScript - w trakcie
+JavaScript - w trakcie, 6_ToDoList - zrobić zadanie opcjonalne
 
-podsumowanie_3 - całość
 
 podsumowanie_4 - całość
 
-PHP_zaawansowane - całość
+
+PHP_zaawansowane - w trakcie
+
 
 PHP_TDD - całość
 
-HTML_CSS - całość
+
+HTML_CSS - w trakcie
 
