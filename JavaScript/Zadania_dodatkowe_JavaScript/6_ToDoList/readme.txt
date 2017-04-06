@@ -1,4 +1,3 @@
-Slider
 
 Napisz listę zadań do zrobienia. Strona ma spełniać następujące założenia:
 
@@ -12,7 +11,7 @@ Napisz listę zadań do zrobienia. Strona ma spełniać następujące założeni
 
 ---------------------------------------------------------------
 
-Dodatkowo:
+Opcjonalnie:
 
 Dodaj do strony drugi input, w którym będzie można wpisać priorytet zadania (liczba całkowita od 1 do 10). Podczas dodawania zadania musi być ono dodane w odpowiednie miejsce na liście (zadania z priorytetem 10 na samej górze, zadania z priorytetem 0 na samym dole listy).
 
