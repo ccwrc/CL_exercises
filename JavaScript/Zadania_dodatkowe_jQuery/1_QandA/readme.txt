@@ -11,7 +11,7 @@ Punkt 2
 
 Przygotuj do pracy plik JavaScript. Dopisz event, który sprawdzi, czy elementy DOM zostały załadowane. Przetestuj (np. przez wyświetlenie w konsoli napisu "Działa").
 ---------------------------------------------------------
-Punkt 3
+Punkt 3a
 
 Znajdź następujące elementy i zapisz je do zmiennych:
 
@@ -20,7 +20,7 @@ Znajdź następujące elementy i zapisz je do zmiennych:
 
 Wypisz zmienne w konsoli, żeby upewnić się, czy zawierają poprawne dane.
 ---------------------------------------------------------
-Punkt 3
+Punkt 3b
 
 Do wszystkich elementów h1 dodaj event, który zareaguje na kliknięcie (nie używaj pętli – pamiętaj, że działamy w jQuery). Przetestuj (np. przez wyświetlenie w konsoli napisu "kliknięcie w h1").
 ---------------------------------------------------------

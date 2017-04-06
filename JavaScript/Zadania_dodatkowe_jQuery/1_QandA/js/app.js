@@ -3,6 +3,11 @@
 
 $(document).ready(function () {
 
-    console.log("dziala");
+    var allQuestions = $("h1");
+    var allAnswers = $("p");
+
+    allQuestions.on("click", function () {
+        console.log("klikniecie w h1");
+    });
 
 });
