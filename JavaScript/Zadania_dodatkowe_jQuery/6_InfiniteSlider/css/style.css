@@ -1,0 +1,25 @@
+.slider {
+    height: 250px;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 2410px;
+    height: 200px;
+}
+
+.slider li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
