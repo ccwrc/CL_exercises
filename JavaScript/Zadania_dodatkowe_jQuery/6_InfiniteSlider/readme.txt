@@ -46,7 +46,14 @@ Zmodyfikuj event tak, żeby po kliknięciu w przycisk:
 Punkt 6
 
 Dodaj drugi event dla przycisku Prev. Wykonaj takie same kroki jak dla eventu Next. Pamiętaj tylko o warunku, którego nie może przekroczyć zmienna określająca indeks obrazka w drugą stronę oraz o kierunku przesuwania. Wciąż używamy własności left.
+-------------------------------------------------------------
+Punkt 7
 
+Spróbuj stworzyć jeszcze jedną funkcję, która będzie odpowiedzialna za przesuwanie slajdu po kliknięciu w dowolny przycisk. Zastanów się, jakie parametry należy do niej przekazać. Ustaw jej odpowiednią nazwę i komentarz.
+-------------------------------------------------------------
+Punkt 8
+
+Sprawdź, jak działa Twoja strona. Czy widzisz problemy? Napisz.
 
 
 
