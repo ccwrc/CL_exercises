@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     var nextButton = $("#nextPicture");
     var prevButton = $("#prevPicture");
-    var allLi = $("ul").find("li");
     var images = $(".slider").find("img");
     var imgIndex = 0;
     var imgWidth = 400;

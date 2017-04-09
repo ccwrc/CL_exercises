@@ -1,8 +1,4 @@
-SimpleSlider
 
-Napisz prosty slider. Zadanie podzielone jest na punkty. Trzymaj się dokładnie treści punktów i rób je po kolei. 
-
-------------------------------------------------------------
 Punkt 1
 
 Zapoznaj się z kodem HTML dodanym do zadania. Do zrobienia slidera zazwyczaj musimy odpowiednio dostosować style dla listy, w której znajdują się obrazki. Dlatego po dodaniu klasy slider do odpowiedniego elementu zrób następujące kroki w pliku style.css:
@@ -49,11 +45,8 @@ Dodaj drugi event dla przycisku Prev. Wykonaj takie same kroki jak dla eventu Ne
 -------------------------------------------------------------
 Punkt 7
 
-Spróbuj stworzyć jeszcze jedną funkcję, która będzie odpowiedzialna za przesuwanie slajdu po kliknięciu w dowolny przycisk. Zastanów się, jakie parametry należy do niej przekazać. Ustaw jej odpowiednią nazwę i komentarz.
--------------------------------------------------------------
-Punkt 8
+Stwórz funkcję, która będzie odpowiedzialna za przesuwanie slajdu po kliknięciu w dowolny przycisk. 
 
-Sprawdź, jak działa Twoja strona. Czy widzisz problemy? Napisz.
 
 
 
