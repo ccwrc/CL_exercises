@@ -1,13 +1,9 @@
 
-/* opcja:
- Dodaj do strony drugi input, w którym będzie można wpisać priorytet zadania (liczba całkowita od 
- 1 do 10). Podczas dodawania zadania musi być ono dodane w odpowiednie miejsce na liście 
- (zadania z priorytetem 10 na samej górze, zadania z priorytetem 0 na samym dole listy). */
-
 document.addEventListener("DOMContentLoaded", function () {
 
     var addButton = document.querySelector("#addTaskButton");
     var taskInput = document.querySelector("#taskInput");
+    var taskPriority = document.querySelector("#taskPriority");
     var counter = document.querySelector("#counter");
     counter.innerText = 0;
     var tasklist = document.querySelector("#taskList");
@@ -15,8 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     addButton.addEventListener("click", function () {
         var taskText = taskInput.value;
+        var priority = taskPriority.value;
         taskInput.value = "";
-        if (taskText.length > 5 && taskText.length < 100) {
+        taskPriority.value = "";
+
+        if (taskText.length > 5 && taskText.length < 100 && (priority == 0 || priority == 1)) {
             var newTaskLi = document.createElement("li");
             var newH3 = document.createElement("h3");
             var deleteButton = document.createElement("button");
@@ -38,8 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
             newTaskLi.appendChild(deleteButton);
             newTaskLi.appendChild(completeButton);
 
-            taskList.appendChild(newTaskLi);
-
+            if (priority == 0) {
+                taskList.appendChild(newTaskLi);
+            } else {
+                taskList.insertBefore(newTaskLi, taskList.firstChild);
+            }
         }
 
     });

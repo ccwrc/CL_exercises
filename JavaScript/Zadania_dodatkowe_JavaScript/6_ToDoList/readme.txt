@@ -13,6 +13,6 @@ Napisz listę zadań do zrobienia. Strona ma spełniać następujące założeni
 
 Opcjonalnie:
 
-Dodaj do strony drugi input, w którym będzie można wpisać priorytet zadania (liczba całkowita od 1 do 10). Podczas dodawania zadania musi być ono dodane w odpowiednie miejsce na liście (zadania z priorytetem 10 na samej górze, zadania z priorytetem 0 na samym dole listy).
+Dodaj do strony drugi input, w którym będzie można wpisać priorytet zadania (liczba 0 lub 1). Podczas dodawania zadania musi być ono dodane w odpowiednie miejsce na liście (zadania z priorytetem 1 na samej górze, zadania z priorytetem 0 na samym dole listy).
 
 ##Pamiętaj: Zaplanuj wcześniej swoją pracę i rozpisz ją na etapy (podobnie jak w poprzednich zadaniach). Nie rób wszystkiego na raz!
