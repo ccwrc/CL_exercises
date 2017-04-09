@@ -1,24 +1,23 @@
-.slider{
+.slider {
     height: 250px;
     width: 400px;
     overflow: hidden;
     position: relative;
 }
 
-.slider ul{
+.slider ul {
     list-style: none;
     margin: 0;
     padding: 0;
     position: relative;
     display: block;
-    /*	 position: absolute; */
     left: 0;
     top: 0;
     width: 2410px;
     height: 200px;
 }
 
-.slider li{
+.slider li {
     display: inline-block;
     margin: 0;
     padding: 0;
