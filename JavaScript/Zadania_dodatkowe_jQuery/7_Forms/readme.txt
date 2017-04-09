@@ -5,7 +5,7 @@ Zadanie będzie polagało na stworzeniu skryptu walidującego pola formularza or
 --------------------------------------------------------------
 Punkt 1
 
-Zapoznaj się dokładnie z kodem HTML dodanym do zadania. Dopisz adres pod który chcemy wysłać formularzz do elementu form w odpowiedni atrybut.
+Zapoznaj się dokładnie z kodem HTML dodanym do zadania. Dopisz adres pod który chcemy wysłać formularz do elementu form w odpowiedni atrybut.
 --------------------------------------------------------------
 Punkt 2
 
