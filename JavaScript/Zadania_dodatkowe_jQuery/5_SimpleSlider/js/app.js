@@ -7,11 +7,9 @@ $(document).ready(function () {
     var imgIndex = 0;
     var imgWidth = 400;
 
-    $("ul").css("width", "2500px");
-
     nextButton.on("click", function () {
         imgIndex++;
-        if (imgIndex >= 5) {
+        if (imgIndex >= 6) {
             imgIndex = 0;
         }
         // minus przy imgIndex powoduje, ze mozna uzyc left zamiast rigth
@@ -19,11 +17,11 @@ $(document).ready(function () {
     });
 
     prevButton.on("click", function () { //smiec do poprawy
-        imgIndex++;
-        if (imgIndex >= 5) { //taa...
-            imgIndex = 0;
+        imgIndex--;
+        if (imgIndex < 0) {
+            imgIndex = 5;
         }
-        $("ul").animate({"left": imgIndex * imgWidth + "px"}, 500);
+        $("ul").animate({"left": -imgIndex * imgWidth + "px"}, 500);
     });
 
     /* Zmodyfikuj event tak, żeby po kliknięciu w przycisk:
