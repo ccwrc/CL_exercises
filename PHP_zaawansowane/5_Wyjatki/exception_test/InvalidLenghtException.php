@@ -9,4 +9,13 @@ class InvalidLenghtException extends Exception {
 
 // http://php.net/manual/en/class.exception.php
 // http://webmaster.helion.pl/index.php/php-obsluga-wyjatkow
-// phpinfo();
+// http://phpedia.pl/wiki/Wyj%C4%85tki
+
+ // phpinfo();
+ // Loaded Configuration File 	/etc/php/7.0/apache2/php.ini 
+
+
+/* ...ExampleException dziedziczy po Exception, blok catch łapiący ten typ wyjątku 
+ * musi być nad blokiem łapiącym wyjątek Exception, ponieważ wykonywany jest kod z pierwszego 
+ * spełniającego kryteria bloku catch jaki zostanie napotkany. Z tego powodu bloki catch 
+ * łapiące wyjątki typu Exception powinny być zawsze umieszczane jako ostatnie...   */

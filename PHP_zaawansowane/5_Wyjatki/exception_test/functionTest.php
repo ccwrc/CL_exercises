@@ -14,7 +14,7 @@ try {
 } catch (Exception $e) {
     echo('Caught exception: ');
 } finally {
-    echo('First finally.');
+    echo('First finally.'); // zawsze wywoływany, finally jest w php od 5.5
 }
 
 
