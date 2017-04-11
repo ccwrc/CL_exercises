@@ -5,6 +5,12 @@ $handle = fopen('file.txt', 'r+w');
 // var_dump($handle);
 // resource(3, stream)
 
+echo "ctime <br/>";
+var_dump(filectime("file.txt"));
+echo "mtime <br/>";
+var_dump(filemtime("file.txt"));
+
+
 
 $content = fread($handle, filesize('file.txt'));
 // var_dump($content);

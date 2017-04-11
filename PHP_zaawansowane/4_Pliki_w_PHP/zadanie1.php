@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadFile)) {
             echo "<hr/>" . $uploadFile . "klawo jak cholera Egon";
             echo '<a href="showImage.php?path_to_img=' . base64_encode($uploadFile) . '" target="_blank">show_img</a>';
-        } else { // base64encode -> showImage.php
+        } else { 
             echo "błąd wysyłania";
         }
     }
