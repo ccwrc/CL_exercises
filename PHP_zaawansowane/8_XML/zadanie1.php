@@ -56,7 +56,7 @@
         echo "<td>$course->units</td>";
         echo "<td>$course->instructor</td>";
         echo "<td>$course->days</td>";
-        echo "<td>{$course->time->start_time}</td>"; //{} zagniezdzone
+        echo "<td>{$course->time->start_time}</td>"; //{} zagniezdzone, inaczej wyswietli ->end_time
         echo "<td>{$course->time->end_time}</td>";
         echo "<td>{$course->place->building}</td>";
         echo "<td>{$course->place->room}</td>";
