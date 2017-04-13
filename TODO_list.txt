@@ -3,9 +3,6 @@
 podsumowanie_4 - całość
 
 
-PHP_zaawansowane - w trakcie
-
-
 PHP_TDD - całość
 
 
