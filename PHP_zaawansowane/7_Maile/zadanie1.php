@@ -47,27 +47,27 @@ if (($_SERVER["REQUEST_METHOD"] === "POST") && isset($_POST["nickname"])
 ?>
 
 <html>
-    <form method="POST">
+    <form method="POST" action="">
         <label>
             od kogo:<br/>
             <input type="text" name="nickname" required="required"/>
         </label>
-        <br>
+        <br/>
         <label>
             adres email:<br/>
             <input type="email" name="mailAddress" required="required"/>
         </label>
-        <br>
+        <br/>
         <label>
             temat wiadomości:<br/>
             <input type="text" name="subject" required="required"/>
         </label>
-        <br>
+        <br/>
         <label>
             treść wiadomości:<br/>
             <textarea name="message" cols="40" rows="5" required="required"></textarea>
         </label>
-        <br>
+        <br/>
         <input type="submit" value="Wyślij wiadomość"/>
     </form>
 </html>
