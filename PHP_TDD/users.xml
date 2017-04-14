@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<dataset>
+    <Users
+            id="50"
+            name="Test4"
+            email="Test4@gmail.com"
+            password="3858f62230ac3c915f300c664312c63f"
+            info="Test Different User data..."/>
+    <Users
+            id="51"
+            name="Test1"
+            email="Test4@gmail.com"
+            password="3858f62230ac3c915f300c664312c63f"
+            info="Test Different User data..."/>
+
+
+    <Tweets
+            id="1"
+            user_id = "50"
+            tweet = "Bzdura 1"/>
+    <Tweets
+            id="2"
+            user_id = "50"
+            tweet = "Bzdura 2 "/>
+    <Tweets
+            id="3"
+            user_id = "51"
+            tweet = "Bzdura 3"/>
+    <Tweets
+            id="4"
+            user_id = "51"
+            tweet = "Bzdura 4"/>
+</dataset>
