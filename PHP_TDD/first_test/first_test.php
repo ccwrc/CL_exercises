@@ -2,18 +2,23 @@
 
 // co jest grane: ./vendor/bin/phpunit
 // komenda do wyw testu: phpunit UnitTest first_test.php
+// ew. ./vendor/bin/phpunit first_test.php - pref.
+// 
+// https://phpunit.de/
+// http://itcraftsman.pl/tdd-w-php-testy-jednostkowe-z-phpunit-krok-po-kroku/
+// PHPUnit 6.1 is supported on PHP 7.0 and PHP 7.1.
 
 class sampleTest extends PHPUnit_Framework_TestCase {
 
     public function testTrue() {
 
         // $this->assertTrue(true); // OK (2 tests, 2 assertions)
-        // $this->assertTrue(funkcja(423));
-        $this->assertTrue(false); 
+        // $this->assertTrue(functionFail(13));
+        $this->assertTrue(true, "ten komunikat powinien sie wyswietlic po oblaniu testu"); 
     }
 
     public function testFalse() {
-        $this->assertFalse(false);
+        $this->assertFalse(true);
     }
 
 }
