@@ -9,7 +9,7 @@
 
   Na przykład dla argumentu x = 15 wynik ma być następujący:
 
-  12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz
+  12Fizz4BuzzFizz78FizzBuzz11Fizz1314BuzzFizz
 
   Napisz testy do tej funkcji. */
 
