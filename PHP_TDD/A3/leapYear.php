@@ -6,7 +6,7 @@
 function leapYear($year) {
 
     if ($year <= 0 || !is_int($year)) {
-        throw new Exception('nieprawidłowa wartość');
+        throw new RangeException('nieprawidłowa wartość');
     }
 
     if ((($year % 4) == 0) && ((($year % 100) != 0) || (($year % 400) == 0))) {
