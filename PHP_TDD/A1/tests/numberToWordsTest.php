@@ -44,8 +44,4 @@ class numberToWordsTest extends PHPUnit_Framework_TestCase {
         $this->assertInternalType('string', numberToWords(55));
     }
 
-//    public function testSimple() {
-//        $this->assertEquals('simple', $GLOBALS['simpleVar']);
-//        $this->assertEquals('747', $_POST['testVar']);
-//    }
 }

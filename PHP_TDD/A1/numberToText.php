@@ -1,9 +1,9 @@
 <?php
 
-function numberToText($number) {
+function numberToText($number) { //dzialajacy zgodnie z zalozeniami chaos
 
     if ((!is_int($number)) || ($number < 0 || $number > 999)) {
-        echo 'liczba poza zakresem lub brak liczby całkowitej';
+        return 'liczba poza zakresem lub brak liczby całkowitej';
     }
 
     if ($number == 0) {
