@@ -27,8 +27,7 @@ function numberToWords($number) {
     foreach ($numberArr as $key => $digit) {
         $digit = (int) $digit;
 
-        if ((count($numberArr) == 2 && $key == 0 && $digit == 1) || (count($numberArr) == 3 
-                && $key == 1 && $digit == 1)) {
+        if ((count($numberArr) == 2 && $key == 0 && $digit == 1) || (count($numberArr) == 3 && $key == 1 && $digit == 1)) {
 
             $digitIndex = $numberArr[$key + 1] + 9;
             $ret[] = $texts[0][$digitIndex];
@@ -41,40 +40,3 @@ function numberToWords($number) {
 
     return implode(' ', $ret);
 }
-
-
-
-
-// old
-function numberToText($number) {
-
-    if ((!is_int($number)) || ($number < 0 || $number > 999)) {
-        echo 'liczba poza zakresem lub brak liczby całkowitej';
-    }
-
-    if ($number == 0) {
-        return 'zero';
-    }
-
-    $texts = [
-        ['jeden', 'dwa', 'trzy', 'cztery', 'pięć', 'sześć', 'siedem', 'osiem', 'dziewięć', 'dziesięć', 'jedenaście', 'dwanaście', 'trzynaście', 'czternaście', 'piętnaście', 'szesnaście', 'siedemnaście', 'osiemnaście', 'dziewiętnaście'],
-        ['dziesięć', 'dwadzieścia', 'trzydzieści', 'czterdzieści', 'pięćdziesiąt', 'sześćdziesiąt', 'siedemdziesiąt', 'osiemdziesiąt', 'dziewięćdziesiąt'],
-        ['sto', 'dwieście', 'trzysta', 'czterysta', 'pięćset', 'sześćset', 'siedemset', 'osiemset', 'dziewięćset']
-    ];
-    
-    if ($number >= 1 && $number <= 19) {
-        return $texts[0][$number - 1];
-    }
-    
-    if ($number <= 99 && ($number%10 == 0)) {
-        $numberArr = str_split($number, 1);
-        return $texts[1][$numberArr[0]-1];
-    }
-    
-    if ($number <= 99) {
-        $numberArr = str_split($number, 1);
-        return $texts[1][$numberArr[0] - 1] . " " . $texts[0][$numberArr[1] - 1];
-    }
-}
-
-var_dump(numberToText(92));
