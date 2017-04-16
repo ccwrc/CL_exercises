@@ -13,11 +13,21 @@ class fizzBuzzTest extends PHPUnit_Framework_TestCase {
     public function testIfReturnCorrectType() {
         $this->assertInternalType('string', fizzBuzz(654));
     }
-    
+
     public function testIfReturnCorrectTypeIfValueIsIncorrect() {
         $this->assertInternalType('bool', fizzBuzz("string"));
         $this->assertInternalType('bool', fizzBuzz(-22));
         $this->assertInternalType('bool', fizzBuzz(1.1));
+    }
+
+    public function testIfReturnsString() {
+        $actual = fizzBuzz(rand(0, 100));
+        $this->assertInternalType('string', $actual);
+    }
+
+    public function testIfReturnsNonEmptyStringWhenParamIsGreaterThanZero() {
+        $actual = fizzBuzz(rand(1, 100));
+        $this->assertGreaterThan(0, strlen($actual));
     }
 
 }
