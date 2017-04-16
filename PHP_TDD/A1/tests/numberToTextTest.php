@@ -34,6 +34,7 @@ class numberToTextTest extends PHPUnit_Framework_TestCase {
     public function testIsExpectedIsSame() {
         $expected = 'liczba poza zakresem lub brak liczby całkowitej';
         $this->assertSame($expected, numberToText(-4));
+        $this->assertSame($expected, numberToText(3.33));
     }
 
     public function testIsExpectedIsEqual() {
