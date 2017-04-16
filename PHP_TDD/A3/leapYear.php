@@ -15,3 +15,19 @@ function leapYear($year) {
         return false;
     }
 }
+
+//// wersja bardziej poprawna, ale z wieksza iloscia kodu
+//function leapYear($year) {
+//    if(!is_int($year)) {
+//        throw new InvalidArgumentException("$year is not an integer");
+//    }
+//    if($year <= 0) {
+//        throw new RangeException("$year cannot be less than 0");
+//    }
+//    
+//    if(($year % 4 == 0 && $year % 100 != 0) || $year % 400 == 0) {
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
