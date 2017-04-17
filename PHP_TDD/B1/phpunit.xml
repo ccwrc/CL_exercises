@@ -19,7 +19,8 @@
     
     <php>
         <var name="simpleVar" value="simple"/>
-        <post name="testVar" value="33"/>        
+        <post name="testVar" value="33"/>   
+        <get name="testVarGet" value="77"/>      
     </php>
     
 </phpunit>
