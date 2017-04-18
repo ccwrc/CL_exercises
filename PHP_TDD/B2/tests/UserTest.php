@@ -1,6 +1,5 @@
 <?php
 
-// http://itcraftsman.pl/tdd-w-php-jak-testowac-modele/
 require_once __DIR__ . '/../vendor/autoload.php';
 
 class UserTest extends PHPUnit_Extensions_Database_TestCase {
@@ -8,9 +7,8 @@ class UserTest extends PHPUnit_Extensions_Database_TestCase {
     protected static $mysqliConn;
 
     public function getConnection() {
-        $conn = new PDO(
-                $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD']
-        );
+        // globals zapisane w phpunit.xml
+        $conn = new PDO($GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD']);
         return new PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection($conn, $GLOBALS['DB_NAME']);
     }
 
@@ -45,8 +43,10 @@ class UserTest extends PHPUnit_Extensions_Database_TestCase {
         $user->setEmail('hash@mail.pl');
         $user->setPassword('hash');
         $user->save(self::$mysqliConn);
-
         $this->assertTrue(password_verify('hash', $user->getPassword()));
     }
 
 }
+
+// next ->
+// http://itcraftsman.pl/tdd-w-php-jak-testowac-modele/
