@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+// https://phpunit.de/manual/current/en/database.html
 
 class UserTest extends PHPUnit_Extensions_Database_TestCase {
 
@@ -40,9 +41,7 @@ class UserTest extends PHPUnit_Extensions_Database_TestCase {
 
     public function testPasswordHashing() {
         $user = new User();
-        $user->setEmail('hash@mail.pl');
         $user->setPassword('hash');
-        $user->save(self::$mysqliConn);
         $this->assertTrue(password_verify('hash', $user->getPassword()));
     }
 
