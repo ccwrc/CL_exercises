@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    
+    <!-- zestaw danych dla dbunit, w komentarzach hasla bez # -->
+    <!-- haslo1 -->
+    <Users 
+        id="1" 
+        email="haslo1@gmail.elo" 
+        password="$2y$10$TXxNpNBXzwNof3BtyJDVlu4QVZh1R.ez/AO2SxZJ9UN7XpDT9Hffy" />
+    
+    <!-- haslo2 -->
+    <Users 
+        id="2" 
+        email="haslo2@gmail.elo" 
+        password="$2y$10$12mKV3PXjblPIZexH1J2wOQWUAf3yvWxBn1aQKXsVqVQOzWFv.gyO" />
+    
+    <!-- haslo3 -->
+    <Users 
+        id="3" 
+        email="haslo3@gmail.elo" 
+        password="$2y$10$32rWVYHVTolnASe/ey/Sdu6fTbhMDSF56umHuhi8eQ9Z5kL5wuGcW" />
+    
+    <!-- haslo4 -->
+    <Users 
+        id="4" 
+        email="haslo4@gmail.elo" 
+        password="$2y$10$Q7fJoHiEce28ThnBi/SS5.luxsi7anREDoJrjuhAP1RvagjT9Wkzu" />   
+
+</dataset>
