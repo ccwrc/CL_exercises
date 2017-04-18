@@ -24,14 +24,6 @@ class User {
         }
     }
 
-    public function getId() {
-        return $this->id;
-    }
-
-    public function getEmail() {
-        return $this->email;
-    }
-
     public function setPassword($password, $isHashed = false) {
         if (is_string($password)) {
             if (!$isHashed) {
@@ -42,8 +34,20 @@ class User {
         }
     }
 
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+    
+    public function getPassword() {
+        return $this->password;
+    }
+
     public function save(mysqli $connection) {
-        $query = '';
+        $query = "";
         if ($this->id == -1) {
             $query = "INSERT INTO Users (email, password) "
                     . "VALUES ('$this->email', '$this->password')";
