@@ -6,8 +6,8 @@ require_once("Message.php");
 
 $configDB = array(
     'servername' => "localhost",
-    'username' => "test",
-    'password' => "haslo",
+    'username' => "root",
+    'password' => "coderslab",
     'baseName' => "Twitter"
 );
 
