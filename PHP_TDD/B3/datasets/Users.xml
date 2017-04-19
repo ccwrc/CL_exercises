@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    
+    <!-- zestaw danych dla dbunit, w komentarzach hasla bez # -->
+    <!-- haslo1 -->
+    <Users 
+        id="1" 
+        name="name1"
+        email="haslo1@gmail.elo" 
+        info="info1"
+        password="$2y$10$TXxNpNBXzwNof3BtyJDVlu4QVZh1R.ez/AO2SxZJ9UN7XpDT9Hffy" />
+    
+    <!-- haslo2 -->
+    <Users 
+        id="2" 
+        name="name2"
+        email="haslo2@gmail.elo" 
+        info="info2"
+        password="$2y$10$12mKV3PXjblPIZexH1J2wOQWUAf3yvWxBn1aQKXsVqVQOzWFv.gyO" />
+    
+    <!-- haslo3 -->
+    <Users 
+        id="3" 
+        name="name3"
+        email="haslo3@gmail.elo" 
+        info="info3"
+        password="$2y$10$32rWVYHVTolnASe/ey/Sdu6fTbhMDSF56umHuhi8eQ9Z5kL5wuGcW" />
+
+</dataset>
+
+<!--private $name;
+    private $id;
+    private $email;
+    private $info;
+    private $password; -->
