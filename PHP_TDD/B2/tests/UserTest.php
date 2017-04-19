@@ -49,3 +49,4 @@ class UserTest extends PHPUnit_Extensions_Database_TestCase {
 
 // next ->
 // http://itcraftsman.pl/tdd-w-php-jak-testowac-modele/
+// https://webmastah.pl/testy-jednostkowe-z-phpunit-oraz-mockery/
