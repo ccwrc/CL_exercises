@@ -14,11 +14,10 @@
     </testsuites>
     
     <php>
-        <!-- http://itcraftsman.pl/tdd-w-php-testowanie-bazy-danych/ -->
-        <var name="DB_DSN" value="mysql:dbname=test_user;host=localhost" />
+        <var name="DB_DSN" value="mysql:dbname=Twitter;host=localhost" />
         <var name="DB_USER" value="root" />
         <var name="DB_PASSWD" value="coderslab" />
-        <var name="DB_NAME" value="test_user" />
+        <var name="DB_NAME" value="Twitter" />
         <var name="DB_HOST" value="localhost" />
     </php>
 </phpunit>
