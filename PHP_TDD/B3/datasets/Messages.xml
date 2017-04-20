@@ -4,34 +4,28 @@
     <!-- zestaw danych dla dbunit -->
     <Messages 
         id="1" 
-        senderId="1"
-        senderName="name1" 
-        receiverId="2"
-        receiverName="name2"
+        sender_id="1"
+        receiver_id="2"
         opened="2011-11-11 11:11:22"
         message="message1"    />
     
     <Messages 
         id="2" 
-        senderId="1"
-        senderName="name1" 
-        receiverId="2"
-        receiverName="name2"
-        opened="2011-11-11 11:21:22"
+        sender_id="2"
+        receiver_id="1"
+        opened="2011-11-11 11:11:22"
         message="message2"    />
     
     <Messages 
         id="3" 
-        senderId="2"
-        senderName="name2" 
-        receiverId="3"
-        receiverName="name3"
-        opened="2012-11-10 11:11:22"
+        sender_id="1"
+        receiver_id="2"
+        opened="2011-12-11 11:11:22"
         message="message3"    />
 
 </dataset>
 
-<!-- private $id;
+<!-- private $id;  	id 	sender_id 	reciever_id 	opened 	message 
     private $senderId;
     private $senderName;
     private $receiverId;
