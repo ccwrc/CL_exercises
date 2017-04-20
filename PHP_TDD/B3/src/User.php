@@ -77,8 +77,10 @@ class User{
     //   true if user was deleted
     //   false if not
     public static function DeleteUser(User $toDelete, $password){
-        if($toDelete->authenticate($password)){
-            $sql = "DELETE FROM Users WHERE";
+        if($toDelete->authenticate($password)){ // error authenticate($password)
+            // error $sql = "DELETE FROM Users WHERE";
+            $id = $toDelete->getId();
+            $sql = "DELETE FROM Users WHERE id = '$id'";
             if (User::$conn->query($sql) === TRUE) {
                 return true;
             }
@@ -90,7 +92,8 @@ class User{
         $ret = array();
         $sqlStatement = "Select id, name, email from Users";
         $result = User::$conn->query($sqlStatement);
-        if ($result->num_rows < 0) {
+        // error if ($result->num_rows < 0) {
+        if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()){
                 $ret[] = $row;
             }
@@ -163,9 +166,10 @@ class User{
         $hashed_pass = $this->password;
         if(password_verify($password, $hashed_pass)){
             //User is verified
-            return false;
+            // error return false;
+            return true;
         }
         return false;
-    }
+    } 
 
 }
