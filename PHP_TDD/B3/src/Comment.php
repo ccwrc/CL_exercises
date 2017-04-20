@@ -19,7 +19,9 @@ class Comment{
     //   new Tweet object if new entry was added to table
     //   null if there was some problem
     public static function CreateComment($creatorId, $creatorName, $tweetId, $comment){
-        $sqlStatement = "INSERT INTO Comments(tweet_id, user_id, comment) values ($creatorId, $tweetId, '$comment')";
+        // id 	tweet_id 	user_id 	comment 
+       // error $sqlStatement = "INSERT INTO Comments(tweet_id, user_id, comment) values ($creatorId, $tweetId, '$comment')";
+        $sqlStatement = "INSERT INTO Comments(tweet_id, user_id, comment) values ($tweetId, $creatorId, '$comment')";
         if (Comment::$conn->query($sqlStatement) === TRUE) {
             return new Comment(Comment::$conn->insert_id, $creatorId, $creatorName, $tweetId, $comment);
         }
@@ -32,7 +34,8 @@ class Comment{
     //   false if not
     public static function DeleteComment($toDeleteId){
         $sql = "DELETE FROM Comments WHERE id = {$toDeleteId}";
-        if (Comment::$conn->query($SQL) === TRUE) {
+        // error if (Comment::$conn->query($SQL) === TRUE) {
+        if (Comment::$conn->query($sql) === TRUE) {
             return true;
         }
         return false;
@@ -53,7 +56,8 @@ class Comment{
         return $ret;
     }
 
-    private function __construct($newId, $newUserId, $newUserName, $newTweetId, $newComment){
+    // error private function __construct($newId, $newUserId, $newUserName, $newTweetId, $newComment){
+        public function __construct($newId, $newUserId, $newUserName, $newTweetId, $newComment){    
         $this->id = $newId;
         $this->userId = $newUserId;
         $this->userName = $newUserName;
@@ -71,10 +75,12 @@ class Comment{
     }
 
     public function getTweetId(){
-        return $this->$tweetId;
+        // error return $this->$tweetId;
+        return $this->tweetId;
     }
 
-    public function getCommentText($newComment){
+    // error public function getCommentText($newComment){
+    public function getCommentText(){
         return $this->comment;
     }
 
