@@ -27,7 +27,8 @@ class User{
             return new User($userData['id'], $userData['name'], $userData['info'], $userData['email'], $userData['password']);
         }
         //there is user with this name in db
-        return -1;
+        // error return -1;
+        return null;
     }
 
     //this function returns:
@@ -59,11 +60,11 @@ class User{
     public static function AuthenticateUser($userMail, $password){
         $sqlStatement = "Select * from Users where email = '$userMail'";
         $result = User::$conn->query($sqlStatement);
-        if ($result->num_rows != 1) {
+        // error if ($result->num_rows != 1) {
+        if ($result->num_rows == 1) {
             $userData = $result->fetch_assoc();
             $user = new User($userData['id'], $userData['name'], $userData['email'], $userData['info'], $userData['password']);
-
-            if($user->authenticate($password)){
+            if($user->authenticate($password)){ // error authenticate($password)
                 //User is authenticated - we can return him
                 return $user;
             }
@@ -106,7 +107,8 @@ class User{
         return null;
     }
 
-    private function __construct($newId, $newName, $newMail, $newInfo, $password){
+    // error private function __construct($newId, $newName, $newMail, $newInfo, $password){
+    public function __construct($newId, $newName, $newMail, $newInfo, $password){
         $this->id = $newId;
         $this->name = $newName;
         $this->email = $newMail;
@@ -127,7 +129,8 @@ class User{
     }
 
     public function getEmail(){
-        return $this->name;
+        // error return $this->name;
+        return $this->email;
     }
 
     public function setEmail($newEmail){
