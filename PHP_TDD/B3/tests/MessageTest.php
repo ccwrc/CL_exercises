@@ -14,6 +14,9 @@ class MessageTest extends PHPUnit_Extensions_Database_TestCase {
         return $this->createFlatXmlDataSet(__DIR__ . '/../datasets/Messages.xml');
     }
     
+    public function testTrue() {
+        $this->assertTrue(true);
+    }
     
     
     
