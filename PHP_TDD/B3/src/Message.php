@@ -71,8 +71,10 @@ class Message{
         return $ret;
     }
 
-    private function __construct($newId, $senderId, $senderName, $receiverId, $receiverName, $message, $opened){
-        $this->id = $newId;
+    // error private function __construct($newId, $senderId, $senderName, $receiverId, $receiverName, $message, $opened){
+    public function __construct($senderId, $senderName, $receiverId, $receiverName, $message, $opened){    
+        // error $this->id = $newId;
+        $this->id = -1;    
         $this->senderId = $senderId;
         $this->senderName = $senderName;
         $this->receiverId = $receiverId;
@@ -92,13 +94,18 @@ class Message{
     public function getSenderName(){
         return $this->senderName;
     }
+    
+    public function getOpened(){
+        return $this->opened;
+    }
 
     public function getReceiverId(){
         return $this->receiverId;
     }
 
     public function getReceiverName(){
-        return $this->senderName;
+        // error return $this->senderName;
+        return $this->receiverName;
     }
 
     public function getMessage(){
