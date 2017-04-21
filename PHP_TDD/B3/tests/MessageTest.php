@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../src/Message.php';
 require_once __DIR__ . '/../src/connection.php';
 
-class CommentTest extends PHPUnit_Extensions_Database_TestCase {
+class MessageTest extends PHPUnit_Extensions_Database_TestCase {
 
     public function getConnection() {
         $conn = new PDO($GLOBALS["DB_DSN"], $GLOBALS["DB_USER"], $GLOBALS["DB_PASSWD"]);

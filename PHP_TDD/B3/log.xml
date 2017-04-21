@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Application Test Suite" tests="23" assertions="22" failures="0" errors="0" time="1.575718">
+    <testsuite name="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" tests="9" assertions="9" failures="0" errors="0" time="0.285393">
+      <testcase name="testCreateCommentReturnsComment" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="17" assertions="1" time="0.030996"/>
+      <testcase name="testDeleteComment" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="22" assertions="1" time="0.027144"/>
+      <testcase name="testIsGetAllTweetCommentsReturnsArray" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="26" assertions="1" time="0.047842"/>
+      <testcase name="testConstruct" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="30" assertions="1" time="0.031969"/>
+      <testcase name="testIsIdIsNumeric" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="35" assertions="1" time="0.026178"/>
+      <testcase name="testIsUserIdIsNumeric" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="40" assertions="1" time="0.033301"/>
+      <testcase name="testIsTweetIdIsNumeric" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="45" assertions="1" time="0.033275"/>
+      <testcase name="testIsCommentTextIsString" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="50" assertions="1" time="0.028999"/>
+      <testcase name="testSaveToDb" class="CommentTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/CommentTest.php" line="55" assertions="1" time="0.025689"/>
+    </testsuite>
+    <testsuite name="MessageTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/MessageTest.php" tests="1" assertions="0" failures="0" errors="0" time="0.026275">
+      <testcase name="Warning" assertions="0" time="0.026275"/>
+    </testsuite>
+    <testsuite name="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" tests="13" assertions="13" failures="0" errors="0" time="1.264050">
+      <testcase name="testGetUserIfIdIsNotInDB" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="17" assertions="1" time="0.018385"/>
+      <testcase name="testGetUserIfIdIsInDB" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="21" assertions="1" time="0.027833"/>
+      <testcase name="testToCreateNewUser" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="26" assertions="1" time="0.015391"/>
+      <testcase name="testCreateUserIsUserExists" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="31" assertions="1" time="0.020172"/>
+      <testcase name="testCreateUserIsUserNoExists" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="35" assertions="1" time="0.241497"/>
+      <testcase name="testCreateUserIsEmailCorrect" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="40" assertions="1" time="0.242000"/>
+      <testcase name="testAuthenticateUserIfUserNoExists" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="45" assertions="1" time="0.015516"/>
+      <testcase name="testAuthenticateUserIfUserExists" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="49" assertions="1" time="0.132729"/>
+      <testcase name="testIfDeleteUserReturnTrue" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="54" assertions="1" time="0.131837"/>
+      <testcase name="testGetAllUserNamesReturnsCorrectArray" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="59" assertions="1" time="0.016922"/>
+      <testcase name="testGetUserInfoIsArray" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="63" assertions="1" time="0.020620"/>
+      <testcase name="testAuthenticate" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="67" assertions="1" time="0.132083"/>
+      <testcase name="testSaveToDBandSetPassword" class="UserTest" file="/home/ccwrc/Workspace/WAR_PHP_W_04_TDD/B3/tests/UserTest.php" line="72" assertions="1" time="0.249065"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
