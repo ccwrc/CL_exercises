@@ -1,0 +1,19 @@
+body {
+    background-color: blue;
+}
+
+#one {
+    color: greenyellow;
+}
+
+#two {
+    color: violet;
+}
+
+.color-brown {
+    color:brown;
+}
+
+.block {
+    border: 2px dotted blueviolet;
+}
