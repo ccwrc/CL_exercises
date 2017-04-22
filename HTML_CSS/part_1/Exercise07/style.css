@@ -1,0 +1,38 @@
+
+#div1 {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border: dotted black 1px;
+    float: left;
+}
+
+#div2 {
+    height: 50px;
+    width: 50px;
+    background-color: greenyellow;
+    border: dotted black 1px;
+    float: right;
+}
+
+#div_clear {
+    clear: both;
+}
+
+#p1 {
+    height: 150px;
+    width: 150px;
+    border: 1px dashed grey; 
+    font-size: 40px;
+    color: grey; 
+    font-family: Georgia, Courier New; 	
+    display: inline-block;
+}
+
+#p2 {
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    border: dotted black 1px;
+    display: inline-block;
+}
