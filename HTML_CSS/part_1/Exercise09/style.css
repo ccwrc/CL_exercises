@@ -11,3 +11,14 @@
     font-weight: bold; 	
     padding-bottom: 2px; 
 }
+
+.second_form label {
+    color: grey;
+    font-size: 18px;
+}
+
+.checkpoint {
+    -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+    -moz-appearance: checkbox;    /* Firefox */
+    -ms-appearance: checkbox;     /* not currently supported */
+}

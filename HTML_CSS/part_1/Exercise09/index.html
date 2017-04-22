@@ -7,22 +7,55 @@
     </head>
     <body>
 
-        <div> 
-            <form class="first_form">
-                <label>Your name:</label> <br/>
-                <input class="first_form" type="text" name="name" placeholder="your name" /> <br/>
+        <form class="first_form">
+            <label>Your name:</label> <br/>
+            <input class="first_form" type="text" name="name" placeholder="your name" /> <br/>
 
-                <label>Your E-mail address:</label> <br/>
-                <input class="first_form" type="text" placeholder="Your E-mail" /> <br/>
+            <label>Your E-mail address:</label> <br/>
+            <input class="first_form" type="text" placeholder="Your E-mail" /> <br/>
 
-                <label>
-                    Your message: <br/>
-                    <textarea class="first_form" rows="12" placeholder="message or questions"></textarea>
-                </label> <br/>
+            <label>
+                Your message: <br/>
+                <textarea class="first_form" rows="12" placeholder="message or questions"></textarea>
+            </label> <br/>
 
-                <input type="submit" value="Send">
-            </form>
-        </div>
+            <input type="submit" value="Send">
+        </form>
+
+        <br/><br/>
+
+        <h1>Run your inteligent robo-car</h1>
+        <form class="second_form">
+
+            <h2>Select Country:</h2>
+            <label>
+                <input class="checkpoint" type="radio" name="country" value="1" checked>Poland
+            </label>
+            <label>
+                <input class="checkpoint" type="radio" name="country" value="2">US
+            </label>
+            <label>
+                <input class="checkpoint" type="radio" name="country" value="3">San Marino
+            </label>
+
+            <h2>Select Car:</h2>
+            <label>
+                <input type="radio" name="car" value="1" checked>BMW
+            </label>
+            <label>
+                <input type="radio" name="car" value="2">Jaguar
+            </label>
+
+            <h2>When?</h2>
+            <label>Date:</label>
+            <input type="text" name="date" placeholder="dd.mm.rrrr" />
+
+            <h2>Start engine.</h2>
+            <label>Enter Password<sup>*</sup>:</label>
+            <input type="password" name="pass" >
+            <br/><br/>
+            <input type="submit" value="RUN YOUR CAR">
+        </form>
 
     </body>
 </html>
