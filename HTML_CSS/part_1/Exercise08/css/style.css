@@ -1,0 +1,16 @@
+a {
+    color: red; 
+    border-color: red; 
+    width: 500px;
+}
+
+p {
+    color: red; 
+    border-color: red; 
+    width: 500px;
+    background-color: yellow;
+}
+
+table, tr, th, td {
+    border: solid black 1px;
+}
