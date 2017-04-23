@@ -24,7 +24,7 @@ class Product
     /* Public functions below*/
     public function hasStock()
     {
-        if ($this->stock_qty > 0)
+        if ($this->stockQty > 0)
         {
             return true;
         }
@@ -36,11 +36,11 @@ class Product
     }
 
     public function buy($quantity){
-        $this->stockQty -= $quantity;
+        $this->stockQty += $quantity;
     }
 
     public function getPriceForQuantity($quantity){
-        return $this->unitPrice * $this->stockQty;
+        return $this->unitPrice * $quantity;
     }
 
 
@@ -74,4 +74,5 @@ class Product
     {
         return $this->stockQty;
     }
+    
 }
