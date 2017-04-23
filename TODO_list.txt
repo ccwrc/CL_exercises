@@ -1,7 +1,5 @@
 
 
-podsumowanie_4 - całość
-
 
 PHP_TDD - zadanie C1
 
